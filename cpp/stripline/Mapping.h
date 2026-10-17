@@ -30,7 +30,7 @@ struct Curve
             if (n <= n1)
             {
                 const auto [n0, v0] = points[i - 1];
-                return n1 == n0 ? v1 : v0 + (v1 - v0) * (n - n0) / (n1 - n0);
+                return ! (n1 > n0) ? v1 : v0 + (v1 - v0) * (n - n0) / (n1 - n0); // points are sorted, so ! (n1 > n0) means equal
             }
         }
         return points.back().second;
@@ -51,7 +51,7 @@ struct Curve
             const auto [n0, v0] = points[i - 1];
             const auto [n1, v1] = points[i];
             if (v >= std::min (v0, v1) && v <= std::max (v0, v1))
-                return v1 == v0 ? n0 : n0 + (n1 - n0) * (v - v0) / (v1 - v0);
+                return std::abs (v1 - v0) < 1.0e-12f ? n0 : n0 + (n1 - n0) * (v - v0) / (v1 - v0);
         }
         return 0.0f;
     }

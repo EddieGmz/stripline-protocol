@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stripline.dev/schema/messages.schema.json",
+  "title": "StriplineMessage",
+  "description": "One WebSocket text frame between a Stripline bridge instance (client) and the Stripline console app (server, ws://127.0.0.1:9420). Every frame is one JSON object with a 'type'. Control values are in real units (see controls.json).",
+  "oneOf": [
+    { "$ref": "#/$defs/Hello" },
+    { "$ref": "#/$defs/TrackInfo" },
+    { "$ref": "#/$defs/PluginChanged" },
+    { "$ref": "#/$defs/Values" },
+    { "$ref": "#/$defs/Meters" },
+    { "$ref": "#/$defs/PluginParams" },
+    { "$ref": "#/$defs/Calibration" },
+    { "$ref": "#/$defs/LearnResult" },
+    { "$ref": "#/$defs/Bye" },
+    { "$ref": "#/$defs/Welcome" },
+    { "$ref": "#/$defs/SetValues" },
+    { "$ref": "#/$defs/LoadProfile" },
+    { "$ref": "#/$defs/Learn" },
+    { "$ref": "#/$defs/CancelLearn" },
+    { "$ref": "#/$defs/RequestPluginParams" },
+    { "$ref": "#/$defs/RequestCalibration" },
+    { "$ref": "#/$defs/OpenPluginEditor" },
+    { "$ref": "#/$defs/Ping" },
+    { "$ref": "#/$defs/Pong" }
+  ],
+  "$defs": {
+    "InstanceId": {
+      "type": "string",
+      "description": "Random id a bridge instance creates once and stores in its state, so it survives project reloads. Regenerated when a duplicated track brings a copy.",
+      "pattern": "^[a-z0-9]{8,32}$"
+    },
+    "ControlValues": {
+      "type": "object",
+      "description": "Map of generic control id (controls.json) to value in real units. Switches use 0 or 1.",
+      "additionalProperties": { "type": "number" }
+    },
+    "Track": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "color": { "type": "string", "description": "#RRGGBB, when the host reports one", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "index": { "type": "integer", "minimum": 0, "description": "0-based position in the host's track list, when known" }
+      }
+    },
+    "HostedPlugin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "vendor", "format", "uid"],
+      "properties": {
+        "name": { "type": "string" },
+        "vendor": { "type": "string" },
+        "format": { "type": "string", "enum": ["VST3", "AU", "CLAP"] },
+        "uid": { "type": "string", "description": "Format-specific unique id (VST3 class id, AU type/subtype/manufacturer)" },
+        "version": { "type": "string" }
+      }
+    },
+    "PluginParam": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "name"],
+      "properties": {
+        "id": { "type": "string", "description": "Stable parameter id (VST3 ParamID as decimal string). Preferred for matching." },
+        "index": { "type": "integer", "minimum": 0 },
+        "name": { "type": "string" },
+        "label": { "type": "string", "description": "Unit label the plugin reports, if any" },
+        "steps": { "type": "integer", "minimum": 0, "description": "Number of discrete steps, 0 = continuous" },
+        "defaultNormalized": { "type": "number", "minimum": 0, "maximum": 1 },
+        "normalized": { "type": "number", "minimum": 0, "maximum": 1 },
+        "text": { "type": "string", "description": "Current display text" }
+      }
+    },
+
+    "Hello": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "protocolVersion", "bridgeVersion", "track", "available", "values"],
+      "properties": {
+        "type": { "const": "hello" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "protocolVersion": { "type": "integer" },
+        "bridgeVersion": { "type": "string" },
+        "host": { "type": "string", "description": "Host name as reported by the plugin wrapper, e.g. REAPER" },
+        "track": { "$ref": "#/$defs/Track" },
+        "plugin": { "oneOf": [{ "$ref": "#/$defs/HostedPlugin" }, { "type": "null" }] },
+        "profileId": { "type": ["string", "null"] },
+        "available": { "type": "array", "items": { "type": "string" }, "description": "Generic control ids the active profile maps. Others are shown greyed out." },
+        "values": { "$ref": "#/$defs/ControlValues" }
+      }
+    },
+    "TrackInfo": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "track"],
+      "properties": {
+        "type": { "const": "trackInfo" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "track": { "$ref": "#/$defs/Track" }
+      }
+    },
+    "PluginChanged": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "plugin", "available", "values"],
+      "properties": {
+        "type": { "const": "pluginChanged" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "plugin": { "oneOf": [{ "$ref": "#/$defs/HostedPlugin" }, { "type": "null" }] },
+        "profileId": { "type": ["string", "null"] },
+        "available": { "type": "array", "items": { "type": "string" } },
+        "values": { "$ref": "#/$defs/ControlValues" }
+      }
+    },
+    "Values": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "values"],
+      "description": "Bridge -> app: values changed in the host (automation, plugin window, undo).",
+      "properties": {
+        "type": { "const": "values" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "values": { "$ref": "#/$defs/ControlValues" }
+      }
+    },
+    "Meters": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "peak", "rms"],
+      "description": "Bridge -> app, about 30 per second. Levels in dBFS (-100 = silence).",
+      "properties": {
+        "type": { "const": "meters" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "peak": { "type": "array", "items": { "type": "number" }, "minItems": 1, "maxItems": 2 },
+        "rms": { "type": "array", "items": { "type": "number" }, "minItems": 1, "maxItems": 2 },
+        "gr": { "type": "number", "description": "Gain reduction in dB (positive), when the profile maps a GR meter" }
+      }
+    },
+    "PluginParams": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "params"],
+      "properties": {
+        "type": { "const": "pluginParams" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "params": { "type": "array", "items": { "$ref": "#/$defs/PluginParam" } }
+      }
+    },
+    "Calibration": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "paramIndex", "samples"],
+      "description": "Display text the hosted plugin reports at evenly spaced normalized positions. The app parses numbers from the text to build a mapping curve.",
+      "properties": {
+        "type": { "const": "calibration" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "paramIndex": { "type": "integer", "minimum": 0 },
+        "samples": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["normalized", "text"],
+            "properties": { "normalized": { "type": "number", "minimum": 0, "maximum": 1 }, "text": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "LearnResult": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "controlId"],
+      "properties": {
+        "type": { "const": "learnResult" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "controlId": { "type": "string" },
+        "param": { "oneOf": [{ "$ref": "#/$defs/PluginParam" }, { "type": "null" }], "description": "null when learn timed out" }
+      }
+    },
+    "Bye": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId"],
+      "properties": { "type": { "const": "bye" }, "instanceId": { "$ref": "#/$defs/InstanceId" } }
+    },
+
+    "Welcome": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "protocolVersion", "appVersion"],
+      "properties": {
+        "type": { "const": "welcome" },
+        "protocolVersion": { "type": "integer" },
+        "appVersion": { "type": "string" }
+      }
+    },
+    "SetValues": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "values", "gesture"],
+      "description": "App -> bridge. 'gesture' lets the host record automation and undo correctly: begin when a drag starts, change while dragging, end when released; single for clicks and typed values.",
+      "properties": {
+        "type": { "const": "set" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "values": { "$ref": "#/$defs/ControlValues" },
+        "gesture": { "type": "string", "enum": ["begin", "change", "end", "single"] }
+      }
+    },
+    "LoadProfile": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "profile"],
+      "properties": {
+        "type": { "const": "loadProfile" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "profile": { "type": "object", "description": "A mapping profile, see profile.schema.json" }
+      }
+    },
+    "Learn": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "controlId"],
+      "properties": {
+        "type": { "const": "learn" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "controlId": { "type": "string" },
+        "timeoutMs": { "type": "integer", "minimum": 500 }
+      }
+    },
+    "CancelLearn": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId"],
+      "properties": { "type": { "const": "cancelLearn" }, "instanceId": { "$ref": "#/$defs/InstanceId" } }
+    },
+    "RequestPluginParams": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId"],
+      "properties": { "type": { "const": "requestPluginParams" }, "instanceId": { "$ref": "#/$defs/InstanceId" } }
+    },
+    "RequestCalibration": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId", "paramIndex"],
+      "properties": {
+        "type": { "const": "requestCalibration" },
+        "instanceId": { "$ref": "#/$defs/InstanceId" },
+        "paramIndex": { "type": "integer", "minimum": 0 },
+        "points": { "type": "integer", "minimum": 2, "maximum": 1000, "default": 200 }
+      }
+    },
+    "OpenPluginEditor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "instanceId"],
+      "properties": { "type": { "const": "openPluginEditor" }, "instanceId": { "$ref": "#/$defs/InstanceId" } }
+    },
+    "Ping": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type"],
+      "properties": { "type": { "const": "ping" }, "t": { "type": "number" } }
+    },
+    "Pong": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type"],
+      "properties": { "type": { "const": "pong" }, "t": { "type": "number" } }
+    }
+  }
+}

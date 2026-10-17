@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stripline.dev/schema/profile.schema.json",
+  "title": "StriplineProfile",
+  "description": "Maps Stripline generic controls to one third-party plugin's parameters. The bridge converts a generic value (real units) to the plugin's normalized 0..1 value with the mapping's curve, and back.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "name", "plugin", "mappings"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]{1,63}$", "description": "Stable profile id, e.g. vendor.plugin" },
+    "name": { "type": "string" },
+    "author": { "type": "string" },
+    "notes": { "type": "string" },
+    "plugin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "description": "Plugin name as the host reports it; used to match when no uid is given" },
+        "vendor": { "type": "string" },
+        "uids": {
+          "type": "object",
+          "description": "Format-specific ids that identify the plugin exactly",
+          "additionalProperties": false,
+          "properties": {
+            "VST3": { "type": "string" },
+            "AU": { "type": "string" },
+            "CLAP": { "type": "string" }
+          }
+        },
+        "testedVersions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "mappings": {
+      "type": "object",
+      "description": "Keyed by generic control id (controls.json). Controls missing from this object count as unmapped.",
+      "additionalProperties": { "$ref": "#/$defs/Mapping" }
+    }
+  },
+  "$defs": {
+    "ParamRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "id": { "type": "string", "description": "Stable parameter id (VST3 ParamID). Matched first." },
+        "index": { "type": "integer", "minimum": 0, "description": "Fallback when no id matches" },
+        "name": { "type": "string", "description": "Last resort match, and for display" }
+      }
+    },
+    "Curve": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "min", "max"],
+          "properties": { "kind": { "const": "linear" }, "min": { "type": "number" }, "max": { "type": "number" } }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "min", "max"],
+          "properties": { "kind": { "const": "log" }, "min": { "type": "number", "exclusiveMinimum": 0 }, "max": { "type": "number", "exclusiveMinimum": 0 } }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "points"],
+          "description": "Calibrated table of [normalized, value] pairs, sorted by normalized, values monotonic.",
+          "properties": {
+            "kind": { "const": "table" },
+            "points": {
+              "type": "array", "minItems": 2,
+              "items": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
+            }
+          }
+        }
+      ]
+    },
+    "Mapping": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["available"],
+          "description": "The plugin has no equivalent. The console greys the control out.",
+          "properties": { "available": { "const": false } }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["param", "type", "curve"],
+          "properties": {
+            "param": { "$ref": "#/$defs/ParamRef" },
+            "type": { "const": "continuous" },
+            "curve": { "$ref": "#/$defs/Curve" },
+            "invert": { "type": "boolean", "default": false }
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["param", "type", "steps"],
+          "description": "Plugin parameter has discrete positions. The generic value snaps to the step with the nearest value.",
+          "properties": {
+            "param": { "$ref": "#/$defs/ParamRef" },
+            "type": { "const": "stepped" },
+            "steps": {
+              "type": "array", "minItems": 2,
+              "items": {
+                "type": "object", "additionalProperties": false,
+                "required": ["normalized", "value"],
+                "properties": { "normalized": { "type": "number", "minimum": 0, "maximum": 1 }, "value": { "type": "number" }, "text": { "type": "string" } }
+              }
+            }
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["param", "type"],
+          "description": "On/off parameter. A continuous generic control driving a switch is split at the midpoint of its range.",
+          "properties": {
+            "param": { "$ref": "#/$defs/ParamRef" },
+            "type": { "const": "switch" },
+            "on": { "type": "number", "minimum": 0, "maximum": 1, "default": 1 },
+            "off": { "type": "number", "minimum": 0, "maximum": 1, "default": 0 },
+            "invert": { "type": "boolean", "default": false }
+          }
+        }
+      ]
+    }
+  }
+}

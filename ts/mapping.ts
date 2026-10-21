@@ -115,21 +115,46 @@ export function normalizedToGeneric(def: ControlDef, m: Mapping | undefined, n: 
 }
 
 /** The first number in a display text: "3.20 kHz" -> 3200, "-12 dB" -> -12, "∞"/"inf" -> Infinity. */
-export function parseDisplayNumber(text: string): number | null {
+export function parseDisplayNumber(text: string, unit = ''): number | null {
   const t = text.replace(/−/g, '-').replace(/,/g, '.');
-  if (/∞|inf/i.test(t)) return Infinity;
+  // ∞, inf, or "oo" as a word ("oo : 1", "-oo"), with its sign
+  const inf = t.match(/(^|[^a-z])([-+]?)\s*(∞|inf|oo)(?![a-z])/i);
+  if (inf) return inf[2] === '-' ? -Infinity : Infinity;
   const m = t.match(/[-+]?(?:\d+(?:\.\d+)?|\.\d+)/);
   if (!m) return null;
   let v = parseFloat(m[0]);
   const rest = t.slice((m.index ?? 0) + m[0].length).trimStart();
   if (rest.startsWith('k') || rest.startsWith('K')) v *= 1000;
+  // Times shown in ms or s (often both on one knob): convert to the unit asked for.
+  const time = timeUnitOf(rest);
+  if (time === 'ms' && unit === 's') v /= 1000;
+  else if (time === 's' && unit === 'ms') v *= 1000;
   return v;
 }
 
-/** Table curve from calibration samples: numeric samples only, kept while monotonic. */
-export function curveFromSamples(samples: { normalized: number; text: string }[]): TableCurve | null {
+/** 'ms' or 's' when the text after a number is a time unit. */
+function timeUnitOf(rest: string): 'ms' | 's' | null {
+  if (/^ms\b/i.test(rest)) return 'ms';
+  if (/^(s|sec|secs|seconds?)\b/i.test(rest)) return 's';
+  return null;
+}
+
+/** The time unit a set of display texts uses first, so mixed "308 ms" / "1.50 s" texts parse on one scale. */
+function firstTimeUnit(texts: string[]): string {
+  for (const text of texts) {
+    const m = text.match(/[-+]?(?:\d+(?:\.\d+)?|\.\d+)\s*(.*)$/);
+    const u = m ? timeUnitOf(m[1]) : null;
+    if (u) return u;
+  }
+  return '';
+}
+
+/** Table curve from calibration samples: numeric samples only, kept while monotonic.
+ *  `unit` is the unit wanted for times ('ms' or 's'); by default the first one the texts use. */
+export function curveFromSamples(samples: { normalized: number; text: string }[], unit?: string): TableCurve | null {
+  const u = unit || firstTimeUnit(samples.map((s) => s.text));
   const pts = samples
-    .map((s) => [s.normalized, parseDisplayNumber(s.text)] as const)
+    .map((s) => [s.normalized, parseDisplayNumber(s.text, u)] as const)
     .filter((p): p is readonly [number, number] => p[1] !== null && Number.isFinite(p[1]))
     .map(([n, v]) => [n, v]);
   if (pts.length < 2) return null;
@@ -147,10 +172,11 @@ export function curveFromSamples(samples: { normalized: number; text: string }[]
  * Steps from the display text at each position of a stepped parameter. Texts without a number
  * (OFF, AUTO, VAR) take the control's min when first, max when last, else the value between neighbours.
  */
-export function stepsFromTexts(positions: { normalized: number; text: string }[], min: number, max: number): Step[] {
+export function stepsFromTexts(positions: { normalized: number; text: string }[], min: number, max: number, unit?: string): Step[] {
+  const u = unit || firstTimeUnit(positions.map((p) => p.text));
   const vals = positions.map((p) => {
-    const v = parseDisplayNumber(p.text);
-    return v === Infinity ? max : v;
+    const v = parseDisplayNumber(p.text, u);
+    return v === Infinity ? max : v === -Infinity ? min : v;
   });
   return positions.map((p, i) => {
     let v = vals[i];

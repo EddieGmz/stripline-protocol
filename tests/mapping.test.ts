@@ -81,6 +81,19 @@ describe('calibration', () => {
     expect(parseDisplayNumber('∞:1')).toBe(Infinity);
     expect(parseDisplayNumber('\u221212.0 dB')).toBe(-12);
     expect(parseDisplayNumber('.75s')).toBe(0.75);
+    expect(parseDisplayNumber('oo : 1')).toBe(Infinity);
+    expect(parseDisplayNumber('-oo')).toBe(-Infinity);
+    expect(parseDisplayNumber('Boost 3 dB')).toBe(3); // "oo" inside a word is not infinity
+    expect(parseDisplayNumber('308 ms', 's')).toBeCloseTo(0.308);
+    expect(parseDisplayNumber('1.50 s', 'ms')).toBe(1500);
+  });
+
+  it('reads knobs that switch from ms to s on one scale', () => {
+    const c = curveFromSamples(['20 ms', '144 ms', '308 ms', '1.50 s', '4.00 s'].map((text, i) => ({ normalized: i / 4, text })));
+    expect(c?.points.map((p) => p[1])).toEqual([20, 144, 308, 1500, 4000]);
+    const s = curveFromSamples(['20 ms', '308 ms', '1.50 s'].map((text, i) => ({ normalized: i / 2, text })), 's');
+    expect(s?.points[2][1]).toBe(1.5);
+    expect(s?.points[1][1]).toBeCloseTo(0.308);
   });
   it('builds steps from display text, filling OFF/AUTO/∞', () => {
     const steps = stepsFromTexts(

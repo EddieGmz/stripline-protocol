@@ -56,6 +56,16 @@ int main()
     CHECK (std::isinf (*parseDisplayNumber ("\xE2\x88\x9E:1")));
     CHECK (! parseDisplayNumber ("Off").has_value());
     CHECK (near (*parseDisplayNumber (".75s"), 0.75f));
+    CHECK (std::isinf (*parseDisplayNumber ("oo : 1")) && *parseDisplayNumber ("oo : 1") > 0);
+    CHECK (std::isinf (*parseDisplayNumber ("-oo")) && *parseDisplayNumber ("-oo") < 0);
+    CHECK (near (*parseDisplayNumber ("Boost 3 dB"), 3.0f));
+    CHECK (near (*parseDisplayNumber ("308 ms", "s"), 0.308f));
+    CHECK (near (*parseDisplayNumber ("1.50 s", "ms"), 1500.0f));
+    {
+        Curve mixed;
+        CHECK (curveFromSamples ({ { 0.0f, "20 ms" }, { 0.5f, "308 ms" }, { 1.0f, "4.00 s" } }, mixed));
+        CHECK (mixed.points.size() == 3 && near (mixed.points[2].second, 4000.0f));
+    }
 
     Curve auto_;
     CHECK (curveFromSamples ({ { 0.0f, "20 Hz" }, { 0.2f, "100 Hz" }, { 0.4f, "Off" }, { 0.6f, "1.00 kHz" }, { 0.8f, "900 Hz" }, { 1.0f, "16 kHz" } }, auto_));

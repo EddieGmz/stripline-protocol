@@ -66,7 +66,10 @@ struct Mapping
 
     std::string paramId;    // stable id, matched first
     int paramIndex = -1;    // fallback
-    std::string paramName;  // last resort, and for display
+    std::string paramName;  // last resort, and for display (first of paramNames)
+    std::vector<std::string> paramNames; // candidate names, tried in order (ignoring case, then as prefix)
+    bool autoCurve = false; // Continuous: build the curve from the plugin's display text when it loads
+    bool autoSteps = false; // Stepped: read the steps from the plugin when it loads
 
     Curve curve;            // Continuous
     std::vector<Step> steps;// Stepped

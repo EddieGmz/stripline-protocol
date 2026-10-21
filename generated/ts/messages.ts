@@ -41,10 +41,14 @@ export interface Hello {
   plugin?: HostedPlugin | null;
   profileId?: string | null;
   /**
-   * Generic control ids the active profile maps. Others are shown greyed out.
+   * Controls the active profile maps to a parameter that exists: shared control ids and 'x.<extra id>'. Others are greyed out.
    */
   available: string[];
   values: ControlValues;
+  /**
+   * The active profile as resolved for this plugin instance (profile.schema.json): 'auto' curves and steps are replaced by what the bridge read from the plugin, and mappings whose parameter wasn't found are marked { available: false }. The console draws the strip from its layout and skin.
+   */
+  profile?: {} | null;
 }
 export interface Track {
   name: string;
@@ -68,7 +72,7 @@ export interface HostedPlugin {
   version?: string;
 }
 /**
- * Map of generic control id (controls.json) to value in real units. Switches use 0 or 1.
+ * Map of control id to value. Shared controls (controls.json) in real units, switches 0 or 1. Extras as 'x.<id>': real units when continuous, step index when stepped, 0/1 when switch.
  */
 export interface ControlValues {
   [k: string]: number;
@@ -85,6 +89,10 @@ export interface PluginChanged {
   profileId?: string | null;
   available: string[];
   values: ControlValues;
+  /**
+   * The active profile as resolved for this plugin instance (profile.schema.json): 'auto' curves and steps are replaced by what the bridge read from the plugin, and mappings whose parameter wasn't found are marked { available: false }. The console draws the strip from its layout and skin.
+   */
+  profile?: {} | null;
 }
 /**
  * Bridge -> app: values changed in the host (automation, plugin window, undo).

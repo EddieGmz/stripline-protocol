@@ -7,6 +7,7 @@ import {
   genericToNormalized,
   normalizedToGeneric,
   parseDisplayNumber,
+  stepsFromTexts,
   positionToValue,
   snapValue,
   valueToPosition,
@@ -32,7 +33,7 @@ describe('scale', () => {
   });
   it('snaps to step and range', () => {
     expect(snapValue(CONTROL_BY_ID['input.gain'], 2.26)).toBe(2.5);
-    expect(snapValue(CONTROL_BY_ID['input.gain'], 99)).toBe(20);
+    expect(snapValue(CONTROL_BY_ID['input.gain'], 99)).toBe(70);
   });
 });
 
@@ -56,10 +57,15 @@ describe('mapping', () => {
     expect(genericToNormalized(d, m['comp.ratio'], 4.4)).toBe(0.5);
     expect(normalizedToGeneric(d, m['comp.ratio'], 0.52)).toBe(4);
   });
-  it('continuous control driving an inverted switch', () => {
-    const d = CONTROL_BY_ID['comp.attack'];
-    expect(genericToNormalized(d, m['comp.attack'], 1)).toBe(1); // short attack -> Fast on
-    expect(genericToNormalized(d, m['comp.attack'], 25)).toBe(0);
+  it('even mapping for stepped extras', () => {
+    const knee = profile.extras![1];
+    const d = CONTROL_BY_ID['comp.ratio']; // def is not used by 'even'
+    expect(genericToNormalized(d, knee.mapping, 1, 3)).toBe(0.5);
+    expect(normalizedToGeneric(d, knee.mapping, 0.9, 3)).toBe(2);
+  });
+  it('auto curves and steps stay unresolved until the bridge reads the plugin', () => {
+    expect(genericToNormalized(CONTROL_BY_ID['filter.lpf'], m['filter.lpf'], 8000)).toBeNull();
+    expect(genericToNormalized(CONTROL_BY_ID['eq.hmf.freq'], m['eq.hmf.freq'], 3000)).toBeNull();
   });
   it('unavailable and missing mappings return null', () => {
     expect(genericToNormalized(CONTROL_BY_ID['comp.mix'], m['comp.mix'], 50)).toBeNull();
@@ -72,6 +78,21 @@ describe('calibration', () => {
     expect(parseDisplayNumber('3.20 kHz')).toBe(3200);
     expect(parseDisplayNumber('-12.5 dB')).toBe(-12.5);
     expect(parseDisplayNumber('Off')).toBeNull();
+    expect(parseDisplayNumber('∞:1')).toBe(Infinity);
+    expect(parseDisplayNumber('\u221212.0 dB')).toBe(-12);
+    expect(parseDisplayNumber('.75s')).toBe(0.75);
+  });
+  it('builds steps from display text, filling OFF/AUTO/∞', () => {
+    const steps = stepsFromTexts(
+      ['OFF', '45 Hz', '70 Hz', 'AUTO', '360 Hz', '∞'].map((text, i) => ({ normalized: i / 5, text })),
+      10,
+      1000,
+    );
+    expect(steps.map((s) => s.value)).toEqual([10, 45, 70, 215, 360, 1000]);
+  });
+  it('drops samples that break monotonicity', () => {
+    const c = curveFromSamples(['20 Hz', '100 Hz', 'Off', '1.00 kHz', '900 Hz', '16 kHz'].map((text, i) => ({ normalized: i / 5, text })));
+    expect(c?.points.map((p) => p[1])).toEqual([20, 100, 1000, 16000]);
   });
   it('builds a table curve and skips non-numeric samples', () => {
     const c = curveFromSamples([

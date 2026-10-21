@@ -2,128 +2,694 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://stripline.dev/schema/profile.schema.json",
   "title": "StriplineProfile",
-  "description": "Maps Stripline generic controls to one third-party plugin's parameters. The bridge converts a generic value (real units) to the plugin's normalized 0..1 value with the mapping's curve, and back.",
+  "description": "Everything Stripline knows about one third-party channel strip: how to find it on disk, how its parameters map to Stripline's shared controls and to its own extra controls, and how the console draws it (layout and colours). The bridge converts values with the mappings; the console draws the layout.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "id", "name", "plugin", "mappings"],
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "plugin",
+    "mappings"
+  ],
   "properties": {
-    "$schema": { "type": "string" },
-    "schemaVersion": { "const": 1 },
-    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]{1,63}$", "description": "Stable profile id, e.g. vendor.plugin" },
-    "name": { "type": "string" },
-    "author": { "type": "string" },
-    "notes": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 2
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9.-]{1,63}$",
+      "description": "Stable profile id, e.g. vendor.plugin"
+    },
+    "name": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "verified"
+      ],
+      "description": "draft: parameter names are educated guesses and ranges come from auto-calibration; verified: checked against the real plugin's parameter list."
+    },
     "plugin": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
-        "name": { "type": "string", "description": "Plugin name as the host reports it; used to match when no uid is given" },
-        "vendor": { "type": "string" },
+        "name": {
+          "type": "string",
+          "description": "Plugin name as the host reports it. Matching ignores case and also accepts names that start with it (e.g. 'CLA MixHub Stereo')."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other names the same plugin is known by"
+        },
+        "vendor": {
+          "type": "string"
+        },
         "uids": {
           "type": "object",
           "description": "Format-specific ids that identify the plugin exactly",
           "additionalProperties": false,
           "properties": {
-            "VST3": { "type": "string" },
-            "AU": { "type": "string" },
-            "CLAP": { "type": "string" }
+            "VST3": {
+              "type": "string"
+            },
+            "AU": {
+              "type": "string"
+            },
+            "CLAP": {
+              "type": "string"
+            }
           }
         },
-        "testedVersions": { "type": "array", "items": { "type": "string" } }
+        "testedVersions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scan": {
+          "$ref": "#/$defs/ScanHints"
+        }
       }
     },
     "mappings": {
       "type": "object",
-      "description": "Keyed by generic control id (controls.json). Controls missing from this object count as unmapped.",
-      "additionalProperties": { "$ref": "#/$defs/Mapping" }
+      "description": "Keyed by shared control id (controls.json). Controls missing here are unmapped and greyed out.",
+      "additionalProperties": {
+        "$ref": "#/$defs/Mapping"
+      }
+    },
+    "extras": {
+      "type": "array",
+      "description": "Controls specific to this plugin. Each one is automated through one of the bridge's extra slots, in this order.",
+      "maxItems": 32,
+      "items": {
+        "$ref": "#/$defs/Extra"
+      }
+    },
+    "layout": {
+      "$ref": "#/$defs/Layout"
+    },
+    "skin": {
+      "$ref": "#/$defs/Skin"
     }
   },
   "$defs": {
+    "ScanHints": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How the bridge finds this plugin when it scans only known channel strips.",
+      "properties": {
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Case-insensitive substrings of the plugin file name (e.g. 'API Vision')."
+        },
+        "shell": {
+          "type": "boolean",
+          "description": "The plugin lives inside a shell file that holds many plugins (e.g. Waves WaveShell); scan it and keep only matching plugins."
+        },
+        "timeoutSeconds": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 600,
+          "description": "How long one scan may take before the file goes to the unread list. Default 30."
+        }
+      }
+    },
     "ParamRef": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
-        "id": { "type": "string", "description": "Stable parameter id (VST3 ParamID). Matched first." },
-        "index": { "type": "integer", "minimum": 0, "description": "Fallback when no id matches" },
-        "name": { "type": "string", "description": "Last resort match, and for display" }
+        "id": {
+          "type": "string",
+          "description": "Stable parameter id (VST3 ParamID). Matched first."
+        },
+        "index": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Fallback when no id matches"
+        },
+        "name": {
+          "description": "Parameter name, or several candidate names. Matched ignoring case; if nothing matches exactly, a parameter whose name starts with a candidate is accepted.",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            }
+          ]
+        }
       }
     },
     "Curve": {
       "oneOf": [
         {
-          "type": "object", "additionalProperties": false,
-          "required": ["kind", "min", "max"],
-          "properties": { "kind": { "const": "linear" }, "min": { "type": "number" }, "max": { "type": "number" } }
-        },
-        {
-          "type": "object", "additionalProperties": false,
-          "required": ["kind", "min", "max"],
-          "properties": { "kind": { "const": "log" }, "min": { "type": "number", "exclusiveMinimum": 0 }, "max": { "type": "number", "exclusiveMinimum": 0 } }
-        },
-        {
-          "type": "object", "additionalProperties": false,
-          "required": ["kind", "points"],
-          "description": "Calibrated table of [normalized, value] pairs, sorted by normalized, values monotonic.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "min",
+            "max"
+          ],
           "properties": {
-            "kind": { "const": "table" },
-            "points": {
-              "type": "array", "minItems": 2,
-              "items": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
+            "kind": {
+              "const": "linear"
+            },
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
             }
           }
-        }
-      ]
-    },
-    "Mapping": {
-      "oneOf": [
-        {
-          "type": "object", "additionalProperties": false,
-          "required": ["available"],
-          "description": "The plugin has no equivalent. The console greys the control out.",
-          "properties": { "available": { "const": false } }
         },
         {
-          "type": "object", "additionalProperties": false,
-          "required": ["param", "type", "curve"],
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "min",
+            "max"
+          ],
           "properties": {
-            "param": { "$ref": "#/$defs/ParamRef" },
-            "type": { "const": "continuous" },
-            "curve": { "$ref": "#/$defs/Curve" },
-            "invert": { "type": "boolean", "default": false }
+            "kind": {
+              "const": "log"
+            },
+            "min": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "max": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
           }
         },
         {
-          "type": "object", "additionalProperties": false,
-          "required": ["param", "type", "steps"],
-          "description": "Plugin parameter has discrete positions. The generic value snaps to the step with the nearest value.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "points"
+          ],
+          "description": "Calibrated table of [normalized, value] pairs, sorted by normalized, values monotonic.",
           "properties": {
-            "param": { "$ref": "#/$defs/ParamRef" },
-            "type": { "const": "stepped" },
-            "steps": {
-              "type": "array", "minItems": 2,
+            "kind": {
+              "const": "table"
+            },
+            "points": {
+              "type": "array",
+              "minItems": 2,
               "items": {
-                "type": "object", "additionalProperties": false,
-                "required": ["normalized", "value"],
-                "properties": { "normalized": { "type": "number", "minimum": 0, "maximum": 1 }, "value": { "type": "number" }, "text": { "type": "string" } }
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
               }
             }
           }
         },
         {
-          "type": "object", "additionalProperties": false,
-          "required": ["param", "type"],
-          "description": "On/off parameter. A continuous generic control driving a switch is split at the midpoint of its range.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind"
+          ],
+          "description": "The bridge builds a table when the plugin loads, by reading the numbers in the plugin's own display text at evenly spaced positions. 'k' (kHz) multiplies by 1000.",
           "properties": {
-            "param": { "$ref": "#/$defs/ParamRef" },
-            "type": { "const": "switch" },
-            "on": { "type": "number", "minimum": 0, "maximum": 1, "default": 1 },
-            "off": { "type": "number", "minimum": 0, "maximum": 1, "default": 0 },
-            "invert": { "type": "boolean", "default": false }
+            "kind": {
+              "const": "auto"
+            }
           }
         }
       ]
+    },
+    "Step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "normalized",
+        "value"
+      ],
+      "properties": {
+        "normalized": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "value": {
+          "type": "number"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "Mapping": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "available"
+          ],
+          "description": "The plugin has no equivalent. The console greys the control out.",
+          "properties": {
+            "available": {
+              "const": false
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "param",
+            "type",
+            "curve"
+          ],
+          "properties": {
+            "param": {
+              "$ref": "#/$defs/ParamRef"
+            },
+            "type": {
+              "const": "continuous"
+            },
+            "curve": {
+              "$ref": "#/$defs/Curve"
+            },
+            "invert": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "param",
+            "type"
+          ],
+          "description": "The plugin parameter has fixed positions. Give 'steps', or 'auto': true to read them from the plugin (its step count and the number in each step's display text).",
+          "properties": {
+            "param": {
+              "$ref": "#/$defs/ParamRef"
+            },
+            "type": {
+              "const": "stepped"
+            },
+            "steps": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "$ref": "#/$defs/Step"
+              }
+            },
+            "auto": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "param",
+            "type"
+          ],
+          "description": "On/off parameter. A continuous control driving a switch is split at the midpoint of its range.",
+          "properties": {
+            "param": {
+              "$ref": "#/$defs/ParamRef"
+            },
+            "type": {
+              "const": "switch"
+            },
+            "on": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 1
+            },
+            "off": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "default": 0
+            },
+            "invert": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "param",
+            "type"
+          ],
+          "description": "For stepped and choice extras: step i of n sits at normalized i/(n-1) on the plugin parameter.",
+          "properties": {
+            "param": {
+              "$ref": "#/$defs/ParamRef"
+            },
+            "type": {
+              "const": "even"
+            }
+          }
+        }
+      ]
+    },
+    "Extra": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "kind",
+        "mapping"
+      ],
+      "description": "A control only this plugin has. Its value travels as 'x.<id>': real units for continuous, the step index for stepped, 0/1 for switch.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9]{0,31}$"
+        },
+        "label": {
+          "type": "string",
+          "description": "Short label, also the automation name of its slot"
+        },
+        "kind": {
+          "enum": [
+            "continuous",
+            "stepped",
+            "switch"
+          ]
+        },
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        },
+        "scale": {
+          "enum": [
+            "linear",
+            "log"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "description": "Labels of the positions, for stepped extras"
+        },
+        "default": {
+          "type": "number"
+        },
+        "mapping": {
+          "$ref": "#/$defs/Mapping"
+        }
+      }
+    },
+    "Color": {
+      "type": "string",
+      "pattern": "^(#[0-9A-Fa-f]{6}|transparent)$"
+    },
+    "ButtonColors": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/Color"
+      },
+      "description": "[background, border, text]"
+    },
+    "Skin": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Colours the console uses for this plugin's strips when 'Use plugin colours' is on. Colours only: no logos or artwork.",
+      "properties": {
+        "panel": {
+          "$ref": "#/$defs/Color"
+        },
+        "header": {
+          "$ref": "#/$defs/Color"
+        },
+        "line": {
+          "$ref": "#/$defs/Color"
+        },
+        "title": {
+          "$ref": "#/$defs/Color"
+        },
+        "label": {
+          "$ref": "#/$defs/Color"
+        },
+        "value": {
+          "$ref": "#/$defs/Color"
+        },
+        "track": {
+          "$ref": "#/$defs/Color"
+        },
+        "ticks": {
+          "$ref": "#/$defs/Color"
+        },
+        "arc": {
+          "$ref": "#/$defs/Color"
+        },
+        "cap": {
+          "$ref": "#/$defs/Color"
+        },
+        "inset": {
+          "$ref": "#/$defs/Color"
+        },
+        "insetLabel": {
+          "$ref": "#/$defs/Color"
+        },
+        "insetValue": {
+          "$ref": "#/$defs/Color"
+        },
+        "switchOff": {
+          "$ref": "#/$defs/ButtonColors"
+        },
+        "switchOn": {
+          "$ref": "#/$defs/ButtonColors"
+        }
+      }
+    },
+    "LayoutControl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "control"
+      ],
+      "properties": {
+        "control": {
+          "type": "string",
+          "description": "A shared control id (controls.json) or 'x.<extra id>'"
+        },
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "label": {
+          "type": "string",
+          "description": "Label shown on the strip; defaults to the control's own"
+        },
+        "size": {
+          "enum": [
+            "lg",
+            "sm"
+          ]
+        },
+        "cap": {
+          "$ref": "#/$defs/Color"
+        },
+        "arc": {
+          "$ref": "#/$defs/Color"
+        },
+        "on": {
+          "$ref": "#/$defs/Color",
+          "description": "Lit colour for a switch, when it differs from the skin's"
+        },
+        "as": {
+          "enum": [
+            "knob",
+            "switch",
+            "choice"
+          ],
+          "description": "How to draw it; defaults from the control kind"
+        },
+        "lit": {
+          "enum": [
+            "on",
+            "off"
+          ],
+          "description": "For switches: light the button when the value is on (default) or off, e.g. a SHELF button drawn for a 'bell' control."
+        }
+      }
+    },
+    "LayoutItem": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/LayoutControl"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "band",
+            "x",
+            "y"
+          ],
+          "properties": {
+            "band": {
+              "type": "string"
+            },
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sub",
+            "y"
+          ],
+          "properties": {
+            "sub": {
+              "type": "string"
+            },
+            "y": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "note",
+            "x",
+            "y"
+          ],
+          "properties": {
+            "note": {
+              "type": "string"
+            },
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "rule"
+          ],
+          "properties": {
+            "rule": {
+              "type": "number"
+            }
+          }
+        }
+      ]
+    },
+    "Section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "items"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "head": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LayoutControl"
+          },
+          "description": "Small buttons next to the section title"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LayoutItem"
+          },
+          "description": "Positioned in px inside a 108 px wide column"
+        }
+      }
+    },
+    "Layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "io",
+        "eq",
+        "dyn"
+      ],
+      "description": "The three sections the console shows one at a time: input and filters, EQ, dynamics (with the gate when the plugin has one).",
+      "properties": {
+        "io": {
+          "$ref": "#/$defs/Section"
+        },
+        "eq": {
+          "$ref": "#/$defs/Section"
+        },
+        "dyn": {
+          "$ref": "#/$defs/Section"
+        }
+      }
     }
   }
 }

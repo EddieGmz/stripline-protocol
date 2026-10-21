@@ -61,7 +61,7 @@ struct Step { float normalized = 0.0f, value = 0.0f; };
 
 struct Mapping
 {
-    enum class Type { Unmapped, Unavailable, Continuous, Stepped, Switch };
+    enum class Type { Unmapped, Unavailable, Continuous, Stepped, Switch, Even };
     Type type = Type::Unmapped;
 
     std::string paramId;    // stable id, matched first
@@ -71,9 +71,10 @@ struct Mapping
     Curve curve;            // Continuous
     std::vector<Step> steps;// Stepped
     float on = 1.0f, off = 0.0f; // Switch
+    int count = 2;              // Even: number of positions of the control (step i sits at i/(count-1))
     bool invert = false;
 
-    bool isMapped() const noexcept { return type == Type::Continuous || type == Type::Stepped || type == Type::Switch; }
+    bool isMapped() const noexcept { return type == Type::Continuous || type == Type::Stepped || type == Type::Switch || type == Type::Even; }
 };
 
 inline bool genericIsOn (const ControlDef& d, float v) noexcept
@@ -101,6 +102,8 @@ inline float genericToNormalized (const ControlDef& d, const Mapping& m, float v
         }
         case Mapping::Type::Switch:
             return (genericIsOn (d, v) != m.invert) ? m.on : m.off;
+        case Mapping::Type::Even:
+            return m.count > 1 ? clamp01 (std::round (v) / (float) (m.count - 1)) : 0.0f;
         case Mapping::Type::Unmapped:
         case Mapping::Type::Unavailable:
         default:
@@ -134,6 +137,9 @@ inline bool normalizedToGeneric (const ControlDef& d, const Mapping& m, float n,
             out = d.kind == Kind::Switch ? (on ? 1.0f : 0.0f) : (on ? d.max : d.min);
             return true;
         }
+        case Mapping::Type::Even:
+            out = m.count > 1 ? std::round (clamp01 (n) * (float) (m.count - 1)) : 0.0f;
+            return true;
         case Mapping::Type::Unmapped:
         case Mapping::Type::Unavailable:
         default:

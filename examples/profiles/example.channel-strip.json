@@ -1,6 +1,6 @@
 {
   "$schema": "../../schema/profile.schema.json",
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "example.channel-strip",
   "name": "Example channel strip",
   "author": "Stripline",
@@ -8,24 +8,170 @@
   "plugin": {
     "name": "Example Channel Strip",
     "vendor": "Example Audio",
-    "uids": { "VST3": "00000000000000000000000000000000" }
+    "uids": {
+      "VST3": "00000000000000000000000000000000"
+    }
   },
   "mappings": {
-    "input.gain":     { "param": { "id": "1000", "index": 0, "name": "Input Trim" }, "type": "continuous", "curve": { "kind": "linear", "min": -20, "max": 20 } },
-    "input.phase":    { "param": { "id": "1001", "index": 1, "name": "Phase" }, "type": "switch" },
-    "filter.hpf":     { "param": { "id": "1002", "index": 2, "name": "HP Freq" }, "type": "continuous", "curve": { "kind": "log", "min": 16, "max": 350 } },
-    "eq.lmf.freq":    { "param": { "id": "1008", "index": 8, "name": "LMF Freq" }, "type": "continuous",
-                        "curve": { "kind": "table", "points": [[0, 200], [0.25, 340], [0.5, 700], [0.75, 1400], [1, 2500]] } },
-    "comp.ratio":     { "param": { "id": "1018", "index": 18, "name": "Comp Ratio" }, "type": "stepped",
-                        "steps": [
-                          { "normalized": 0.0714, "value": 1.5, "text": "1.5:1" },
-                          { "normalized": 0.2143, "value": 2, "text": "2:1" },
-                          { "normalized": 0.3571, "value": 3, "text": "3:1" },
-                          { "normalized": 0.5, "value": 4, "text": "4:1" },
-                          { "normalized": 0.6429, "value": 6, "text": "6:1" },
-                          { "normalized": 0.7857, "value": 10, "text": "10:1" }
-                        ] },
-    "comp.attack":    { "param": { "id": "1020", "index": 20, "name": "Comp Fast Attack" }, "type": "switch", "invert": true },
-    "comp.mix":       { "available": false }
-  }
+    "input.gain": {
+      "param": {
+        "id": "1000",
+        "index": 0,
+        "name": "Input Trim"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "linear",
+        "min": -20,
+        "max": 20
+      }
+    },
+    "input.phase": {
+      "param": {
+        "id": "1001",
+        "index": 1,
+        "name": "Phase"
+      },
+      "type": "switch"
+    },
+    "filter.hpf": {
+      "param": {
+        "id": "1002",
+        "index": 2,
+        "name": "HP Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "log",
+        "min": 16,
+        "max": 350
+      }
+    },
+    "eq.lmf.freq": {
+      "param": {
+        "id": "1008",
+        "index": 8,
+        "name": [
+          "LMF Freq",
+          "LMF Frequency"
+        ]
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "table",
+        "points": [
+          [
+            0,
+            200
+          ],
+          [
+            0.25,
+            340
+          ],
+          [
+            0.5,
+            700
+          ],
+          [
+            0.75,
+            1400
+          ],
+          [
+            1,
+            2500
+          ]
+        ]
+      }
+    },
+    "comp.ratio": {
+      "param": {
+        "id": "1018",
+        "index": 18,
+        "name": "Comp Ratio"
+      },
+      "type": "stepped",
+      "steps": [
+        {
+          "normalized": 0.0714,
+          "value": 1.5,
+          "text": "1.5:1"
+        },
+        {
+          "normalized": 0.2143,
+          "value": 2,
+          "text": "2:1"
+        },
+        {
+          "normalized": 0.3571,
+          "value": 3,
+          "text": "3:1"
+        },
+        {
+          "normalized": 0.5,
+          "value": 4,
+          "text": "4:1"
+        },
+        {
+          "normalized": 0.6429,
+          "value": 6,
+          "text": "6:1"
+        },
+        {
+          "normalized": 0.7857,
+          "value": 10,
+          "text": "10:1"
+        }
+      ]
+    },
+    "comp.mix": {
+      "available": false
+    },
+    "filter.lpf": {
+      "param": {
+        "name": "LP Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.freq": {
+      "param": {
+        "name": "HMF Freq"
+      },
+      "type": "stepped",
+      "auto": true
+    }
+  },
+  "status": "draft",
+  "extras": [
+    {
+      "id": "fastAttack",
+      "label": "FAST",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1020",
+          "name": "Comp Fast Attack"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "knee",
+      "label": "KNEE",
+      "kind": "stepped",
+      "steps": [
+        "HARD",
+        "MED",
+        "SOFT"
+      ],
+      "mapping": {
+        "param": {
+          "name": "Comp Knee"
+        },
+        "type": "even"
+      }
+    }
+  ]
 }

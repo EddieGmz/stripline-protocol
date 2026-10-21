@@ -16,11 +16,8 @@ export type Mapping =
       /**
        * @minItems 2
        */
-      steps: {
-        normalized: number;
-        value: number;
-        text?: string;
-      }[];
+      steps?: Step[];
+      auto?: boolean;
     }
   | {
       param: ParamRef;
@@ -28,6 +25,10 @@ export type Mapping =
       on?: number;
       off?: number;
       invert?: boolean;
+    }
+  | {
+      param: ParamRef;
+      type: 'even';
     };
 export type Curve =
   | {
@@ -46,14 +47,44 @@ export type Curve =
        * @minItems 2
        */
       points: number[][];
+    }
+  | {
+      kind: 'auto';
     };
+export type Color = string;
+export type LayoutItem =
+  | LayoutControl
+  | {
+      band: string;
+      x: number;
+      y: number;
+    }
+  | {
+      sub: string;
+      y: number;
+    }
+  | {
+      note: string;
+      x: number;
+      y: number;
+    }
+  | {
+      rule: number;
+    };
+/**
+ * [background, border, text]
+ *
+ * @minItems 3
+ * @maxItems 3
+ */
+export type ButtonColors = Color[];
 
 /**
- * Maps Stripline generic controls to one third-party plugin's parameters. The bridge converts a generic value (real units) to the plugin's normalized 0..1 value with the mapping's curve, and back.
+ * Everything Stripline knows about one third-party channel strip: how to find it on disk, how its parameters map to Stripline's shared controls and to its own extra controls, and how the console draws it (layout and colours). The bridge converts values with the mappings; the console draws the layout.
  */
 export interface StriplineProfile {
   $schema?: string;
-  schemaVersion: 1;
+  schemaVersion: 2;
   /**
    * Stable profile id, e.g. vendor.plugin
    */
@@ -61,11 +92,19 @@ export interface StriplineProfile {
   name: string;
   author?: string;
   notes?: string;
+  /**
+   * draft: parameter names are educated guesses and ranges come from auto-calibration; verified: checked against the real plugin's parameter list.
+   */
+  status?: 'draft' | 'verified';
   plugin: {
     /**
-     * Plugin name as the host reports it; used to match when no uid is given
+     * Plugin name as the host reports it. Matching ignores case and also accepts names that start with it (e.g. 'CLA MixHub Stereo').
      */
     name: string;
+    /**
+     * Other names the same plugin is known by
+     */
+    aliases?: string[];
     vendor?: string;
     /**
      * Format-specific ids that identify the plugin exactly
@@ -76,13 +115,39 @@ export interface StriplineProfile {
       CLAP?: string;
     };
     testedVersions?: string[];
+    scan?: ScanHints;
   };
   /**
-   * Keyed by generic control id (controls.json). Controls missing from this object count as unmapped.
+   * Keyed by shared control id (controls.json). Controls missing here are unmapped and greyed out.
    */
   mappings: {
     [k: string]: Mapping;
   };
+  /**
+   * Controls specific to this plugin. Each one is automated through one of the bridge's extra slots, in this order.
+   *
+   * @maxItems 32
+   */
+  extras?: Extra[];
+  layout?: Layout;
+  skin?: Skin;
+}
+/**
+ * How the bridge finds this plugin when it scans only known channel strips.
+ */
+export interface ScanHints {
+  /**
+   * Case-insensitive substrings of the plugin file name (e.g. 'API Vision').
+   */
+  files?: string[];
+  /**
+   * The plugin lives inside a shell file that holds many plugins (e.g. Waves WaveShell); scan it and keep only matching plugins.
+   */
+  shell?: boolean;
+  /**
+   * How long one scan may take before the file goes to the unread list. Default 30.
+   */
+  timeoutSeconds?: number;
 }
 export interface ParamRef {
   /**
@@ -94,7 +159,101 @@ export interface ParamRef {
    */
   index?: number;
   /**
-   * Last resort match, and for display
+   * Parameter name, or several candidate names. Matched ignoring case; if nothing matches exactly, a parameter whose name starts with a candidate is accepted.
    */
-  name: string;
+  name: string | string[];
+}
+export interface Step {
+  normalized: number;
+  value: number;
+  text?: string;
+}
+/**
+ * A control only this plugin has. Its value travels as 'x.<id>': real units for continuous, the step index for stepped, 0/1 for switch.
+ */
+export interface Extra {
+  id: string;
+  /**
+   * Short label, also the automation name of its slot
+   */
+  label: string;
+  kind: 'continuous' | 'stepped' | 'switch';
+  min?: number;
+  max?: number;
+  scale?: 'linear' | 'log';
+  unit?: string;
+  /**
+   * Labels of the positions, for stepped extras
+   *
+   * @minItems 2
+   */
+  steps?: string[];
+  default?: number;
+  mapping: Mapping;
+}
+/**
+ * The three sections the console shows one at a time: input and filters, EQ, dynamics (with the gate when the plugin has one).
+ */
+export interface Layout {
+  io: Section;
+  eq: Section;
+  dyn: Section;
+}
+export interface Section {
+  title: string;
+  /**
+   * Small buttons next to the section title
+   */
+  head?: LayoutControl[];
+  /**
+   * Positioned in px inside a 108 px wide column
+   */
+  items: LayoutItem[];
+}
+export interface LayoutControl {
+  /**
+   * A shared control id (controls.json) or 'x.<extra id>'
+   */
+  control: string;
+  x?: number;
+  y?: number;
+  /**
+   * Label shown on the strip; defaults to the control's own
+   */
+  label?: string;
+  size?: 'lg' | 'sm';
+  cap?: Color;
+  arc?: Color;
+  /**
+   * Lit colour for a switch, when it differs from the skin's
+   */
+  on?: string;
+  /**
+   * How to draw it; defaults from the control kind
+   */
+  as?: 'knob' | 'switch' | 'choice';
+  /**
+   * For switches: light the button when the value is on (default) or off, e.g. a SHELF button drawn for a 'bell' control.
+   */
+  lit?: 'on' | 'off';
+}
+/**
+ * Colours the console uses for this plugin's strips when 'Use plugin colours' is on. Colours only: no logos or artwork.
+ */
+export interface Skin {
+  panel?: Color;
+  header?: Color;
+  line?: Color;
+  title?: Color;
+  label?: Color;
+  value?: Color;
+  track?: Color;
+  ticks?: Color;
+  arc?: Color;
+  cap?: Color;
+  inset?: Color;
+  insetLabel?: Color;
+  insetValue?: Color;
+  switchOff?: ButtonColors;
+  switchOn?: ButtonColors;
 }

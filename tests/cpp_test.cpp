@@ -1,5 +1,5 @@
 // Mirrors tests/mapping.test.ts for the C++ headers. Build: see CMakeLists.txt (STRIPLINE_PROTOCOL_TESTS).
-#include <stripline/Mapping.h>
+#include <stripline/Calibrate.h>
 #include <cassert>
 #include <cmath>
 #include <cstdio>
@@ -38,15 +38,34 @@ int main()
     stepped.steps = { { 0.0714f, 1.5f }, { 0.2143f, 2.0f }, { 0.3571f, 3.0f }, { 0.5f, 4.0f }, { 0.6429f, 6.0f }, { 0.7857f, 10.0f } };
     CHECK (near (genericToNormalized (ratio, stepped, 4.4f), 0.5f));
 
-    const auto& attack = kControls[(size_t) indexOfControl ("comp.attack")];
+    const auto& phase = kControls[(size_t) indexOfControl ("input.phase")];
     Mapping sw;
     sw.type = Mapping::Type::Switch;
     sw.invert = true;
-    CHECK (near (genericToNormalized (attack, sw, 1.0f), 1.0f));
-    CHECK (near (genericToNormalized (attack, sw, 25.0f), 0.0f));
+    CHECK (near (genericToNormalized (phase, sw, 1.0f), 0.0f));
+    CHECK (near (genericToNormalized (phase, sw, 0.0f), 1.0f));
+
+    Mapping even;
+    even.type = Mapping::Type::Even;
+    even.count = 3;
+    CHECK (near (genericToNormalized (phase, even, 1.0f), 0.5f));
+    CHECK (normalizedToGeneric (phase, even, 0.9f, out) && near (out, 2.0f));
+
+    CHECK (near (*parseDisplayNumber ("3.20 kHz"), 3200.0f));
+    CHECK (near (*parseDisplayNumber ("\xE2\x88\x92" "12.0 dB"), -12.0f));
+    CHECK (std::isinf (*parseDisplayNumber ("\xE2\x88\x9E:1")));
+    CHECK (! parseDisplayNumber ("Off").has_value());
+    CHECK (near (*parseDisplayNumber (".75s"), 0.75f));
+
+    Curve auto_;
+    CHECK (curveFromSamples ({ { 0.0f, "20 Hz" }, { 0.2f, "100 Hz" }, { 0.4f, "Off" }, { 0.6f, "1.00 kHz" }, { 0.8f, "900 Hz" }, { 1.0f, "16 kHz" } }, auto_));
+    CHECK (auto_.points.size() == 4 && near (auto_.points[2].second, 1000.0f));
+
+    const auto st = stepsFromTexts ({ { 0.0f, "OFF" }, { 0.2f, "45 Hz" }, { 0.4f, "70 Hz" }, { 0.6f, "AUTO" }, { 0.8f, "360 Hz" }, { 1.0f, "\xE2\x88\x9E" } }, 10.0f, 1000.0f);
+    CHECK (near (st[0].value, 10.0f) && near (st[3].value, 215.0f) && near (st[5].value, 1000.0f));
 
     Mapping none;
-    CHECK (genericToNormalized (attack, none, 1.0f) < 0.0f);
+    CHECK (genericToNormalized (phase, none, 1.0f) < 0.0f);
 
     std::puts ("cpp tests passed");
     return 0;

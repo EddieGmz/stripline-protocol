@@ -5,8 +5,9 @@
 
 namespace stripline::protocol
 {
-inline constexpr int kProtocolVersion = 1;
+inline constexpr int kProtocolVersion = 2;
 inline constexpr int kDefaultPort = 9420;
+inline constexpr int kExtraSlots = 32;
 
 enum class Kind { Continuous, Switch };
 enum class Scale { Linear, Log, Fader };
@@ -24,33 +25,33 @@ struct ControlDef
 };
 
 inline constexpr std::array<ControlDef, 28> kControls {{
-    { "input.gain", "input", "Input", "Gain", Kind::Continuous, Scale::Linear, -20.0f, 20.0f, 0.0f, 0.5f, "dB" },
-    { "input.trim", "input", "Input", "Trim", Kind::Continuous, Scale::Linear, -20.0f, 20.0f, 0.0f, 0.5f, "dB" },
+    { "input.gain", "input", "Input", "Gain", Kind::Continuous, Scale::Linear, -80.0f, 70.0f, 0.0f, 0.5f, "dB" },
+    { "input.trim", "input", "Input", "Trim", Kind::Continuous, Scale::Linear, -24.0f, 24.0f, 0.0f, 0.5f, "dB" },
     { "input.phase", "input", "Input", "Polarity", Kind::Switch, Scale::Linear, 0.0f, 1.0f, 0.0f, 1.0f, "" },
-    { "filter.hpf", "filter", "Filter", "HPF", Kind::Continuous, Scale::Log, 20.0f, 500.0f, 20.0f, 1.0f, "Hz" },
-    { "filter.lpf", "filter", "Filter", "LPF", Kind::Continuous, Scale::Log, 3000.0f, 20000.0f, 20000.0f, 10.0f, "Hz" },
+    { "filter.hpf", "filter", "Filter", "HPF", Kind::Continuous, Scale::Log, 10.0f, 1000.0f, 10.0f, 1.0f, "Hz" },
+    { "filter.lpf", "filter", "Filter", "LPF", Kind::Continuous, Scale::Log, 500.0f, 24000.0f, 24000.0f, 10.0f, "Hz" },
     { "eq.in", "eq", "EQ", "EQ In", Kind::Switch, Scale::Linear, 0.0f, 1.0f, 1.0f, 1.0f, "" },
-    { "eq.lf.gain", "eq", "EQ · Low", "Gain", Kind::Continuous, Scale::Linear, -15.0f, 15.0f, 0.0f, 0.5f, "dB" },
-    { "eq.lf.freq", "eq", "EQ · Low", "Freq", Kind::Continuous, Scale::Log, 30.0f, 450.0f, 100.0f, 1.0f, "Hz" },
+    { "eq.lf.gain", "eq", "EQ · Low", "Gain", Kind::Continuous, Scale::Linear, -18.0f, 18.0f, 0.0f, 0.5f, "dB" },
+    { "eq.lf.freq", "eq", "EQ · Low", "Freq", Kind::Continuous, Scale::Log, 20.0f, 700.0f, 100.0f, 1.0f, "Hz" },
     { "eq.lf.bell", "eq", "EQ · Low", "Bell", Kind::Switch, Scale::Linear, 0.0f, 1.0f, 0.0f, 1.0f, "" },
-    { "eq.lmf.gain", "eq", "EQ · Low mid", "Gain", Kind::Continuous, Scale::Linear, -15.0f, 15.0f, 0.0f, 0.5f, "dB" },
-    { "eq.lmf.freq", "eq", "EQ · Low mid", "Freq", Kind::Continuous, Scale::Log, 200.0f, 2500.0f, 400.0f, 1.0f, "Hz" },
-    { "eq.lmf.q", "eq", "EQ · Low mid", "Q", Kind::Continuous, Scale::Log, 0.3f, 5.0f, 1.0f, 0.01f, "" },
-    { "eq.hmf.gain", "eq", "EQ · High mid", "Gain", Kind::Continuous, Scale::Linear, -15.0f, 15.0f, 0.0f, 0.5f, "dB" },
-    { "eq.hmf.freq", "eq", "EQ · High mid", "Freq", Kind::Continuous, Scale::Log, 600.0f, 7000.0f, 2500.0f, 1.0f, "Hz" },
-    { "eq.hmf.q", "eq", "EQ · High mid", "Q", Kind::Continuous, Scale::Log, 0.3f, 5.0f, 1.0f, 0.01f, "" },
-    { "eq.hf.gain", "eq", "EQ · High", "Gain", Kind::Continuous, Scale::Linear, -15.0f, 15.0f, 0.0f, 0.5f, "dB" },
-    { "eq.hf.freq", "eq", "EQ · High", "Freq", Kind::Continuous, Scale::Log, 1500.0f, 16000.0f, 8000.0f, 10.0f, "Hz" },
+    { "eq.lmf.gain", "eq", "EQ · Low mid", "Gain", Kind::Continuous, Scale::Linear, -18.0f, 18.0f, 0.0f, 0.5f, "dB" },
+    { "eq.lmf.freq", "eq", "EQ · Low mid", "Freq", Kind::Continuous, Scale::Log, 30.0f, 3000.0f, 400.0f, 1.0f, "Hz" },
+    { "eq.lmf.q", "eq", "EQ · Low mid", "Q", Kind::Continuous, Scale::Log, 0.2f, 10.0f, 1.0f, 0.01f, "" },
+    { "eq.hmf.gain", "eq", "EQ · High mid", "Gain", Kind::Continuous, Scale::Linear, -18.0f, 18.0f, 0.0f, 0.5f, "dB" },
+    { "eq.hmf.freq", "eq", "EQ · High mid", "Freq", Kind::Continuous, Scale::Log, 300.0f, 13000.0f, 2500.0f, 1.0f, "Hz" },
+    { "eq.hmf.q", "eq", "EQ · High mid", "Q", Kind::Continuous, Scale::Log, 0.2f, 10.0f, 1.0f, 0.01f, "" },
+    { "eq.hf.gain", "eq", "EQ · High", "Gain", Kind::Continuous, Scale::Linear, -18.0f, 18.0f, 0.0f, 0.5f, "dB" },
+    { "eq.hf.freq", "eq", "EQ · High", "Freq", Kind::Continuous, Scale::Log, 1000.0f, 24000.0f, 8000.0f, 10.0f, "Hz" },
     { "eq.hf.bell", "eq", "EQ · High", "Bell", Kind::Switch, Scale::Linear, 0.0f, 1.0f, 0.0f, 1.0f, "" },
     { "dyn.in", "dyn", "Dynamics", "Dyn In", Kind::Switch, Scale::Linear, 0.0f, 1.0f, 1.0f, 1.0f, "" },
-    { "comp.threshold", "dyn", "Dynamics", "Threshold", Kind::Continuous, Scale::Linear, -40.0f, 0.0f, -10.0f, 0.5f, "dB" },
-    { "comp.ratio", "dyn", "Dynamics", "Ratio", Kind::Continuous, Scale::Log, 1.0f, 10.0f, 3.0f, 0.1f, ":1" },
-    { "comp.attack", "dyn", "Dynamics", "Attack", Kind::Continuous, Scale::Log, 0.1f, 30.0f, 3.0f, 0.1f, "ms" },
-    { "comp.release", "dyn", "Dynamics", "Release", Kind::Continuous, Scale::Log, 0.05f, 4.0f, 0.3f, 0.01f, "s" },
-    { "comp.makeup", "dyn", "Dynamics", "Gain", Kind::Continuous, Scale::Linear, 0.0f, 20.0f, 0.0f, 0.5f, "dB" },
+    { "comp.threshold", "dyn", "Dynamics", "Threshold", Kind::Continuous, Scale::Linear, -60.0f, 25.0f, -10.0f, 0.5f, "dB" },
+    { "comp.ratio", "dyn", "Dynamics", "Ratio", Kind::Continuous, Scale::Log, 1.0f, 100.0f, 3.0f, 0.1f, ":1" },
+    { "comp.attack", "dyn", "Dynamics", "Attack", Kind::Continuous, Scale::Log, 0.02f, 300.0f, 3.0f, 0.01f, "ms" },
+    { "comp.release", "dyn", "Dynamics", "Release", Kind::Continuous, Scale::Log, 0.01f, 5.0f, 0.3f, 0.01f, "s" },
+    { "comp.makeup", "dyn", "Dynamics", "Gain", Kind::Continuous, Scale::Linear, -10.0f, 30.0f, 0.0f, 0.5f, "dB" },
     { "comp.mix", "dyn", "Dynamics", "Mix", Kind::Continuous, Scale::Linear, 0.0f, 100.0f, 100.0f, 1.0f, "%" },
-    { "gate.threshold", "dyn", "Gate", "Threshold", Kind::Continuous, Scale::Linear, -80.0f, 0.0f, -80.0f, 1.0f, "dB" },
-    { "gate.range", "dyn", "Gate", "Range", Kind::Continuous, Scale::Linear, 0.0f, 80.0f, 40.0f, 1.0f, "dB" },
+    { "gate.threshold", "dyn", "Gate", "Threshold", Kind::Continuous, Scale::Linear, -80.0f, 25.0f, -80.0f, 0.5f, "dB" },
+    { "gate.range", "dyn", "Gate", "Range", Kind::Continuous, Scale::Linear, 0.0f, 90.0f, 40.0f, 1.0f, "dB" },
     { "output.fader", "output", "Output", "Fader", Kind::Continuous, Scale::Fader, -60.0f, 12.0f, 0.0f, 0.5f, "dB" },
 }};
 

@@ -1,0 +1,122 @@
+// Builds mapping curves from a plugin's own display text. Mirrors ts/mapping.ts
+// (parseDisplayNumber, curveFromSamples, stepsFromTexts).
+#pragma once
+#include <stripline/Mapping.h>
+#include <cctype>
+#include <cstdlib>
+#include <cmath>
+#include <limits>
+#include <optional>
+#include <string>
+#include <vector>
+
+namespace stripline::protocol
+{
+/** The first number in a display text: "3.20 kHz" -> 3200, "-12 dB" -> -12, "∞" or "inf" -> +infinity. */
+inline std::optional<float> parseDisplayNumber (const std::string& text)
+{
+    std::string t;
+    t.reserve (text.size());
+    for (size_t i = 0; i < text.size(); ++i)
+    {
+        // U+2212 MINUS SIGN (E2 88 92) -> '-'
+        if ((unsigned char) text[i] == 0xE2 && i + 2 < text.size() && (unsigned char) text[i + 1] == 0x88 && (unsigned char) text[i + 2] == 0x92)
+        {
+            t += '-';
+            i += 2;
+            continue;
+        }
+        t += text[i] == ',' ? '.' : text[i];
+    }
+    std::string lower;
+    for (char c : t)
+        lower += (char) std::tolower ((unsigned char) c);
+    if (lower.find ("\xE2\x88\x9E") != std::string::npos || lower.find ("inf") != std::string::npos)
+        return std::numeric_limits<float>::infinity();
+
+    for (size_t i = 0; i < t.size(); ++i)
+    {
+        const bool digit = std::isdigit ((unsigned char) t[i]) != 0;
+        const bool dotDigit = t[i] == '.' && i + 1 < t.size() && std::isdigit ((unsigned char) t[i + 1]);
+        if (! digit && ! dotDigit)
+            continue;
+        size_t start = i;
+        if (start > 0 && (t[start - 1] == '-' || t[start - 1] == '+'))
+            --start;
+        size_t end = i;
+        bool seenDot = false;
+        while (end < t.size() && (std::isdigit ((unsigned char) t[end]) || (t[end] == '.' && ! seenDot)))
+        {
+            seenDot = seenDot || t[end] == '.';
+            ++end;
+        }
+        float v = std::strtof (t.substr (start, end - start).c_str(), nullptr);
+        size_t k = end;
+        while (k < t.size() && t[k] == ' ')
+            ++k;
+        if (k < t.size() && (t[k] == 'k' || t[k] == 'K'))
+            v *= 1000.0f;
+        return v;
+    }
+    return std::nullopt;
+}
+
+/** Table curve from [normalized, display text] samples. Keeps numeric samples while they stay monotonic.
+    Returns false when fewer than two usable points remain. */
+inline bool curveFromSamples (const std::vector<std::pair<float, std::string>>& samples, Curve& out)
+{
+    std::vector<std::pair<float, float>> pts;
+    for (const auto& [n, text] : samples)
+        if (auto v = parseDisplayNumber (text); v && std::isfinite (*v))
+            pts.emplace_back (n, *v);
+    if (pts.size() < 2)
+        return false;
+    // Decide the direction from the ends, then drop samples that go against it (e.g. a wrapped label).
+    const bool rising = pts.back().second >= pts.front().second;
+    std::vector<std::pair<float, float>> mono { pts.front() };
+    for (size_t i = 1; i < pts.size(); ++i)
+        if (rising ? pts[i].second >= mono.back().second : pts[i].second <= mono.back().second)
+            mono.push_back (pts[i]);
+    if (mono.size() < 2 || ! (std::abs (mono.back().second - mono.front().second) > 0.0f))
+        return false;
+    out = {};
+    out.kind = Curve::Kind::Table;
+    out.points = std::move (mono);
+    return true;
+}
+
+/** Steps from the display text of each position of a stepped parameter. Positions without a number
+    (OFF, AUTO, VAR) take the control's minimum when first, its maximum when last, and the value between
+    their neighbours otherwise; infinity becomes the control's maximum. */
+inline std::vector<Step> stepsFromTexts (const std::vector<std::pair<float, std::string>>& positions, float controlMin, float controlMax)
+{
+    std::vector<Step> steps;
+    std::vector<bool> known;
+    for (const auto& [n, text] : positions)
+    {
+        auto v = parseDisplayNumber (text);
+        if (v && std::isinf (*v))
+            v = controlMax;
+        steps.push_back ({ n, v ? *v : 0.0f });
+        known.push_back (v.has_value());
+    }
+    for (size_t i = 0; i < steps.size(); ++i)
+    {
+        if (known[i])
+            continue;
+        if (i == 0)
+            steps[i].value = controlMin;
+        else if (i + 1 == steps.size())
+            steps[i].value = controlMax;
+        else
+        {
+            size_t j = i + 1;
+            while (j < steps.size() && ! known[j])
+                ++j;
+            const float next = j < steps.size() ? steps[j].value : controlMax;
+            steps[i].value = 0.5f * (steps[i - 1].value + next);
+        }
+    }
+    return steps;
+}
+} // namespace stripline::protocol

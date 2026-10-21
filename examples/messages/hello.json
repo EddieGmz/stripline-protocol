@@ -1,12 +1,39 @@
 {
   "type": "hello",
   "instanceId": "k3f9a21c7d0e",
-  "protocolVersion": 1,
+  "protocolVersion": 2,
   "bridgeVersion": "0.1.0",
   "host": "REAPER",
-  "track": { "name": "Lead Vox", "color": "#9B6BD3", "index": 8 },
-  "plugin": { "name": "Example Channel Strip", "vendor": "Example Audio", "format": "VST3", "uid": "00000000000000000000000000000000", "version": "1.2.0" },
+  "track": {
+    "name": "Lead Vox",
+    "color": "#9B6BD3",
+    "index": 8
+  },
+  "plugin": {
+    "name": "Example Channel Strip",
+    "vendor": "Example Audio",
+    "format": "VST3",
+    "uid": "00000000000000000000000000000000",
+    "version": "1.2.0"
+  },
   "profileId": "example.channel-strip",
-  "available": ["input.gain", "input.phase", "filter.hpf", "eq.lmf.freq", "comp.ratio", "comp.attack"],
-  "values": { "input.gain": 2, "input.phase": 0, "filter.hpf": 90, "eq.lmf.freq": 350, "comp.ratio": 4, "comp.attack": 3 }
+  "available": [
+    "input.gain",
+    "input.phase",
+    "filter.hpf",
+    "eq.lmf.freq",
+    "comp.ratio",
+    "x.fastAttack",
+    "x.knee"
+  ],
+  "values": {
+    "input.gain": 2,
+    "input.phase": 0,
+    "filter.hpf": 90,
+    "eq.lmf.freq": 350,
+    "comp.ratio": 4,
+    "x.fastAttack": 0,
+    "x.knee": 1
+  },
+  "profile": null
 }

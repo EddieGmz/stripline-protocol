@@ -14,7 +14,7 @@ Both repos include this one as a git submodule at `protocol/`.
 | `schema/controls.json` | The 36 shared controls: stable id, section, label, range, default, step, unit and knob scale, plus the number of extra slots (32). **Ids never change.** |
 | `schema/messages.schema.json` | Every WebSocket message between bridge and console (JSON Schema 2020-12). |
 | `schema/profile.schema.json` | Profiles: how to find a plugin, how its parameters map to shared and extra controls, and how it fills the console's base strip (global buttons, extra slots, colours). |
-| `profiles/` | Built-in profiles, shipped inside the bridge: UADx API Vision Channel Strip, Lindell 80 Channel, bx_console Focusrite SC, CLA MixHub, White Channel. Verified against each plugin's own parameter list. |
+| `profiles/` | Built-in profiles, shipped inside the bridge: UADx API Vision Channel Strip, Lindell 80 Channel, Lindell 50 Channel, bx_console Focusrite SC, bx_console N, CLA MixHub, White Channel. Verified against each plugin's own parameter list. |
 | `generated/ts/`, `generated/cpp/` | Types and tables generated from the schemas. Committed; never edit by hand. |
 | `ts/` | TypeScript helpers: knob scales, value formatting, mapping math, calibration parsing. |
 | `cpp/stripline/` | Header-only C++ mirror of the same helpers for the bridge. |

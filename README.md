@@ -11,10 +11,10 @@ Both repos include this one as a git submodule at `protocol/`.
 
 | Path | What it is |
 |---|---|
-| `schema/controls.json` | The 28 shared controls: stable id, section, label, range, default, step, unit and knob scale, plus the number of extra slots (32). **Ids never change.** |
+| `schema/controls.json` | The 36 shared controls: stable id, section, label, range, default, step, unit and knob scale, plus the number of extra slots (32). **Ids never change.** |
 | `schema/messages.schema.json` | Every WebSocket message between bridge and console (JSON Schema 2020-12). |
-| `schema/profile.schema.json` | Profiles: how to find a plugin, how its parameters map to shared and extra controls, and how the console draws it (layout and colours). |
-| `profiles/` | Built-in profiles, shipped inside the bridge: API Vision Channel Strip, Lindell 80 Series, bx_console Focusrite SC, CLA MixHub, T-RackS White Channel. **Drafts** until checked against each plugin's parameter list. |
+| `schema/profile.schema.json` | Profiles: how to find a plugin, how its parameters map to shared and extra controls, and how it fills the console's base strip (global buttons, extra slots, colours). |
+| `profiles/` | Built-in profiles, shipped inside the bridge: UADx API Vision Channel Strip, Lindell 80 Channel, bx_console Focusrite SC, CLA MixHub, White Channel. Verified against each plugin's own parameter list. |
 | `generated/ts/`, `generated/cpp/` | Types and tables generated from the schemas. Committed; never edit by hand. |
 | `ts/` | TypeScript helpers: knob scales, value formatting, mapping math, calibration parsing. |
 | `cpp/stripline/` | Header-only C++ mirror of the same helpers for the bridge. |
@@ -38,12 +38,29 @@ Both repos include this one as a git submodule at `protocol/`.
 - `set` carries a `gesture` (`begin` / `change` / `end` / `single`) so the DAW records automation and undo correctly.
 - Meters arrive about 30 times a second in dBFS.
 
-## What a profile holds (v2)
+## The base strip
+
+Every plugin is drawn on the same strip, so the console looks and works the same whatever is loaded:
+
+| Part | Holds |
+|---|---|
+| top (fixed) | track name, meter, up to **6 global buttons** (polarity, pad, EQ before dynamics, sidechain routing…) |
+| **IN** | LINE (`input.trim`), PRE (`input.gain`); engaged by `input.in` |
+| **FILT** | HPF, LPF; engaged by `filter.in` |
+| **EQ** | 4 bands (HIGH, HI MID, LO MID, LOW), each GAIN, FREQ, Q; HIGH and LOW also BELL; engaged by `eq.in` |
+| **COMP** | RATIO, THRSH, RLASE, ATTACK; engaged by `dyn.in` |
+| **GATE** | RANGE, THRSH, RLASE, RATIO, EXP; engaged by `gate.in` |
+| bottom (fixed) | fader, mute, solo |
+
+Each section ends with two rows of 4 slots, one of small knobs and one of small buttons (4 characters at most), for controls
+only that plugin has. A base control the plugin lacks (`{"available": false}`) and an unused slot are drawn disabled.
+
+## What a profile holds (v3)
 
 - **plugin**: name (also matches names that start with it, e.g. "CLA MixHub Stereo"), aliases, vendor, and **scan** hints: file name substrings, whether it lives in a shell file (Waves), and a scan timeout.
 - **mappings**: one per shared control, or `{ "available": false }`.
 - **extras**: up to 32 controls only this plugin has (Thrust, Knee, NIVEAU…). Each gets one of the bridge's extra automation slots, named after it. Values travel as `x.<id>`.
-- **layout**: the three sections the console shows one at a time (`io` input and filters, `eq`, `dyn` with the gate), with every control placed in a 108 px column, band names, sub-headings and rules.
+- **strip**: the plugin's global buttons (up to 6) and, per section, its bottom-row knobs and buttons (up to 4 each); a slot names a shared control or `x.<extra>` and may give it a short label. Plus per-control cap, arc and lit colours.
 - **skin**: panel, text, knob and button colours sampled from the plugin. Colours only; no logos or artwork.
 
 Parameters are found by id, then index, then name; `name` may list several candidates, matched ignoring case, then by prefix.
@@ -71,7 +88,7 @@ cmake -S . -B build -DSTRIPLINE_PROTOCOL_TESTS=ON && cmake --build build && ./bu
 ```
 
 Change a schema → run `npm run generate` → commit the schema and the generated files together. CI fails if they drift.
-`npm run validate` checks every profile, including that layouts only use controls that exist and that built-in profiles cover all 28 shared controls.
+`npm run validate` checks every profile, including that strip slots only use controls that exist, bottom-row labels fit in 4 characters, every extra has a slot, and built-in profiles cover all 36 shared controls.
 
 ### Versioning
 

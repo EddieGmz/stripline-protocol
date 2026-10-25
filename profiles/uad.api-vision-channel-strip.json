@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/profile.schema.json",
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "uad.api-vision-channel-strip",
   "name": "API Vision Channel Strip",
   "author": "Stripline",
@@ -20,13 +20,8 @@
     }
   },
   "mappings": {
-    "input.phase": {
-      "param": {
-        "id": "52",
-        "index": 4,
-        "name": "Phase"
-      },
-      "type": "switch"
+    "input.in": {
+      "available": false
     },
     "input.gain": {
       "param": {
@@ -49,6 +44,22 @@
       "curve": {
         "kind": "auto"
       }
+    },
+    "input.phase": {
+      "param": {
+        "id": "52",
+        "index": 4,
+        "name": "Phase"
+      },
+      "type": "switch"
+    },
+    "filter.in": {
+      "param": {
+        "id": "57",
+        "index": 9,
+        "name": "215 On"
+      },
+      "type": "switch"
     },
     "filter.hpf": {
       "param": {
@@ -80,52 +91,34 @@
       },
       "type": "switch"
     },
-    "eq.hf.gain": {
+    "eq.lf.gain": {
       "param": {
-        "id": "1603",
-        "index": 25,
-        "name": "550 HF Gain"
+        "id": "1631",
+        "index": 32,
+        "name": "550 LF Gain"
       },
       "type": "stepped",
       "auto": true
     },
-    "eq.hf.freq": {
+    "eq.lf.freq": {
       "param": {
-        "id": "1602",
-        "index": 24,
-        "name": "550 HF Freq"
+        "id": "1630",
+        "index": 31,
+        "name": "550 LF Freq"
       },
       "type": "stepped",
       "auto": true
     },
-    "eq.hf.bell": {
+    "eq.lf.q": {
+      "available": false
+    },
+    "eq.lf.bell": {
       "param": {
-        "id": "1604",
-        "index": 26,
-        "name": "550 HF Filter"
+        "id": "1632",
+        "index": 33,
+        "name": "550 LF Filter"
       },
       "type": "switch"
-    },
-    "eq.hmf.gain": {
-      "param": {
-        "id": "1606",
-        "index": 28,
-        "name": "550 HMF Gain"
-      },
-      "type": "stepped",
-      "auto": true
-    },
-    "eq.hmf.freq": {
-      "param": {
-        "id": "1605",
-        "index": 27,
-        "name": "550 HMF Freq"
-      },
-      "type": "stepped",
-      "auto": true
-    },
-    "eq.hmf.q": {
-      "available": false
     },
     "eq.lmf.gain": {
       "param": {
@@ -148,29 +141,53 @@
     "eq.lmf.q": {
       "available": false
     },
-    "eq.lf.gain": {
+    "eq.hmf.gain": {
       "param": {
-        "id": "1631",
-        "index": 32,
-        "name": "550 LF Gain"
+        "id": "1606",
+        "index": 28,
+        "name": "550 HMF Gain"
       },
       "type": "stepped",
       "auto": true
     },
-    "eq.lf.freq": {
+    "eq.hmf.freq": {
       "param": {
-        "id": "1630",
-        "index": 31,
-        "name": "550 LF Freq"
+        "id": "1605",
+        "index": 27,
+        "name": "550 HMF Freq"
       },
       "type": "stepped",
       "auto": true
     },
-    "eq.lf.bell": {
+    "eq.hmf.q": {
+      "available": false
+    },
+    "eq.hf.gain": {
       "param": {
-        "id": "1632",
-        "index": 33,
-        "name": "550 LF Filter"
+        "id": "1603",
+        "index": 25,
+        "name": "550 HF Gain"
+      },
+      "type": "stepped",
+      "auto": true
+    },
+    "eq.hf.freq": {
+      "param": {
+        "id": "1602",
+        "index": 24,
+        "name": "550 HF Freq"
+      },
+      "type": "stepped",
+      "auto": true
+    },
+    "eq.hf.q": {
+      "available": false
+    },
+    "eq.hf.bell": {
+      "param": {
+        "id": "1604",
+        "index": 26,
+        "name": "550 HF Filter"
       },
       "type": "switch"
     },
@@ -224,6 +241,14 @@
     "comp.mix": {
       "available": false
     },
+    "gate.in": {
+      "param": {
+        "id": "1573",
+        "index": 16,
+        "name": "235 On"
+      },
+      "type": "switch"
+    },
     "gate.threshold": {
       "param": {
         "id": "1567",
@@ -245,6 +270,28 @@
       "curve": {
         "kind": "auto"
       }
+    },
+    "gate.release": {
+      "param": {
+        "id": "1570",
+        "index": 13,
+        "name": "235 Release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.ratio": {
+      "available": false
+    },
+    "gate.exp": {
+      "param": {
+        "id": "1572",
+        "index": 15,
+        "name": "235 G/E"
+      },
+      "type": "switch"
     },
     "output.fader": {
       "param": {
@@ -287,26 +334,13 @@
     },
     {
       "id": "cut50",
-      "label": "50 Hz",
+      "label": "50Hz",
       "kind": "switch",
       "mapping": {
         "param": {
           "id": "53",
           "index": 5,
           "name": "Cut Filter"
-        },
-        "type": "switch"
-      }
-    },
-    {
-      "id": "filterOn",
-      "label": "ON",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "57",
-          "index": 9,
-          "name": "215 On"
         },
         "type": "switch"
       }
@@ -352,7 +386,7 @@
     },
     {
       "id": "eqType",
-      "label": "TYPE",
+      "label": "EQ",
       "kind": "stepped",
       "steps": [
         "550L",
@@ -369,7 +403,7 @@
     },
     {
       "id": "compAttack",
-      "label": "ATTACK",
+      "label": "ATK",
       "kind": "stepped",
       "steps": [
         "MED",
@@ -421,57 +455,6 @@
       }
     },
     {
-      "id": "gateIn",
-      "label": "ON",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "1573",
-          "index": 16,
-          "name": "235 On"
-        },
-        "type": "switch"
-      }
-    },
-    {
-      "id": "gateRelease",
-      "label": "Release",
-      "kind": "continuous",
-      "min": 0.05,
-      "max": 3,
-      "scale": "log",
-      "unit": "s",
-      "default": 0.5,
-      "mapping": {
-        "param": {
-          "id": "1570",
-          "index": 13,
-          "name": "235 Release"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
-      "id": "gateMode",
-      "label": "MODE",
-      "kind": "stepped",
-      "steps": [
-        "GATE",
-        "EXP"
-      ],
-      "mapping": {
-        "param": {
-          "id": "1572",
-          "index": 15,
-          "name": "235 G/E"
-        },
-        "type": "even"
-      }
-    },
-    {
       "id": "gateRH",
       "label": "R/H",
       "kind": "stepped",
@@ -502,304 +485,97 @@
       }
     }
   ],
-  "layout": {
-    "io": {
-      "title": "MIC PRE · FILTER",
-      "head": [
-        {
-          "control": "input.phase",
-          "label": "Ø"
-        }
-      ],
-      "items": [
-        {
-          "control": "input.gain",
-          "x": 0,
-          "y": 0,
-          "size": "lg",
-          "cap": "#3D7FD9",
-          "label": "Mic"
-        },
-        {
-          "control": "input.trim",
-          "x": 57,
-          "y": 18,
-          "cap": "#C9CDD2",
-          "label": "Line"
-        },
-        {
-          "control": "x.inputSel",
-          "x": 2,
-          "y": 76
-        },
-        {
-          "control": "x.pad",
-          "x": 60,
-          "y": 84,
-          "on": "#D33A3A"
-        },
-        {
-          "rule": 112
-        },
-        {
-          "sub": "SWEEP FILTER",
-          "y": 118
-        },
-        {
-          "control": "filter.lpf",
-          "x": 3,
-          "y": 136,
-          "cap": "#E58A2B",
-          "label": "Lo-pass"
-        },
-        {
-          "control": "filter.hpf",
-          "x": 57,
-          "y": 154,
-          "cap": "#E58A2B",
-          "label": "Hi-pass"
-        },
-        {
-          "control": "x.filterSc",
-          "x": 8,
-          "y": 202
-        },
-        {
-          "control": "x.filterOn",
-          "x": 64,
-          "y": 222
-        },
-        {
-          "control": "x.cut50",
-          "x": 2,
-          "y": 232
-        }
+  "strip": {
+    "global": [
+      {
+        "control": "input.phase",
+        "label": "Ø"
+      },
+      "x.pad",
+      "x.inputSel",
+      "x.preDyn",
+      "x.dynSc",
+      "x.eqType"
+    ],
+    "filt": {
+      "buttons": [
+        "x.cut50",
+        "x.filterSc"
       ]
     },
-    "eq": {
-      "title": "550L EQ",
-      "head": [
-        {
-          "control": "eq.in",
-          "label": "ON"
-        }
-      ],
-      "items": [
-        {
-          "control": "eq.hf.gain",
-          "x": 0,
-          "y": 0,
-          "size": "lg",
-          "cap": "#E4E6E9",
-          "arc": "#4A9BE0"
-        },
-        {
-          "band": "HF",
-          "x": 58,
-          "y": 4
-        },
-        {
-          "control": "eq.hf.freq",
-          "x": 56,
-          "y": 28,
-          "cap": "#E4E6E9",
-          "arc": "#4A9BE0"
-        },
-        {
-          "control": "eq.hf.bell",
-          "x": 6,
-          "y": 70,
-          "label": "SHELF",
-          "lit": "off"
-        },
-        {
-          "rule": 92
-        },
-        {
-          "control": "eq.hmf.gain",
-          "x": 0,
-          "y": 96,
-          "size": "lg",
-          "cap": "#E4E6E9",
-          "arc": "#4A9BE0"
-        },
-        {
-          "band": "HMF",
-          "x": 58,
-          "y": 100
-        },
-        {
-          "control": "eq.hmf.freq",
-          "x": 56,
-          "y": 124,
-          "cap": "#E4E6E9",
-          "arc": "#4A9BE0"
-        },
-        {
-          "rule": 188
-        },
-        {
-          "control": "eq.lmf.gain",
-          "x": 0,
-          "y": 192,
-          "size": "lg",
-          "cap": "#E4E6E9",
-          "arc": "#4A9BE0"
-        },
-        {
-          "band": "LMF",
-          "x": 58,
-          "y": 196
-        },
-        {
-          "control": "eq.lmf.freq",
-          "x": 56,
-          "y": 220,
-          "cap": "#E4E6E9",
-          "arc": "#4A9BE0"
-        },
-        {
-          "rule": 284
-        },
-        {
-          "control": "eq.lf.gain",
-          "x": 0,
-          "y": 288,
-          "size": "lg",
-          "cap": "#E4E6E9",
-          "arc": "#4A9BE0"
-        },
-        {
-          "band": "LF",
-          "x": 58,
-          "y": 292
-        },
-        {
-          "control": "eq.lf.freq",
-          "x": 56,
-          "y": 316,
-          "cap": "#E4E6E9",
-          "arc": "#4A9BE0"
-        },
-        {
-          "control": "eq.lf.bell",
-          "x": 6,
-          "y": 358,
-          "label": "SHELF",
-          "lit": "off"
-        },
-        {
-          "rule": 380
-        },
-        {
-          "control": "x.preDyn",
-          "x": 2,
-          "y": 390
-        },
-        {
-          "control": "x.dynSc",
-          "x": 56,
-          "y": 390
-        },
-        {
-          "control": "x.eqType",
-          "x": 2,
-          "y": 418
-        }
+    "comp": {
+      "buttons": [
+        "x.compAttack",
+        "x.knee",
+        "x.compType"
       ]
     },
-    "dyn": {
-      "title": "COMP · GATE",
-      "head": [
-        {
-          "control": "dyn.in",
-          "label": "ON"
-        }
-      ],
-      "items": [
-        {
-          "control": "comp.threshold",
-          "x": 0,
-          "y": 0,
-          "size": "lg",
-          "cap": "#141517",
-          "label": "Thresh"
-        },
-        {
-          "control": "comp.ratio",
-          "x": 57,
-          "y": 22,
-          "cap": "#22A08F"
-        },
-        {
-          "control": "comp.release",
-          "x": 3,
-          "y": 72,
-          "cap": "#E4E6E9"
-        },
-        {
-          "control": "x.compAttack",
-          "x": 54,
-          "y": 90
-        },
-        {
-          "control": "x.knee",
-          "x": 54,
-          "y": 128
-        },
-        {
-          "control": "x.compType",
-          "x": 0,
-          "y": 138
-        },
-        {
-          "rule": 176
-        },
-        {
-          "sub": "GATE · EXP",
-          "y": 182
-        },
-        {
-          "control": "x.gateIn",
-          "x": 64,
-          "y": 178
-        },
-        {
-          "control": "gate.threshold",
-          "x": 3,
-          "y": 204,
-          "cap": "#141517",
-          "label": "Thresh"
-        },
-        {
-          "control": "gate.range",
-          "x": 57,
-          "y": 222,
-          "cap": "#E4E6E9",
-          "label": "Depth"
-        },
-        {
-          "control": "x.gateRelease",
-          "x": 3,
-          "y": 266,
-          "cap": "#E4E6E9"
-        },
-        {
-          "control": "x.gateMode",
-          "x": 54,
-          "y": 286
-        },
-        {
-          "control": "x.gateRH",
-          "x": 54,
-          "y": 322
-        },
-        {
-          "control": "x.gateFast",
-          "x": 6,
-          "y": 332
-        }
+    "gate": {
+      "buttons": [
+        "x.gateFast",
+        "x.gateRH"
       ]
+    },
+    "colors": {
+      "input.gain": {
+        "cap": "#3D7FD9"
+      },
+      "input.trim": {
+        "cap": "#C9CDD2"
+      },
+      "filter.hpf": {
+        "cap": "#E58A2B"
+      },
+      "filter.lpf": {
+        "cap": "#E58A2B"
+      },
+      "eq.hf.gain": {
+        "cap": "#E4E6E9",
+        "arc": "#4A9BE0"
+      },
+      "eq.hf.freq": {
+        "cap": "#E4E6E9",
+        "arc": "#4A9BE0"
+      },
+      "eq.hmf.gain": {
+        "cap": "#E4E6E9",
+        "arc": "#4A9BE0"
+      },
+      "eq.hmf.freq": {
+        "cap": "#E4E6E9",
+        "arc": "#4A9BE0"
+      },
+      "eq.lmf.gain": {
+        "cap": "#E4E6E9",
+        "arc": "#4A9BE0"
+      },
+      "eq.lmf.freq": {
+        "cap": "#E4E6E9",
+        "arc": "#4A9BE0"
+      },
+      "eq.lf.gain": {
+        "cap": "#E4E6E9",
+        "arc": "#4A9BE0"
+      },
+      "eq.lf.freq": {
+        "cap": "#E4E6E9",
+        "arc": "#4A9BE0"
+      },
+      "comp.ratio": {
+        "cap": "#22A08F"
+      },
+      "comp.release": {
+        "cap": "#E4E6E9"
+      },
+      "gate.range": {
+        "cap": "#E4E6E9"
+      },
+      "gate.release": {
+        "cap": "#E4E6E9"
+      },
+      "x.pad": {
+        "on": "#D33A3A"
+      }
     }
   },
   "skin": {

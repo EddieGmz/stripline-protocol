@@ -17,7 +17,10 @@
       "type": "string"
     },
     "schemaVersion": {
-      "const": 2
+      "enum": [
+        3
+      ],
+      "description": "Profile format version. 3: the console draws every plugin on the same base strip; a profile adds its global buttons, extra slots and colours (strip)."
     },
     "id": {
       "type": "string",
@@ -103,8 +106,8 @@
         "$ref": "#/$defs/Extra"
       }
     },
-    "layout": {
-      "$ref": "#/$defs/Layout"
+    "strip": {
+      "$ref": "#/$defs/Strip"
     },
     "skin": {
       "$ref": "#/$defs/Skin"
@@ -514,180 +517,110 @@
         }
       }
     },
-    "LayoutControl": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "control"
-      ],
-      "properties": {
-        "control": {
-          "type": "string",
-          "description": "A shared control id (controls.json) or 'x.<extra id>'"
-        },
-        "x": {
-          "type": "number"
-        },
-        "y": {
-          "type": "number"
-        },
-        "label": {
-          "type": "string",
-          "description": "Label shown on the strip; defaults to the control's own"
-        },
-        "size": {
-          "enum": [
-            "lg",
-            "sm"
-          ]
-        },
-        "cap": {
-          "$ref": "#/$defs/Color"
-        },
-        "arc": {
-          "$ref": "#/$defs/Color"
-        },
-        "on": {
-          "$ref": "#/$defs/Color",
-          "description": "Lit colour for a switch, when it differs from the skin's"
-        },
-        "as": {
-          "enum": [
-            "knob",
-            "switch",
-            "choice"
-          ],
-          "description": "How to draw it; defaults from the control kind"
-        },
-        "lit": {
-          "enum": [
-            "on",
-            "off"
-          ],
-          "description": "For switches: light the button when the value is on (default) or off, e.g. a SHELF button drawn for a 'bell' control."
-        }
-      }
-    },
-    "LayoutItem": {
+    "Slot": {
+      "description": "A control placed in a slot: a shared control id (controls.json) or 'x.<extra id>', or an object with a label of its own.",
       "oneOf": [
         {
-          "$ref": "#/$defs/LayoutControl"
+          "type": "string"
         },
         {
           "type": "object",
           "additionalProperties": false,
           "required": [
-            "band",
-            "x",
-            "y"
+            "control"
           ],
           "properties": {
-            "band": {
-              "type": "string"
+            "control": {
+              "type": "string",
+              "description": "A shared control id or 'x.<extra id>'"
             },
-            "x": {
-              "type": "number"
+            "label": {
+              "type": "string",
+              "maxLength": 6,
+              "description": "Label on the strip; defaults to the control's own. Bottom-row slots show at most 4 characters."
             },
-            "y": {
-              "type": "number"
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "sub",
-            "y"
-          ],
-          "properties": {
-            "sub": {
-              "type": "string"
+            "lit": {
+              "enum": [
+                "on",
+                "off"
+              ],
+              "description": "Switches: light the button when the value is on (default) or off, e.g. 'FATK' for a parameter that reads Fast at 0."
             },
-            "y": {
-              "type": "number"
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "note",
-            "x",
-            "y"
-          ],
-          "properties": {
-            "note": {
-              "type": "string"
-            },
-            "x": {
-              "type": "number"
-            },
-            "y": {
-              "type": "number"
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "rule"
-          ],
-          "properties": {
-            "rule": {
-              "type": "number"
+            "on": {
+              "$ref": "#/$defs/Color",
+              "description": "This button's lit colour, when it differs from the skin's"
             }
           }
         }
       ]
     },
-    "Section": {
+    "SectionSlots": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "title",
-        "items"
-      ],
+      "description": "The section's two bottom rows: up to 4 small knobs and up to 4 small buttons, for controls only this plugin has. Empty slots are drawn disabled so every strip lines up. Buttons show at most 4 characters; a stepped control on a button shows its current step.",
       "properties": {
-        "title": {
-          "type": "string"
-        },
-        "head": {
+        "knobs": {
           "type": "array",
+          "maxItems": 4,
           "items": {
-            "$ref": "#/$defs/LayoutControl"
-          },
-          "description": "Small buttons next to the section title"
+            "$ref": "#/$defs/Slot"
+          }
         },
-        "items": {
+        "buttons": {
           "type": "array",
+          "maxItems": 4,
           "items": {
-            "$ref": "#/$defs/LayoutItem"
-          },
-          "description": "Positioned in px inside a 108 px wide column"
+            "$ref": "#/$defs/Slot"
+          }
         }
       }
     },
-    "Layout": {
+    "Strip": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "io",
-        "eq",
-        "dyn"
-      ],
-      "description": "The three sections the console shows one at a time: input and filters, EQ, dynamics (with the gate when the plugin has one).",
+      "description": "How this plugin fills the console's base strip. The base controls of each section are fixed (shared controls); a base control the plugin lacks (mapping {\"available\": false}) is drawn disabled.",
       "properties": {
-        "io": {
-          "$ref": "#/$defs/Section"
+        "global": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/Slot"
+          },
+          "description": "Up to 6 buttons under the meter, for whole-strip functions: polarity, pad, EQ before dynamics, sidechain routing…"
+        },
+        "in": {
+          "$ref": "#/$defs/SectionSlots"
+        },
+        "filt": {
+          "$ref": "#/$defs/SectionSlots"
         },
         "eq": {
-          "$ref": "#/$defs/Section"
+          "$ref": "#/$defs/SectionSlots"
         },
-        "dyn": {
-          "$ref": "#/$defs/Section"
+        "comp": {
+          "$ref": "#/$defs/SectionSlots"
+        },
+        "gate": {
+          "$ref": "#/$defs/SectionSlots"
+        },
+        "colors": {
+          "type": "object",
+          "description": "Per control (shared id or x.<id>): knob cap and arc colours, or a button's lit colour.",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "cap": {
+                "$ref": "#/$defs/Color"
+              },
+              "arc": {
+                "$ref": "#/$defs/Color"
+              },
+              "on": {
+                "$ref": "#/$defs/Color"
+              }
+            }
+          }
         }
       }
     }

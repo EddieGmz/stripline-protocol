@@ -1,18 +1,21 @@
 {
   "$comment": "Canonical list of Stripline shared controls. IDs are stable forever: never rename or reuse one. Values travel in real units (dB, Hz, ms, s, %, ratio). Ranges are wide enough to hold every supported plugin's own range; the console draws each knob with the range of the plugin it controls. 'scale' says how a 0..1 position maps to the value: linear, log (geometric), or fader (position = ((v-min)/(max-min))^2). Plugin-specific controls are not listed here: they use the bridge's extra slots (see profile.schema.json, 'extras').",
-  "protocolVersion": 2,
+  "protocolVersion": 3,
   "extraSlots": 32,
   "controls": [
+    { "id": "input.in",       "section": "input",  "group": "Input",         "label": "In",        "kind": "switch",     "scale": "linear", "min": 0,     "max": 1,      "default": 1,      "step": 1,     "unit": "" },
     { "id": "input.gain",     "section": "input",  "group": "Input",         "label": "Gain",      "kind": "continuous", "scale": "linear", "min": -80,  "max": 70,    "default": 0,     "step": 0.5,  "unit": "dB" },
     { "id": "input.trim",     "section": "input",  "group": "Input",         "label": "Trim",      "kind": "continuous", "scale": "linear", "min": -24,  "max": 24,    "default": 0,     "step": 0.5,  "unit": "dB" },
     { "id": "input.phase",    "section": "input",  "group": "Input",         "label": "Polarity",  "kind": "switch",     "scale": "linear", "min": 0,    "max": 1,     "default": 0,     "step": 1,    "unit": "" },
 
+    { "id": "filter.in",      "section": "filter", "group": "Filter",        "label": "Filter In", "kind": "switch",     "scale": "linear", "min": 0,     "max": 1,      "default": 1,      "step": 1,     "unit": "" },
     { "id": "filter.hpf",     "section": "filter", "group": "Filter",        "label": "HPF",       "kind": "continuous", "scale": "log",    "min": 10,   "max": 1000,  "default": 10,    "step": 1,    "unit": "Hz" },
     { "id": "filter.lpf",     "section": "filter", "group": "Filter",        "label": "LPF",       "kind": "continuous", "scale": "log",    "min": 500,  "max": 24000, "default": 24000, "step": 10,   "unit": "Hz" },
 
     { "id": "eq.in",          "section": "eq",     "group": "EQ",            "label": "EQ In",     "kind": "switch",     "scale": "linear", "min": 0,    "max": 1,     "default": 1,     "step": 1,    "unit": "" },
     { "id": "eq.lf.gain",     "section": "eq",     "group": "EQ · Low",      "label": "Gain",      "kind": "continuous", "scale": "linear", "min": -18,  "max": 18,    "default": 0,     "step": 0.5,  "unit": "dB" },
     { "id": "eq.lf.freq",     "section": "eq",     "group": "EQ · Low",      "label": "Freq",      "kind": "continuous", "scale": "log",    "min": 20,   "max": 700,   "default": 100,   "step": 1,    "unit": "Hz" },
+    { "id": "eq.lf.q",        "section": "eq",     "group": "EQ · Low",      "label": "Q",         "kind": "continuous", "scale": "log",    "min": 0.2,   "max": 10,     "default": 1,      "step": 0.01,  "unit": "" },
     { "id": "eq.lf.bell",     "section": "eq",     "group": "EQ · Low",      "label": "Bell",      "kind": "switch",     "scale": "linear", "min": 0,    "max": 1,     "default": 0,     "step": 1,    "unit": "" },
     { "id": "eq.lmf.gain",    "section": "eq",     "group": "EQ · Low mid",  "label": "Gain",      "kind": "continuous", "scale": "linear", "min": -18,  "max": 18,    "default": 0,     "step": 0.5,  "unit": "dB" },
     { "id": "eq.lmf.freq",    "section": "eq",     "group": "EQ · Low mid",  "label": "Freq",      "kind": "continuous", "scale": "log",    "min": 30,   "max": 3000,  "default": 400,   "step": 1,    "unit": "Hz" },
@@ -22,17 +25,22 @@
     { "id": "eq.hmf.q",       "section": "eq",     "group": "EQ · High mid", "label": "Q",         "kind": "continuous", "scale": "log",    "min": 0.2,  "max": 10,    "default": 1,     "step": 0.01, "unit": "" },
     { "id": "eq.hf.gain",     "section": "eq",     "group": "EQ · High",     "label": "Gain",      "kind": "continuous", "scale": "linear", "min": -18,  "max": 18,    "default": 0,     "step": 0.5,  "unit": "dB" },
     { "id": "eq.hf.freq",     "section": "eq",     "group": "EQ · High",     "label": "Freq",      "kind": "continuous", "scale": "log",    "min": 1000, "max": 24000, "default": 8000,  "step": 10,   "unit": "Hz" },
+    { "id": "eq.hf.q",        "section": "eq",     "group": "EQ · High",     "label": "Q",         "kind": "continuous", "scale": "log",    "min": 0.2,   "max": 10,     "default": 1,      "step": 0.01,  "unit": "" },
     { "id": "eq.hf.bell",     "section": "eq",     "group": "EQ · High",     "label": "Bell",      "kind": "switch",     "scale": "linear", "min": 0,    "max": 1,     "default": 0,     "step": 1,    "unit": "" },
 
-    { "id": "dyn.in",         "section": "dyn",    "group": "Dynamics",      "label": "Dyn In",    "kind": "switch",     "scale": "linear", "min": 0,    "max": 1,     "default": 1,     "step": 1,    "unit": "" },
+    { "id": "dyn.in",         "section": "dyn",    "group": "Dynamics",      "label": "Comp In",   "kind": "switch",     "scale": "linear", "min": 0,    "max": 1,     "default": 1,     "step": 1,    "unit": "" },
     { "id": "comp.threshold", "section": "dyn",    "group": "Dynamics",      "label": "Threshold", "kind": "continuous", "scale": "linear", "min": -60,  "max": 25,    "default": -10,   "step": 0.5,  "unit": "dB" },
     { "id": "comp.ratio",     "section": "dyn",    "group": "Dynamics",      "label": "Ratio",     "kind": "continuous", "scale": "log",    "min": 1,    "max": 100,   "default": 3,     "step": 0.1,  "unit": ":1" },
     { "id": "comp.attack",    "section": "dyn",    "group": "Dynamics",      "label": "Attack",    "kind": "continuous", "scale": "log",    "min": 0.02,  "max": 300,  "default": 3,     "step": 0.01, "unit": "ms" },
     { "id": "comp.release",   "section": "dyn",    "group": "Dynamics",      "label": "Release",   "kind": "continuous", "scale": "log",    "min": 0.01, "max": 5,     "default": 0.3,   "step": 0.01, "unit": "s" },
     { "id": "comp.makeup",    "section": "dyn",    "group": "Dynamics",      "label": "Gain",      "kind": "continuous", "scale": "linear", "min": -10,  "max": 30,    "default": 0,     "step": 0.5,  "unit": "dB" },
     { "id": "comp.mix",       "section": "dyn",    "group": "Dynamics",      "label": "Mix",       "kind": "continuous", "scale": "linear", "min": 0,    "max": 100,   "default": 100,   "step": 1,    "unit": "%" },
+    { "id": "gate.in",        "section": "dyn",    "group": "Gate",          "label": "Gate In",   "kind": "switch",     "scale": "linear", "min": 0,     "max": 1,      "default": 1,      "step": 1,     "unit": "" },
     { "id": "gate.threshold", "section": "dyn",    "group": "Gate",          "label": "Threshold", "kind": "continuous", "scale": "linear", "min": -80,  "max": 25,    "default": -80,   "step": 0.5,  "unit": "dB" },
     { "id": "gate.range",     "section": "dyn",    "group": "Gate",          "label": "Range",     "kind": "continuous", "scale": "linear", "min": 0,    "max": 90,    "default": 40,    "step": 1,    "unit": "dB" },
+    { "id": "gate.release",   "section": "dyn",    "group": "Gate",          "label": "Release",   "kind": "continuous", "scale": "log",    "min": 0.005, "max": 10,     "default": 0.3,    "step": 0.001, "unit": "s" },
+    { "id": "gate.ratio",     "section": "dyn",    "group": "Gate",          "label": "Ratio",     "kind": "continuous", "scale": "log",    "min": 1,     "max": 100,    "default": 2,      "step": 0.1,   "unit": ":1" },
+    { "id": "gate.exp",       "section": "dyn",    "group": "Gate",          "label": "Expander",  "kind": "switch",     "scale": "linear", "min": 0,     "max": 1,      "default": 0,      "step": 1,     "unit": "" },
 
     { "id": "output.fader",   "section": "output", "group": "Output",        "label": "Fader",     "kind": "continuous", "scale": "fader",  "min": -60,  "max": 12,    "default": 0,     "step": 0.5,  "unit": "dB" }
   ]

@@ -11,8 +11,8 @@ static bool near (float a, float b, float eps = 1e-3f) { return std::abs (a - b)
 
 int main()
 {
-    static_assert (kControls.size() == 28);
-    static_assert (indexOfControl ("output.fader") == 27);
+    static_assert (kControls.size() == 36);
+    static_assert (indexOfControl ("output.fader") == 35);
 
     for (const auto& c : kControls)
         if (c.kind == Kind::Continuous)

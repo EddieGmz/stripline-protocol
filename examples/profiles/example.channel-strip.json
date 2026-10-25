@@ -1,6 +1,6 @@
 {
   "$schema": "../../schema/profile.schema.json",
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "example.channel-strip",
   "name": "Example channel strip",
   "author": "Stripline",
@@ -173,5 +173,19 @@
         "type": "even"
       }
     }
-  ]
+  ],
+  "strip": {
+    "global": [
+      {
+        "control": "input.phase",
+        "label": "Ø"
+      }
+    ],
+    "comp": {
+      "buttons": [
+        "x.fastAttack",
+        "x.knee"
+      ]
+    }
+  }
 }

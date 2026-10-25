@@ -51,26 +51,30 @@ export type Curve =
   | {
       kind: 'auto';
     };
-export type Color = string;
-export type LayoutItem =
-  | LayoutControl
+/**
+ * A control placed in a slot: a shared control id (controls.json) or 'x.<extra id>', or an object with a label of its own.
+ */
+export type Slot =
+  | string
   | {
-      band: string;
-      x: number;
-      y: number;
-    }
-  | {
-      sub: string;
-      y: number;
-    }
-  | {
-      note: string;
-      x: number;
-      y: number;
-    }
-  | {
-      rule: number;
+      /**
+       * A shared control id or 'x.<extra id>'
+       */
+      control: string;
+      /**
+       * Label on the strip; defaults to the control's own. Bottom-row slots show at most 4 characters.
+       */
+      label?: string;
+      /**
+       * Switches: light the button when the value is on (default) or off, e.g. 'FATK' for a parameter that reads Fast at 0.
+       */
+      lit?: 'on' | 'off';
+      /**
+       * This button's lit colour, when it differs from the skin's
+       */
+      on?: string;
     };
+export type Color = string;
 /**
  * [background, border, text]
  *
@@ -84,7 +88,10 @@ export type ButtonColors = Color[];
  */
 export interface StriplineProfile {
   $schema?: string;
-  schemaVersion: 2;
+  /**
+   * Profile format version. 3: the console draws every plugin on the same base strip; a profile adds its global buttons, extra slots and colours (strip).
+   */
+  schemaVersion: 3;
   /**
    * Stable profile id, e.g. vendor.plugin
    */
@@ -129,7 +136,7 @@ export interface StriplineProfile {
    * @maxItems 32
    */
   extras?: Extra[];
-  layout?: Layout;
+  strip?: Strip;
   skin?: Skin;
 }
 /**
@@ -192,50 +199,43 @@ export interface Extra {
   mapping: Mapping;
 }
 /**
- * The three sections the console shows one at a time: input and filters, EQ, dynamics (with the gate when the plugin has one).
+ * How this plugin fills the console's base strip. The base controls of each section are fixed (shared controls); a base control the plugin lacks (mapping {"available": false}) is drawn disabled.
  */
-export interface Layout {
-  io: Section;
-  eq: Section;
-  dyn: Section;
+export interface Strip {
+  /**
+   * Up to 6 buttons under the meter, for whole-strip functions: polarity, pad, EQ before dynamics, sidechain routing…
+   *
+   * @maxItems 6
+   */
+  global?: Slot[];
+  in?: SectionSlots;
+  filt?: SectionSlots;
+  eq?: SectionSlots;
+  comp?: SectionSlots;
+  gate?: SectionSlots;
+  /**
+   * Per control (shared id or x.<id>): knob cap and arc colours, or a button's lit colour.
+   */
+  colors?: {
+    [k: string]: {
+      cap?: Color;
+      arc?: Color;
+      on?: Color;
+    };
+  };
 }
-export interface Section {
-  title: string;
+/**
+ * The section's two bottom rows: up to 4 small knobs and up to 4 small buttons, for controls only this plugin has. Empty slots are drawn disabled so every strip lines up. Buttons show at most 4 characters; a stepped control on a button shows its current step.
+ */
+export interface SectionSlots {
   /**
-   * Small buttons next to the section title
+   * @maxItems 4
    */
-  head?: LayoutControl[];
+  knobs?: Slot[];
   /**
-   * Positioned in px inside a 108 px wide column
+   * @maxItems 4
    */
-  items: LayoutItem[];
-}
-export interface LayoutControl {
-  /**
-   * A shared control id (controls.json) or 'x.<extra id>'
-   */
-  control: string;
-  x?: number;
-  y?: number;
-  /**
-   * Label shown on the strip; defaults to the control's own
-   */
-  label?: string;
-  size?: 'lg' | 'sm';
-  cap?: Color;
-  arc?: Color;
-  /**
-   * Lit colour for a switch, when it differs from the skin's
-   */
-  on?: string;
-  /**
-   * How to draw it; defaults from the control kind
-   */
-  as?: 'knob' | 'switch' | 'choice';
-  /**
-   * For switches: light the button when the value is on (default) or off, e.g. a SHELF button drawn for a 'bell' control.
-   */
-  lit?: 'on' | 'off';
+  buttons?: Slot[];
 }
 /**
  * Colours the console uses for this plugin's strips when 'Use plugin colours' is on. Colours only: no logos or artwork.

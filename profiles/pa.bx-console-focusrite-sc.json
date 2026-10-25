@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/profile.schema.json",
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "pa.bx-console-focusrite-sc",
   "name": "bx_console Focusrite SC",
   "author": "Stripline",
@@ -20,13 +20,8 @@
     ]
   },
   "mappings": {
-    "input.phase": {
-      "param": {
-        "id": "1349022565",
-        "index": 6,
-        "name": "Phase"
-      },
-      "type": "switch"
+    "input.in": {
+      "available": false
     },
     "input.gain": {
       "param": {
@@ -40,6 +35,17 @@
       }
     },
     "input.trim": {
+      "available": false
+    },
+    "input.phase": {
+      "param": {
+        "id": "1349022565",
+        "index": 6,
+        "name": "Phase"
+      },
+      "type": "switch"
+    },
+    "filter.in": {
       "available": false
     },
     "filter.hpf": {
@@ -91,6 +97,9 @@
       },
       "type": "stepped",
       "auto": true
+    },
+    "eq.lf.q": {
+      "available": false
     },
     "eq.lf.bell": {
       "available": false
@@ -181,6 +190,9 @@
       "type": "stepped",
       "auto": true
     },
+    "eq.hf.q": {
+      "available": false
+    },
     "eq.hf.bell": {
       "available": false
     },
@@ -256,6 +268,14 @@
         "kind": "auto"
       }
     },
+    "gate.in": {
+      "param": {
+        "id": "1198804846",
+        "index": 44,
+        "name": "Gate On"
+      },
+      "type": "switch"
+    },
     "gate.threshold": {
       "param": {
         "id": "1198806120",
@@ -278,6 +298,28 @@
         "kind": "auto"
       }
     },
+    "gate.release": {
+      "param": {
+        "id": "1198805612",
+        "index": 40,
+        "name": "Gate Release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.ratio": {
+      "available": false
+    },
+    "gate.exp": {
+      "param": {
+        "id": "1198802296",
+        "index": 46,
+        "name": "Gate Expander"
+      },
+      "type": "switch"
+    },
     "output.fader": {
       "param": {
         "id": "1333020526",
@@ -293,7 +335,7 @@
   "extras": [
     {
       "id": "vGain",
-      "label": "V Gain",
+      "label": "VGN",
       "kind": "continuous",
       "min": -120,
       "max": -70,
@@ -335,7 +377,7 @@
     },
     {
       "id": "hpfOn",
-      "label": "IN",
+      "label": "HPF",
       "kind": "switch",
       "default": 1,
       "mapping": {
@@ -362,7 +404,7 @@
     },
     {
       "id": "lpfOn",
-      "label": "IN",
+      "label": "LPF",
       "kind": "switch",
       "default": 1,
       "mapping": {
@@ -389,14 +431,14 @@
     },
     {
       "id": "dynHpf",
-      "label": "SC HPF",
+      "label": "SC",
       "kind": "stepped",
       "steps": [
         "OFF",
         "COMP",
         "GATE",
         "G+C",
-        "AUDIO"
+        "AUD"
       ],
       "default": 1,
       "mapping": {
@@ -424,7 +466,7 @@
     },
     {
       "id": "hmfX3",
-      "label": "x3",
+      "label": "HMx3",
       "kind": "switch",
       "mapping": {
         "param": {
@@ -437,7 +479,7 @@
     },
     {
       "id": "lmfX3",
-      "label": "x3",
+      "label": "LMx3",
       "kind": "switch",
       "mapping": {
         "param": {
@@ -463,22 +505,8 @@
       }
     },
     {
-      "id": "gateIn",
-      "label": "GATE IN",
-      "kind": "switch",
-      "default": 1,
-      "mapping": {
-        "param": {
-          "id": "1198804846",
-          "index": 44,
-          "name": "Gate On"
-        },
-        "type": "switch"
-      }
-    },
-    {
       "id": "gateHold",
-      "label": "Hold",
+      "label": "HOLD",
       "kind": "continuous",
       "min": 0.02,
       "max": 4,
@@ -498,27 +526,6 @@
       }
     },
     {
-      "id": "gateRelease",
-      "label": "Release",
-      "kind": "continuous",
-      "min": 0.1,
-      "max": 5,
-      "scale": "log",
-      "unit": "s",
-      "default": 0.3,
-      "mapping": {
-        "param": {
-          "id": "1198805612",
-          "index": 40,
-          "name": "Gate Release"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
       "id": "gateFast",
       "label": "FAST",
       "kind": "switch",
@@ -530,331 +537,107 @@
         },
         "type": "switch"
       }
-    },
-    {
-      "id": "expand",
-      "label": "EXPAND",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "1198802296",
-          "index": 46,
-          "name": "Gate Expander"
-        },
-        "type": "switch"
-      }
     }
   ],
-  "layout": {
-    "io": {
-      "title": "INPUT · FILTERS",
-      "head": [
-        {
-          "control": "input.phase",
-          "label": "Ø",
-          "on": "#F09A2C"
-        }
-      ],
-      "items": [
-        {
-          "control": "input.gain",
-          "x": 3,
-          "y": 0,
-          "cap": "#F2C12E",
-          "label": "In Gain"
-        },
-        {
-          "control": "x.vGain",
-          "x": 57,
-          "y": 18,
-          "cap": "#F2C12E"
-        },
-        {
-          "rule": 84
-        },
-        {
-          "sub": "FILTERS",
-          "y": 90
-        },
-        {
-          "control": "filter.lpf",
-          "x": 3,
-          "y": 108,
-          "cap": "#B5B9BF",
-          "label": "LPF"
-        },
-        {
-          "control": "filter.hpf",
-          "x": 57,
-          "y": 108,
-          "cap": "#B5B9BF",
-          "label": "HPF"
-        },
-        {
-          "control": "x.lpfOn",
-          "x": 8,
-          "y": 172,
-          "on": "#D7362B"
-        },
-        {
-          "control": "x.lpfDiv3",
-          "x": 8,
-          "y": 198,
-          "on": "#F09A2C"
-        },
-        {
-          "control": "x.hpfOn",
-          "x": 62,
-          "y": 172,
-          "on": "#D7362B"
-        },
-        {
-          "control": "x.hpfX3",
-          "x": 62,
-          "y": 198,
-          "on": "#F09A2C"
-        },
-        {
-          "rule": 228
-        },
-        {
-          "control": "x.dynHpf",
-          "x": 0,
-          "y": 236
-        },
-        {
-          "control": "x.thd",
-          "x": 57,
-          "y": 232,
-          "cap": "#F2C12E"
-        }
+  "strip": {
+    "global": [
+      {
+        "control": "input.phase",
+        "label": "Ø"
+      },
+      {
+        "control": "x.eqPost",
+        "label": "EQ PRE",
+        "lit": "off"
+      }
+    ],
+    "in": {
+      "knobs": [
+        "x.vGain",
+        "x.thd"
+      ]
+    },
+    "filt": {
+      "buttons": [
+        "x.hpfOn",
+        "x.hpfX3",
+        "x.lpfOn",
+        "x.lpfDiv3"
       ]
     },
     "eq": {
-      "title": "EQ",
-      "head": [
-        {
-          "control": "x.eqPost",
-          "on": "#F09A2C"
-        },
-        {
-          "control": "eq.in",
-          "label": "IN"
-        }
-      ],
-      "items": [
-        {
-          "control": "eq.hf.gain",
-          "x": 0,
-          "y": 0,
-          "size": "lg",
-          "cap": "#DADADA"
-        },
-        {
-          "band": "HF",
-          "x": 58,
-          "y": 4
-        },
-        {
-          "control": "eq.hf.freq",
-          "x": 56,
-          "y": 28,
-          "cap": "#F2C12E"
-        },
-        {
-          "rule": 92
-        },
-        {
-          "control": "eq.hmf.gain",
-          "x": 0,
-          "y": 96,
-          "size": "lg",
-          "cap": "#DADADA"
-        },
-        {
-          "band": "HMF",
-          "x": 58,
-          "y": 100
-        },
-        {
-          "control": "eq.hmf.freq",
-          "x": 56,
-          "y": 124,
-          "cap": "#F2C12E"
-        },
-        {
-          "control": "eq.hmf.q",
-          "x": 3,
-          "y": 162,
-          "cap": "#F2C12E"
-        },
-        {
-          "rule": 222
-        },
-        {
-          "control": "eq.lmf.gain",
-          "x": 0,
-          "y": 226,
-          "size": "lg",
-          "cap": "#DADADA"
-        },
-        {
-          "band": "LMF",
-          "x": 58,
-          "y": 230
-        },
-        {
-          "control": "eq.lmf.freq",
-          "x": 56,
-          "y": 254,
-          "cap": "#F2C12E"
-        },
-        {
-          "control": "eq.lmf.q",
-          "x": 3,
-          "y": 292,
-          "cap": "#F2C12E"
-        },
-        {
-          "rule": 352
-        },
-        {
-          "control": "eq.lf.gain",
-          "x": 0,
-          "y": 356,
-          "size": "lg",
-          "cap": "#DADADA"
-        },
-        {
-          "band": "LF",
-          "x": 58,
-          "y": 360
-        },
-        {
-          "control": "eq.lf.freq",
-          "x": 56,
-          "y": 384,
-          "cap": "#F2C12E"
-        },
-        {
-          "control": "x.hmfX3",
-          "x": 70,
-          "y": 192,
-          "on": "#F09A2C"
-        },
-        {
-          "control": "x.lmfX3",
-          "x": 70,
-          "y": 326,
-          "on": "#F09A2C"
-        }
+      "buttons": [
+        "x.hmfX3",
+        "x.lmfX3"
       ]
     },
-    "dyn": {
-      "title": "COMP · GATE",
-      "head": [
-        {
-          "control": "x.compLink",
-          "on": "#F09A2C"
-        },
-        {
-          "control": "dyn.in",
-          "label": "IN",
-          "on": "#F09A2C"
-        }
-      ],
-      "items": [
-        {
-          "control": "comp.threshold",
-          "x": 0,
-          "y": 0,
-          "size": "lg",
-          "cap": "#F2C12E",
-          "label": "Thresh"
-        },
-        {
-          "control": "comp.ratio",
-          "x": 57,
-          "y": 24,
-          "cap": "#F2C12E"
-        },
-        {
-          "control": "comp.release",
-          "x": 3,
-          "y": 74,
-          "cap": "#F2C12E"
-        },
+    "comp": {
+      "knobs": [
         {
           "control": "comp.makeup",
-          "x": 52,
-          "y": 88,
-          "size": "lg",
-          "cap": "#F2C12E"
-        },
-        {
-          "control": "comp.attack",
-          "x": 3,
-          "y": 140,
-          "cap": "#F2C12E"
+          "label": "GAIN"
         },
         {
           "control": "comp.mix",
-          "x": 57,
-          "y": 164,
-          "cap": "#F2C12E"
-        },
-        {
-          "rule": 228
-        },
-        {
-          "sub": "GATE",
-          "y": 234
-        },
-        {
-          "control": "x.gateIn",
-          "x": 52,
-          "y": 230,
-          "on": "#4CCB61"
-        },
-        {
-          "control": "gate.threshold",
-          "x": 3,
-          "y": 256,
-          "cap": "#F2C12E",
-          "label": "Thresh"
-        },
-        {
-          "control": "gate.range",
-          "x": 57,
-          "y": 274,
-          "cap": "#F2C12E",
-          "label": "Range"
-        },
-        {
-          "control": "x.gateHold",
-          "x": 3,
-          "y": 318,
-          "cap": "#F2C12E"
-        },
-        {
-          "control": "x.gateRelease",
-          "x": 57,
-          "y": 318,
-          "cap": "#F2C12E"
-        },
-        {
-          "control": "x.expand",
-          "x": 52,
-          "y": 382,
-          "on": "#2BB8A4"
-        },
-        {
-          "control": "x.gateFast",
-          "x": 8,
-          "y": 382,
-          "on": "#F09A2C"
+          "label": "MIX"
         }
+      ],
+      "buttons": [
+        "x.compLink",
+        "x.dynHpf"
       ]
+    },
+    "gate": {
+      "knobs": [
+        "x.gateHold"
+      ],
+      "buttons": [
+        "x.gateFast"
+      ]
+    },
+    "colors": {
+      "filter.hpf": {
+        "cap": "#B5B9BF"
+      },
+      "filter.lpf": {
+        "cap": "#B5B9BF"
+      },
+      "eq.hf.gain": {
+        "cap": "#DADADA"
+      },
+      "eq.hmf.gain": {
+        "cap": "#DADADA"
+      },
+      "eq.lmf.gain": {
+        "cap": "#DADADA"
+      },
+      "eq.lf.gain": {
+        "cap": "#DADADA"
+      },
+      "input.phase": {
+        "on": "#F09A2C"
+      },
+      "x.eqPost": {
+        "on": "#F09A2C"
+      },
+      "x.hpfX3": {
+        "on": "#F09A2C"
+      },
+      "x.lpfDiv3": {
+        "on": "#F09A2C"
+      },
+      "x.hmfX3": {
+        "on": "#F09A2C"
+      },
+      "x.lmfX3": {
+        "on": "#F09A2C"
+      },
+      "gate.in": {
+        "on": "#4CCB61"
+      },
+      "gate.exp": {
+        "on": "#2BB8A4"
+      }
     }
   },
   "skin": {

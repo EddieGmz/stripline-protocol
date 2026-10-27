@@ -37,6 +37,11 @@ Both repos include this one as a git submodule at `protocol/`.
 - Control values always travel in **real units** (dB, Hz, ms, s, %, ratio). Only the bridge deals with the hosted plugin's 0..1 values, using the profile.
 - `set` carries a `gesture` (`begin` / `change` / `end` / `single`) so the DAW records automation and undo correctly.
 - Meters arrive about 30 times a second in dBFS.
+- **In REAPER** the bridge reaches REAPER's API through its VST3 host interface and says so in `hello`
+  (`capabilities: ["reaper"]`). It then reports the track's position, mute and solo in `track` (and in `trackInfo`
+  when they change), accepts `trackCommand` (mute, solo) and `transportCommand` (play, stop, pause, record, repeat,
+  rewind/forward while held), and, while the console sends it `watchTransport`, reports the transport in `transport`
+  messages. Without it, the console falls back to REAPER's OSC for the transport.
 
 ## The base strip
 

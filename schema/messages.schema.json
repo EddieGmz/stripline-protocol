@@ -60,6 +60,18 @@
     },
     {
       "$ref": "#/$defs/Pong"
+    },
+    {
+      "$ref": "#/$defs/Transport"
+    },
+    {
+      "$ref": "#/$defs/TrackCommand"
+    },
+    {
+      "$ref": "#/$defs/TransportCommand"
+    },
+    {
+      "$ref": "#/$defs/WatchTransport"
     }
   ],
   "$defs": {
@@ -93,7 +105,15 @@
         "index": {
           "type": "integer",
           "minimum": 0,
-          "description": "0-based position in the host's track list, when known"
+          "description": "0-based position in the host's track list, when known (REAPER: from the host API; the console orders strips by it)"
+        },
+        "mute": {
+          "type": "boolean",
+          "description": "Track mute in the host, when the bridge can read it (capability 'reaper')"
+        },
+        "solo": {
+          "type": "boolean",
+          "description": "Track solo in the host (any solo mode), when the bridge can read it (capability 'reaper')"
         }
       }
     },
@@ -242,6 +262,16 @@
             }
           ],
           "description": "The active profile as resolved for this plugin instance (profile.schema.json): 'auto' curves and steps are replaced by what the bridge read from the plugin, and mappings whose parameter wasn't found are marked { available: false }. The console draws the strip from its layout and skin."
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "reaper"
+            ]
+          },
+          "description": "Optional features. 'reaper': the bridge reached REAPER's API, so it reports the track's index, mute and solo, accepts trackCommand, and drives the transport (transportCommand, watchTransport → transport)."
         }
       }
     },
@@ -692,6 +722,129 @@
         },
         "t": {
           "type": "number"
+        }
+      }
+    },
+    "Transport": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "bridge → console: the host's transport, sent while the console watches this instance (watchTransport): on every state change and about 15 times a second while the position moves.",
+      "required": [
+        "type",
+        "instanceId",
+        "playing",
+        "paused",
+        "recording",
+        "repeat",
+        "beats",
+        "time"
+      ],
+      "properties": {
+        "type": {
+          "const": "transport"
+        },
+        "instanceId": {
+          "$ref": "#/$defs/InstanceId"
+        },
+        "playing": {
+          "type": "boolean",
+          "description": "Playing or recording (true while paused too)"
+        },
+        "paused": {
+          "type": "boolean"
+        },
+        "recording": {
+          "type": "boolean"
+        },
+        "repeat": {
+          "type": "boolean"
+        },
+        "beats": {
+          "type": "string",
+          "description": "Position as measures.beats, e.g. 5.2.50"
+        },
+        "time": {
+          "type": "string",
+          "description": "Position as time, e.g. 1:23.456"
+        }
+      }
+    },
+    "TrackCommand": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "console → bridge: set the host track's mute and/or solo (capability 'reaper'). The bridge answers with trackInfo.",
+      "required": [
+        "type",
+        "instanceId"
+      ],
+      "properties": {
+        "type": {
+          "const": "trackCommand"
+        },
+        "instanceId": {
+          "$ref": "#/$defs/InstanceId"
+        },
+        "mute": {
+          "type": "boolean"
+        },
+        "solo": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TransportCommand": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "console → bridge: drive the host transport (capability 'reaper'). play/stop/pause/record behave like the host's buttons; repeat toggles loop; rewind/forward scrub while held (down true, then false).",
+      "required": [
+        "type",
+        "instanceId",
+        "action"
+      ],
+      "properties": {
+        "type": {
+          "const": "transportCommand"
+        },
+        "instanceId": {
+          "$ref": "#/$defs/InstanceId"
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "play",
+            "stop",
+            "pause",
+            "playStop",
+            "record",
+            "repeat",
+            "rewind",
+            "forward"
+          ]
+        },
+        "down": {
+          "type": "boolean",
+          "description": "rewind/forward only: true while held"
+        }
+      }
+    },
+    "WatchTransport": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "console → bridge: start or stop sending transport messages. The console watches one instance at a time.",
+      "required": [
+        "type",
+        "instanceId",
+        "on"
+      ],
+      "properties": {
+        "type": {
+          "const": "watchTransport"
+        },
+        "instanceId": {
+          "$ref": "#/$defs/InstanceId"
+        },
+        "on": {
+          "type": "boolean"
         }
       }
     }

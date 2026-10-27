@@ -498,5 +498,5 @@ export const CONTROL_BY_ID: Readonly<Record<ControlId, ControlDef>> = Object.fro
   CONTROLS.map((c) => [c.id, c]),
 ) as Record<ControlId, ControlDef>;
 
-export const MESSAGE_TYPES = ["hello","trackInfo","pluginChanged","values","meters","pluginParams","calibration","learnResult","bye","welcome","set","loadProfile","learn","cancelLearn","requestPluginParams","requestCalibration","openPluginEditor","ping","pong"] as const;
+export const MESSAGE_TYPES = ["hello","trackInfo","pluginChanged","values","meters","pluginParams","calibration","learnResult","bye","welcome","set","loadProfile","learn","cancelLearn","requestPluginParams","requestCalibration","openPluginEditor","ping","pong","transport","trackCommand","transportCommand","watchTransport"] as const;
 export type MessageType = (typeof MESSAGE_TYPES)[number];

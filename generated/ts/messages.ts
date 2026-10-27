@@ -22,7 +22,11 @@ export type StriplineMessage =
   | RequestCalibration
   | OpenPluginEditor
   | Ping
-  | Pong;
+  | Pong
+  | Transport
+  | TrackCommand
+  | TransportCommand
+  | WatchTransport;
 /**
  * Random id a bridge instance creates once and stores in its state, so it survives project reloads. Regenerated when a duplicated track brings a copy.
  */
@@ -49,6 +53,10 @@ export interface Hello {
    * The active profile as resolved for this plugin instance (profile.schema.json): 'auto' curves and steps are replaced by what the bridge read from the plugin, and mappings whose parameter wasn't found are marked { available: false }. The console draws the strip from its layout and skin.
    */
   profile?: {} | null;
+  /**
+   * Optional features. 'reaper': the bridge reached REAPER's API, so it reports the track's index, mute and solo, accepts trackCommand, and drives the transport (transportCommand, watchTransport → transport).
+   */
+  capabilities?: 'reaper'[];
 }
 export interface Track {
   name: string;
@@ -57,9 +65,17 @@ export interface Track {
    */
   color?: string;
   /**
-   * 0-based position in the host's track list, when known
+   * 0-based position in the host's track list, when known (REAPER: from the host API; the console orders strips by it)
    */
   index?: number;
+  /**
+   * Track mute in the host, when the bridge can read it (capability 'reaper')
+   */
+  mute?: boolean;
+  /**
+   * Track solo in the host (any solo mode), when the bridge can read it (capability 'reaper')
+   */
+  solo?: boolean;
 }
 export interface HostedPlugin {
   name: string;
@@ -228,4 +244,55 @@ export interface Ping {
 export interface Pong {
   type: 'pong';
   t?: number;
+}
+/**
+ * bridge → console: the host's transport, sent while the console watches this instance (watchTransport): on every state change and about 15 times a second while the position moves.
+ */
+export interface Transport {
+  type: 'transport';
+  instanceId: InstanceId;
+  /**
+   * Playing or recording (true while paused too)
+   */
+  playing: boolean;
+  paused: boolean;
+  recording: boolean;
+  repeat: boolean;
+  /**
+   * Position as measures.beats, e.g. 5.2.50
+   */
+  beats: string;
+  /**
+   * Position as time, e.g. 1:23.456
+   */
+  time: string;
+}
+/**
+ * console → bridge: set the host track's mute and/or solo (capability 'reaper'). The bridge answers with trackInfo.
+ */
+export interface TrackCommand {
+  type: 'trackCommand';
+  instanceId: InstanceId;
+  mute?: boolean;
+  solo?: boolean;
+}
+/**
+ * console → bridge: drive the host transport (capability 'reaper'). play/stop/pause/record behave like the host's buttons; repeat toggles loop; rewind/forward scrub while held (down true, then false).
+ */
+export interface TransportCommand {
+  type: 'transportCommand';
+  instanceId: InstanceId;
+  action: 'play' | 'stop' | 'pause' | 'playStop' | 'record' | 'repeat' | 'rewind' | 'forward';
+  /**
+   * rewind/forward only: true while held
+   */
+  down?: boolean;
+}
+/**
+ * console → bridge: start or stop sending transport messages. The console watches one instance at a time.
+ */
+export interface WatchTransport {
+  type: 'watchTransport';
+  instanceId: InstanceId;
+  on: boolean;
 }

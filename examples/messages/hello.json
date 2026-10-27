@@ -1,14 +1,19 @@
 {
   "type": "hello",
   "instanceId": "k3f9a21c7d0e",
-  "protocolVersion": 2,
+  "protocolVersion": 3,
   "bridgeVersion": "0.1.0",
   "host": "REAPER",
   "track": {
     "name": "Lead Vox",
     "color": "#9B6BD3",
-    "index": 8
+    "index": 8,
+    "mute": false,
+    "solo": false
   },
+  "capabilities": [
+    "reaper"
+  ],
   "plugin": {
     "name": "Example Channel Strip",
     "vendor": "Example Audio",

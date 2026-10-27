@@ -92,5 +92,9 @@ namespace msg
     inline constexpr std::string_view openPluginEditor = "openPluginEditor";
     inline constexpr std::string_view ping = "ping";
     inline constexpr std::string_view pong = "pong";
+    inline constexpr std::string_view transport = "transport";
+    inline constexpr std::string_view trackCommand = "trackCommand";
+    inline constexpr std::string_view transportCommand = "transportCommand";
+    inline constexpr std::string_view watchTransport = "watchTransport";
 } // namespace msg
 } // namespace stripline::protocol

@@ -277,12 +277,12 @@ export interface TrackCommand {
   solo?: boolean;
 }
 /**
- * console → bridge: drive the host transport (capability 'reaper'). play/stop/pause/record behave like the host's buttons; repeat toggles loop; rewind/forward scrub while held (down true, then false).
+ * console → bridge: drive the host transport (capability 'reaper'). play/stop/pause/record behave like the host's buttons; playStop is the Space key (stop when playing, else play); repeat toggles loop; goStart/goEnd move the edit cursor to the project start/end; rewind/forward scrub while held (down true, then false).
  */
 export interface TransportCommand {
   type: 'transportCommand';
   instanceId: InstanceId;
-  action: 'play' | 'stop' | 'pause' | 'playStop' | 'record' | 'repeat' | 'rewind' | 'forward';
+  action: 'play' | 'stop' | 'pause' | 'playStop' | 'record' | 'repeat' | 'rewind' | 'forward' | 'goStart' | 'goEnd';
   /**
    * rewind/forward only: true while held
    */

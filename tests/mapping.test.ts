@@ -5,6 +5,7 @@ import {
   CONTROLS,
   curveFromSamples,
   genericToNormalized,
+  reachedStep,
   normalizedToGeneric,
   parseDisplayNumber,
   stepsFromTexts,
@@ -52,15 +53,27 @@ describe('mapping', () => {
     expect(genericToNormalized(d, m['eq.lmf.freq'], 520)).toBeCloseTo(0.375);
     expect(normalizedToGeneric(d, m['eq.lmf.freq'], 0.375)).toBeCloseTo(520);
   });
-  it('stepped snaps to the nearest value', () => {
+  it('stepped lands on the step the value has reached', () => {
     const d = CONTROL_BY_ID['comp.ratio'];
     expect(genericToNormalized(d, m['comp.ratio'], 4.4)).toBe(0.5);
     expect(normalizedToGeneric(d, m['comp.ratio'], 0.52)).toBe(4);
+  });
+  it('reachedStep: 3 and 3.9 stay on 2, 4 reaches 4; uneven and falling steps too', () => {
+    const even = [2, 4, 6, 8].map((value, i) => ({ normalized: i / 3, value }));
+    expect([1, 2, 3, 3.9, 4, 5.999999, 7, 9].map((v) => reachedStep(even, v).value)).toEqual([2, 2, 2, 2, 4, 6, 6, 8]);
+    const api = [50, 100, 200, 300, 400].map((value, i) => ({ normalized: i / 4, value })); // API 550 LF
+    expect([60, 199, 200, 350].map((v) => reachedStep(api, v).value)).toEqual([50, 100, 200, 300]);
+    const falling = [10, 5, 0].map((value, i) => ({ normalized: i / 2, value })); // knob turns the value down
+    expect([10, 7, 5, 1, -3].map((v) => reachedStep(falling, v).value)).toEqual([10, 10, 5, 5, 0]);
+    const shuffled = [even[2], even[0], even[3], even[1]]; // order in the profile doesn't matter
+    expect(reachedStep(shuffled, 5).value).toBe(4);
   });
   it('even mapping for stepped extras', () => {
     const knee = profile.extras![1];
     const d = CONTROL_BY_ID['comp.ratio']; // def is not used by 'even'
     expect(genericToNormalized(d, knee.mapping, 1, 3)).toBe(0.5);
+    expect(genericToNormalized(d, knee.mapping, 1.9, 3)).toBe(0.5); // index 1 until 2 is reached
+    expect(genericToNormalized(d, knee.mapping, 2.7, 3)).toBe(1); // past the last: the last
     expect(normalizedToGeneric(d, knee.mapping, 0.9, 3)).toBe(2);
   });
   it('auto curves and steps stay unresolved until the bridge reads the plugin', () => {

@@ -63,6 +63,34 @@ function genericIsOn(def: ControlDef, v: number): boolean {
   return def.kind === 'switch' ? v >= 0.5 : v >= (def.min + def.max) / 2;
 }
 
+/**
+ * The step a control value has reached. Going along the plugin's positions, it is the last step whose
+ * value the control has passed (values may rise or fall along the plugin's knob); before the first
+ * step, the first. So with steps 2, 4, 6 a value of 3 or 3.9 stays on 2 and 4 reaches 4: a knob turns
+ * continuously and the plugin lands on the step it has reached.
+ */
+export function reachedStep<S extends Step>(steps: readonly S[], v: number): S {
+  let first = steps[0];
+  let last = steps[0];
+  for (const s of steps) {
+    if (s.normalized < first.normalized) first = s;
+    if (s.normalized > last.normalized) last = s;
+  }
+  const rising = last.value >= first.value;
+  const eps = 1e-6 * Math.max(1, Math.abs(last.value - first.value)); // 4 reaches 4 despite float noise
+  let best: S | null = null;
+  for (const s of steps) {
+    const passed = rising ? s.value <= v + eps : s.value >= v - eps;
+    if (passed && (!best || s.normalized > best.normalized)) best = s;
+  }
+  return best ?? first;
+}
+
+/** For stepped extras ('even' mappings): the step index reached, 0 … count-1. */
+export function reachedIndex(v: number, count: number): number {
+  return Math.max(0, Math.min(count - 1, Math.floor(v + 1e-6)));
+}
+
 function nearestStep(steps: Step[], key: 'value' | 'normalized', x: number): Step {
   let best = steps[0];
   for (const s of steps) if (Math.abs(s[key] - x) < Math.abs(best[key] - x)) best = s;
@@ -83,13 +111,13 @@ export function genericToNormalized(def: ControlDef, m: Mapping | undefined, v: 
       return m.invert ? 1 - n : n;
     }
     case 'stepped':
-      return m.steps ? nearestStep(m.steps, 'value', v).normalized : null;
+      return m.steps ? reachedStep(m.steps, v).normalized : null;
     case 'switch': {
       const on = genericIsOn(def, v) !== !!m.invert;
       return on ? (m.on ?? 1) : (m.off ?? 0);
     }
     case 'even':
-      return count > 1 ? clamp01(Math.round(v) / (count - 1)) : 0;
+      return count > 1 ? reachedIndex(v, count) / (count - 1) : 0;
   }
 }
 

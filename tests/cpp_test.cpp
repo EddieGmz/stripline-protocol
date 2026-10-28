@@ -37,6 +37,14 @@ int main()
     stepped.type = Mapping::Type::Stepped;
     stepped.steps = { { 0.0714f, 1.5f }, { 0.2143f, 2.0f }, { 0.3571f, 3.0f }, { 0.5f, 4.0f }, { 0.6429f, 6.0f }, { 0.7857f, 10.0f } };
     CHECK (near (genericToNormalized (ratio, stepped, 4.4f), 0.5f));
+    CHECK (near (genericToNormalized (ratio, stepped, 5.9f), 0.5f));   // 6 not reached yet
+    CHECK (near (genericToNormalized (ratio, stepped, 6.0f), 0.6429f)); // reached
+    CHECK (near (genericToNormalized (ratio, stepped, 1.0f), 0.0714f)); // before the first: the first
+    Mapping falling;
+    falling.type = Mapping::Type::Stepped;
+    falling.steps = { { 0.0f, 10.0f }, { 0.5f, 5.0f }, { 1.0f, 0.0f } };
+    CHECK (near (genericToNormalized (ratio, falling, 7.0f), 0.0f));
+    CHECK (near (genericToNormalized (ratio, falling, 5.0f), 0.5f));
 
     const auto& phase = kControls[(size_t) indexOfControl ("input.phase")];
     Mapping sw;

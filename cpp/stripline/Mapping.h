@@ -3,6 +3,7 @@
 #pragma once
 #include <stripline/Controls.h>
 #include <stripline/Scale.h>
+#include <algorithm>
 #include <cmath>
 #include <string>
 #include <utility>
@@ -85,6 +86,36 @@ inline bool genericIsOn (const ControlDef& d, float v) noexcept
     return d.kind == Kind::Switch ? v >= 0.5f : v >= (d.min + d.max) * 0.5f;
 }
 
+/** The step a control value has reached: going along the plugin's positions, the last step whose value
+    the control has passed (values rising or falling); before the first step, the first. Steps 2, 4, 6:
+    3 and 3.9 stay on 2, 4 reaches 4. Same rule as reachedStep() in ts/mapping.ts. No allocation. */
+inline const Step& reachedStep (const std::vector<Step>& steps, float v) noexcept
+{
+    const Step* first = &steps.front();
+    const Step* last = &steps.front();
+    for (const auto& s : steps)
+    {
+        if (s.normalized < first->normalized) first = &s;
+        if (s.normalized > last->normalized) last = &s;
+    }
+    const bool rising = last->value >= first->value;
+    const float eps = 1.0e-6f * std::max (1.0f, std::abs (last->value - first->value));
+    const Step* best = nullptr;
+    for (const auto& s : steps)
+    {
+        const bool passed = rising ? s.value <= v + eps : s.value >= v - eps;
+        if (passed && (best == nullptr || s.normalized > best->normalized))
+            best = &s;
+    }
+    return best != nullptr ? *best : *first;
+}
+
+/** For stepped extras ('even' mappings): the step index reached, 0 … count-1. */
+inline int reachedIndex (float v, int count) noexcept
+{
+    return std::clamp ((int) std::floor (v + 1.0e-6f), 0, std::max (0, count - 1));
+}
+
 /** Generic value -> plugin normalized. Returns -1 when unmapped. */
 inline float genericToNormalized (const ControlDef& d, const Mapping& m, float v) noexcept
 {
@@ -98,15 +129,12 @@ inline float genericToNormalized (const ControlDef& d, const Mapping& m, float v
         case Mapping::Type::Stepped:
         {
             if (m.steps.empty()) return -1.0f;
-            const Step* best = &m.steps.front();
-            for (const auto& s : m.steps)
-                if (std::abs (s.value - v) < std::abs (best->value - v)) best = &s;
-            return best->normalized;
+            return reachedStep (m.steps, v).normalized;
         }
         case Mapping::Type::Switch:
             return (genericIsOn (d, v) != m.invert) ? m.on : m.off;
         case Mapping::Type::Even:
-            return m.count > 1 ? clamp01 (std::round (v) / (float) (m.count - 1)) : 0.0f;
+            return m.count > 1 ? (float) reachedIndex (v, m.count) / (float) (m.count - 1) : 0.0f;
         case Mapping::Type::Unmapped:
         case Mapping::Type::Unavailable:
         default:

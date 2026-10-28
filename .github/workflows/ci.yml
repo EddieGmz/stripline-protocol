@@ -1,8 +1,8 @@
 name: CI
 on:
-  # Builds run only for version tags (vX.Y.Z). Day-to-day work goes to `develop`; `main` is merged by hand.
   push:
-    tags: ['v*.*.*']
+    branches: [main]
+  pull_request:
 
 jobs:
   check:

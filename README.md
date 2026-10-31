@@ -34,7 +34,11 @@ Both repos include this one as a git submodule at `protocol/`.
 ```
 
 - The **bridge connects** to the console; the console never connects to plugins.
-- Control values always travel in **real units** (dB, Hz, ms, s, %, ratio). Only the bridge deals with the hosted plugin's 0..1 values, using the profile.
+- **Knobs travel as the plugin parameter's own 0..1 position**, passed straight through like a MIDI-learned knob:
+  the plugin applies its own curve and steps, and the bridge sends the plugin's own text for each knob
+  (`positions`, `texts`, `defaults` in `hello`; `texts` in `values`). A profile only says which plugin parameter
+  goes on which knob (and `invert`). The fader stays in dB and switches in 0/1; older bridges send everything in
+  real units.
 - `set` carries a `gesture` (`begin` / `change` / `end` / `single`) so the DAW records automation and undo correctly.
 - Meters arrive about 30 times a second in dBFS.
 - **In REAPER** the bridge reaches REAPER's API through its VST3 host interface and says so in `hello`

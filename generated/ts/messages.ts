@@ -57,6 +57,17 @@ export interface Hello {
    * Optional features. 'reaper': the bridge reached REAPER's API, so it reports the track's index, mute and solo, accepts trackCommand, and drives the transport (transportCommand, watchTransport → transport).
    */
   capabilities?: 'reaper'[];
+  /**
+   * Knob controls that travel as the plugin parameter's own 0..1 position, passed straight through like a MIDI-learned knob: the plugin applies its own curve and steps. Their values in 'values' are positions, not real units; 'texts' says what the plugin shows. Every shared continuous control but output.fader, and continuous extras. Absent from older bridges (everything in real units).
+   */
+  positions?: string[];
+  /**
+   * The plugin's own display text for knob controls (see 'positions'), e.g. "1.50 kHz", "OFF".
+   */
+  texts?: {
+    [k: string]: string;
+  };
+  defaults?: ControlValues1;
 }
 export interface Track {
   name: string;
@@ -88,9 +99,15 @@ export interface HostedPlugin {
   version?: string;
 }
 /**
- * Map of control id to value. Shared controls (controls.json) in real units, switches 0 or 1. Extras as 'x.<id>': real units when continuous, step index when stepped, 0/1 when switch.
+ * Map of control id to value. Knob controls listed in 'positions' carry the plugin parameter's 0..1 position. Other shared controls (controls.json) in real units, switches 0 or 1. Extras as 'x.<id>': 0..1 position when continuous, step index when stepped, 0/1 when switch.
  */
 export interface ControlValues {
+  [k: string]: number;
+}
+/**
+ * Map of control id to value. Knob controls listed in 'positions' carry the plugin parameter's 0..1 position. Other shared controls (controls.json) in real units, switches 0 or 1. Extras as 'x.<id>': 0..1 position when continuous, step index when stepped, 0/1 when switch.
+ */
+export interface ControlValues1 {
   [k: string]: number;
 }
 export interface TrackInfo {
@@ -109,6 +126,23 @@ export interface PluginChanged {
    * The active profile as resolved for this plugin instance (profile.schema.json): 'auto' curves and steps are replaced by what the bridge read from the plugin, and mappings whose parameter wasn't found are marked { available: false }. The console draws the strip from its layout and skin.
    */
   profile?: {} | null;
+  /**
+   * Knob controls that travel as the plugin parameter's own 0..1 position, passed straight through like a MIDI-learned knob: the plugin applies its own curve and steps. Their values in 'values' are positions, not real units; 'texts' says what the plugin shows. Every shared continuous control but output.fader, and continuous extras. Absent from older bridges (everything in real units).
+   */
+  positions?: string[];
+  /**
+   * The plugin's own display text for knob controls (see 'positions'), e.g. "1.50 kHz", "OFF".
+   */
+  texts?: {
+    [k: string]: string;
+  };
+  defaults?: ControlValues2;
+}
+/**
+ * Map of control id to value. Knob controls listed in 'positions' carry the plugin parameter's 0..1 position. Other shared controls (controls.json) in real units, switches 0 or 1. Extras as 'x.<id>': 0..1 position when continuous, step index when stepped, 0/1 when switch.
+ */
+export interface ControlValues2 {
+  [k: string]: number;
 }
 /**
  * Bridge -> app: values changed in the host (automation, plugin window, undo).
@@ -117,6 +151,12 @@ export interface Values {
   type: 'values';
   instanceId: InstanceId;
   values: ControlValues;
+  /**
+   * The plugin's own display text for knob controls (see 'positions'), e.g. "1.50 kHz", "OFF".
+   */
+  texts?: {
+    [k: string]: string;
+  };
 }
 /**
  * Bridge -> app, about 30 per second. Levels in dBFS (-100 = silence).

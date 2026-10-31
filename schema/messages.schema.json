@@ -82,7 +82,7 @@
     },
     "ControlValues": {
       "type": "object",
-      "description": "Map of control id to value. Shared controls (controls.json) in real units, switches 0 or 1. Extras as 'x.<id>': real units when continuous, step index when stepped, 0/1 when switch.",
+      "description": "Map of control id to value. Knob controls listed in 'positions' carry the plugin parameter's 0..1 position. Other shared controls (controls.json) in real units, switches 0 or 1. Extras as 'x.<id>': 0..1 position when continuous, step index when stepped, 0/1 when switch.",
       "additionalProperties": {
         "type": "number"
       }
@@ -272,6 +272,24 @@
             ]
           },
           "description": "Optional features. 'reaper': the bridge reached REAPER's API, so it reports the track's index, mute and solo, accepts trackCommand, and drives the transport (transportCommand, watchTransport → transport)."
+        },
+        "positions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Knob controls that travel as the plugin parameter's own 0..1 position, passed straight through like a MIDI-learned knob: the plugin applies its own curve and steps. Their values in 'values' are positions, not real units; 'texts' says what the plugin shows. Every shared continuous control but output.fader, and continuous extras. Absent from older bridges (everything in real units)."
+        },
+        "texts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "The plugin's own display text for knob controls (see 'positions'), e.g. \"1.50 kHz\", \"OFF\"."
+        },
+        "defaults": {
+          "$ref": "#/$defs/ControlValues",
+          "description": "The plugin's default position for knob controls (double-click resets to it)."
         }
       }
     },
@@ -347,6 +365,24 @@
             }
           ],
           "description": "The active profile as resolved for this plugin instance (profile.schema.json): 'auto' curves and steps are replaced by what the bridge read from the plugin, and mappings whose parameter wasn't found are marked { available: false }. The console draws the strip from its layout and skin."
+        },
+        "positions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Knob controls that travel as the plugin parameter's own 0..1 position, passed straight through like a MIDI-learned knob: the plugin applies its own curve and steps. Their values in 'values' are positions, not real units; 'texts' says what the plugin shows. Every shared continuous control but output.fader, and continuous extras. Absent from older bridges (everything in real units)."
+        },
+        "texts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "The plugin's own display text for knob controls (see 'positions'), e.g. \"1.50 kHz\", \"OFF\"."
+        },
+        "defaults": {
+          "$ref": "#/$defs/ControlValues",
+          "description": "The plugin's default position for knob controls (double-click resets to it)."
         }
       }
     },
@@ -368,6 +404,13 @@
         },
         "values": {
           "$ref": "#/$defs/ControlValues"
+        },
+        "texts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "The plugin's own display text for knob controls (see 'positions'), e.g. \"1.50 kHz\", \"OFF\"."
         }
       }
     },

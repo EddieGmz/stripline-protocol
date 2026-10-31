@@ -1,0 +1,1442 @@
+[
+  {
+    "index": 0,
+    "name": "THD",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "-0.00",
+    "id": "114800",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-30.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-15.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-0.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "15.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "30.00"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "name": "Gain",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.111111111938953,
+    "normalized": 0.111111111938953,
+    "text": "-0.00",
+    "id": "3165055",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-10.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "12.50"
+      },
+      {
+        "normalized": 0.5,
+        "text": "35.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "57.50"
+      },
+      {
+        "normalized": 1.0,
+        "text": "80.00"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "name": "Pad",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "110739",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "name": "Unity",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "111433589",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "name": "High Frequency",
+    "label": "",
+    "steps": 4,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "461817658",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "16 kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "12 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "12 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "10 kHz"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "name": "High Gain",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "-0.00",
+    "id": "461831233",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-16.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-8.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-0.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "8.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "16.00"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "name": "84 Mode",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1078682591",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "name": "Mid High Q",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "471526791",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "name": "Mid Frequency",
+    "label": "",
+    "steps": 7,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1054264544",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "700 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1600 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "3200 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "7200 Hz"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "name": "Mid Gain",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "-0.00",
+    "id": "1054278119",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-18.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-9.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-0.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "9.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "18.00"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "name": "Low Frequency",
+    "label": "",
+    "steps": 5,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "356082668",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "35 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "60 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "110 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "220 Hz"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "name": "Low Gain",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "-0.00",
+    "id": "356096243",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-16.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-8.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-0.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "8.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "16.00"
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "name": "High Pass",
+    "label": "",
+    "steps": 5,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "462099667",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "45 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "70 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "160 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "360 Hz"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "name": "Low Pass",
+    "label": "",
+    "steps": 6,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "OFF",
+    "id": "356364677",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "6 kHz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "8 kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "10 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "18 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "OFF"
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "name": "Equalizer",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "843529938",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "name": "Filter",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "872991608",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "name": "Comp Mix",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "100 %",
+    "id": "950464717",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0 %"
+      },
+      {
+        "normalized": 0.25,
+        "text": "25 %"
+      },
+      {
+        "normalized": 0.5,
+        "text": "50 %"
+      },
+      {
+        "normalized": 0.75,
+        "text": "75 %"
+      },
+      {
+        "normalized": 1.0,
+        "text": "100 %"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "name": "Comp High Pass Filter",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "950459087",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "32.9 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "90.0 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "208.3 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "400.0 Hz"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "name": "Comp Threshold",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.533333361148834,
+    "normalized": 0.533333361148834,
+    "text": "-4.00",
+    "id": "1938282012",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-20.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-12.50"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-5.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "2.50"
+      },
+      {
+        "normalized": 1.0,
+        "text": "10.00"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "name": "Comp Ratio",
+    "label": "",
+    "steps": 5,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "3:1",
+    "id": "720421436",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1.5:1"
+      },
+      {
+        "normalized": 0.25,
+        "text": "2:1"
+      },
+      {
+        "normalized": 0.5,
+        "text": "3:1"
+      },
+      {
+        "normalized": 0.75,
+        "text": "4:1"
+      },
+      {
+        "normalized": 1.0,
+        "text": "6:1"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "name": "Comp Gain",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.100000001490116,
+    "normalized": 0.100000001490116,
+    "text": "2.00",
+    "id": "1546932014",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "5.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "10.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "15.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.00"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "name": "Comp Recovery",
+    "label": "",
+    "steps": 5,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "AUTO",
+    "id": "1045107652",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "100 ms"
+      },
+      {
+        "normalized": 0.25,
+        "text": "400 ms"
+      },
+      {
+        "normalized": 0.5,
+        "text": "800 ms"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.5 s"
+      },
+      {
+        "normalized": 1.0,
+        "text": "AUTO"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "name": "Comp In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "792670356",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "name": "Comp Fast",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1546902539",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "name": "Comp Niveau",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "751155021",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "name": "Comp Smash",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1547159824",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "name": "Comp External Side Chain",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1298077496",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "name": "Gate Hysteresis",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.100000001490116,
+    "normalized": 0.100000001490116,
+    "text": "2.00",
+    "id": "417655138",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "5.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "10.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "15.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.00"
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "name": "Gate Threshold",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "-5.00",
+    "id": "1425402848",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-30.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-17.50"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-5.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.50"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.00"
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "name": "Gate Range",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "0.00",
+    "id": "758661938",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "15.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "30.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "45.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "60.00"
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "name": "Gate Recovery",
+    "label": "s",
+    "steps": 0,
+    "defaultNormalized": 0.698970019817352,
+    "normalized": 0.698970019817352,
+    "text": "0.50",
+    "id": "128005504",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.02"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.06"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.20"
+      },
+      {
+        "normalized": 0.75,
+        "text": "0.63"
+      },
+      {
+        "normalized": 1.0,
+        "text": "2.00"
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "name": "Gate In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "894455632",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "name": "Gate Fast",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "578304967",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "name": "Gate Expander",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1135502002",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "name": "Gate Inverted",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1554793696",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "name": "Gate External Side Chain",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1461058292",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "name": "Mute",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "3363353",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "name": "Phase",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "106629499",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "name": "Level",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.749999940395355,
+    "normalized": 0.749999940395355,
+    "text": "-0.00",
+    "id": "102865796",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-80.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-30.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-10.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "-0.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "10.00"
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "name": "TMT Channel",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "1",
+    "id": "1941368680",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1"
+      },
+      {
+        "normalized": 0.25,
+        "text": "9"
+      },
+      {
+        "normalized": 0.5,
+        "text": "16"
+      },
+      {
+        "normalized": 0.75,
+        "text": "24"
+      },
+      {
+        "normalized": 1.0,
+        "text": "32"
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "name": "TMT Link",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "953802677",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "name": "Input Level",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "-0.00",
+    "id": "1921125727",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-10.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-5.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-0.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "5.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "10.00"
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "name": "Output Level",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "-0.00",
+    "id": "36461782",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-10.00"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-5.00"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-0.00"
+      },
+      {
+        "normalized": 0.75,
+        "text": "5.00"
+      },
+      {
+        "normalized": 1.0,
+        "text": "10.00"
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "name": "Bypass",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1652125811",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "On"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "name": "Program",
+    "label": "",
+    "steps": 29,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Default",
+    "id": "1886548852",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Default"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Snare Crunch"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Dylan 3d Dresdow - Bitten Snare"
+      },
+      {
+        "normalized": 0.75,
+        "text": "Dylan 3d Dresdow - Nice Overheads"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Dylan 3d Dresdow - Vocal Love"
+      }
+    ]
+  }
+]

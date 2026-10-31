@@ -78,7 +78,7 @@ function checkProfile(profile, builtIn) {
 
 for (const f of readdirSync(join(root, 'examples/profiles'))) report(`examples/profiles/${f}`, checkProfile(read(`examples/profiles/${f}`), false));
 const ids = new Set();
-for (const f of readdirSync(join(root, 'profiles'))) {
+for (const f of readdirSync(join(root, 'profiles')).filter((n) => n.endsWith('.json'))) {
   const p = read(`profiles/${f}`);
   const problems = checkProfile(p, true);
   if (f !== `${p.id}.json`) problems.push(`file name must be ${p.id}.json`);

@@ -1,0 +1,1154 @@
+[
+  {
+    "index": 0,
+    "name": "Comp In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "0",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "name": "Eq In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "name": "Filter In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "2",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "name": "Eq Pre",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "3",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "name": "Eq SC",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "4",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "name": "Filter SC",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "5",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "name": "HP Freq",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "30.0 Hz",
+    "id": "6",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "30.0 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "77.5 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "125.0 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "187.5 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "400.0 Hz"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "name": "LP Freq",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "20.0 kHz",
+    "id": "7",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "3.0 kHz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "3.6 kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "5.0 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "9.0 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.0 kHz"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "name": "HF Gain",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "8",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "name": "HF Freq",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.373333364725113,
+    "normalized": 0.373333364725113,
+    "text": "4.3 kHz",
+    "id": "9",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1.5 kHz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "3.4 kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "5.5 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "8.8 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "22.0 kHz"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "name": "HMF Gain",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "10",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "name": "HMF Freq",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.485714286565781,
+    "normalized": 0.485714286565781,
+    "text": "2.1 kHz",
+    "id": "11",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.6 kHz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "1.4 kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "2.1 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "3.6 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "7.0 kHz"
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "name": "HMF Q",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.4",
+    "id": "12",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1.5"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.6"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.4"
+      },
+      {
+        "normalized": 0.75,
+        "text": "0.3"
+      },
+      {
+        "normalized": 1.0,
+        "text": "0.2"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "name": "LMF Gain",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "13",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0"
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "name": "LMF Freq",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.499999970197678,
+    "normalized": 0.499999970197678,
+    "text": "0.7 kHz",
+    "id": "14",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.2 kHz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.5 kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.7 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.1 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "2.0 kHz"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "name": "LMF Q",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.4",
+    "id": "15",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1.5"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.6"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.4"
+      },
+      {
+        "normalized": 0.75,
+        "text": "0.3"
+      },
+      {
+        "normalized": 1.0,
+        "text": "0.2"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "name": "LF Gain",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "16",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "name": "LF Freq",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.400000005960464,
+    "normalized": 0.400000005960464,
+    "text": "150.0 Hz",
+    "id": "17",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "40.0 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "105.0 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "185.0 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "280.0 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "600.0 Hz"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "name": "HF Bell",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "18",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "name": "LF Bell",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "19",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "name": "G",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "20",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "name": "Gain",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "21",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "name": "Volume",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "22",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "name": "Threshold",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.675000011920929,
+    "normalized": 0.675000011920929,
+    "text": "-10.0",
+    "id": "23",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "10.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "2.9"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-4.6"
+      },
+      {
+        "normalized": 0.75,
+        "text": "-12.3"
+      },
+      {
+        "normalized": 1.0,
+        "text": "-20.0"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "name": "Ratio",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.400000005960464,
+    "normalized": 0.400000005960464,
+    "text": "2.0",
+    "id": "24",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "1.6"
+      },
+      {
+        "normalized": 0.5,
+        "text": "3.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.0"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "name": "Release",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.400000005960464,
+    "normalized": 0.400000005960464,
+    "text": "0.4",
+    "id": "25",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.1"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.2"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.7"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.7"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "name": "Fast",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "26",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "name": "Peak",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "27",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "name": "Threshold Exp",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "-30.0",
+    "id": "28",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-30.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-18.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-6.9"
+      },
+      {
+        "normalized": 0.75,
+        "text": "2.9"
+      },
+      {
+        "normalized": 1.0,
+        "text": "10.0"
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "name": "Hold Exp",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "0.0 s",
+    "id": "29",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0 s"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.2 s"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.7 s"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.7 s"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0 s"
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "name": "Range",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "0.0",
+    "id": "30",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "10.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "20.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "30.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "40.0"
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "name": "Release Exp",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.7 s",
+    "id": "31",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.1 s"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.2 s"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.7 s"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.7 s"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0 s"
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "name": "Fast Exp",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "32",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "name": "Exp",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "33",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "name": "Phase",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "34",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.25,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.75,
+        "text": "On"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "name": "Bypass",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "0.0",
+    "id": "35",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.2"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.5"
+      },
+      {
+        "normalized": 0.75,
+        "text": "0.8"
+      },
+      {
+        "normalized": 1.0,
+        "text": "1.0"
+      }
+    ]
+  }
+]

@@ -1,0 +1,973 @@
+{
+  "$schema": "../schema/profile.schema.json",
+  "schemaVersion": 3,
+  "id": "waves.scheps-omni-channel-2",
+  "name": "Scheps Omni Channel 2",
+  "author": "Stripline",
+  "status": "verified",
+  "notes": "Knobs pass the plugin's own position through; the console prints the plugin's text. Stereo and Mono (name match). Only the main (left / stereo) set of controls is on the strip; the R copies for Duo and M/S modes stay in the plugin, as do the de-esser bands and inserts. EQ: LOW, TONE (on LO MID), MID (on HI MID), HIGH; their filter types are the EQ buttons. Gate range is the Floor knob, inverted.",
+  "plugin": {
+    "name": "Scheps Omni Channel 2",
+    "aliases": [],
+    "vendor": "Waves",
+    "scan": {
+      "files": [
+        "WaveShell"
+      ],
+      "shell": true,
+      "timeoutSeconds": 180
+    }
+  },
+  "mappings": {
+    "input.in": {
+      "param": {
+        "id": "15",
+        "index": 17,
+        "name": "Pre:On/Off"
+      },
+      "type": "switch"
+    },
+    "input.gain": {
+      "param": {
+        "id": "1",
+        "index": 3,
+        "name": "Input Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "input.trim": {
+      "available": false
+    },
+    "input.phase": {
+      "param": {
+        "id": "0",
+        "index": 2,
+        "name": "Invert L"
+      },
+      "type": "switch"
+    },
+    "filter.in": {
+      "available": false
+    },
+    "filter.hpf": {
+      "param": {
+        "id": "32",
+        "index": 34,
+        "name": "Pre:HP Cutoff Frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "filter.lpf": {
+      "param": {
+        "id": "38",
+        "index": 40,
+        "name": "Pre:LP Cutoff Frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.in": {
+      "param": {
+        "id": "141",
+        "index": 143,
+        "name": "EQ:On/Off"
+      },
+      "type": "switch"
+    },
+    "eq.lf.gain": {
+      "param": {
+        "id": "147",
+        "index": 149,
+        "name": "EQ:LF Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.freq": {
+      "param": {
+        "id": "150",
+        "index": 152,
+        "name": "EQ:LF Frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.q": {
+      "param": {
+        "id": "146",
+        "index": 148,
+        "name": "EQ:LF Q"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.bell": {
+      "available": false
+    },
+    "eq.lmf.gain": {
+      "param": {
+        "id": "153",
+        "index": 155,
+        "name": "EQ:Tone Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.freq": {
+      "param": {
+        "id": "152",
+        "index": 154,
+        "name": "EQ:Tone Frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.q": {
+      "param": {
+        "id": "151",
+        "index": 153,
+        "name": "EQ:Tone Q"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.gain": {
+      "param": {
+        "id": "158",
+        "index": 160,
+        "name": "EQ:Mid Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.freq": {
+      "param": {
+        "id": "157",
+        "index": 159,
+        "name": "EQ:Mid Frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.q": {
+      "param": {
+        "id": "156",
+        "index": 158,
+        "name": "EQ:Mid Q"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.gain": {
+      "param": {
+        "id": "163",
+        "index": 165,
+        "name": "EQ:HF Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.freq": {
+      "param": {
+        "id": "162",
+        "index": 164,
+        "name": "EQ:HF Frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.q": {
+      "param": {
+        "id": "161",
+        "index": 163,
+        "name": "EQ:HF Q"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.bell": {
+      "available": false
+    },
+    "dyn.in": {
+      "param": {
+        "id": "73",
+        "index": 75,
+        "name": "Comp:On/Off"
+      },
+      "type": "switch"
+    },
+    "comp.threshold": {
+      "param": {
+        "id": "83",
+        "index": 85,
+        "name": "Comp:Threshold"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.ratio": {
+      "param": {
+        "id": "77",
+        "index": 79,
+        "name": "Comp:Ratio"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.attack": {
+      "param": {
+        "id": "79",
+        "index": 81,
+        "name": "Comp:Attack"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.release": {
+      "param": {
+        "id": "81",
+        "index": 83,
+        "name": "Comp:Release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.makeup": {
+      "param": {
+        "id": "104",
+        "index": 106,
+        "name": "Comp:Out Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.mix": {
+      "param": {
+        "id": "85",
+        "index": 87,
+        "name": "Comp:Mix"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.in": {
+      "param": {
+        "id": "45",
+        "index": 47,
+        "name": "Gate:On/Off"
+      },
+      "type": "switch"
+    },
+    "gate.threshold": {
+      "param": {
+        "id": "48",
+        "index": 50,
+        "name": "Gate:Threshold"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.range": {
+      "param": {
+        "id": "50",
+        "index": 52,
+        "name": "Gate:Floor"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      },
+      "invert": true
+    },
+    "gate.release": {
+      "param": {
+        "id": "56",
+        "index": 58,
+        "name": "Gate:Release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.ratio": {
+      "available": false
+    },
+    "gate.exp": {
+      "param": {
+        "id": "58",
+        "index": 60,
+        "name": "Gate:Exp"
+      },
+      "type": "switch"
+    },
+    "output.fader": {
+      "param": {
+        "id": "4",
+        "index": 6,
+        "name": "Output Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    }
+  },
+  "extras": [
+    {
+      "id": "invR",
+      "label": "ØR",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "2",
+          "index": 4,
+          "name": "Invert R"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "deEss",
+      "label": "DS",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "110",
+          "index": 112,
+          "name": "DeEsser:On/Off"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "limOn",
+      "label": "LIM",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "10",
+          "index": 12,
+          "name": "Limit:On"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "limThr",
+      "label": "LIM",
+      "kind": "continuous",
+      "min": -30.0,
+      "max": 0.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "9",
+          "index": 11,
+          "name": "Limit:Threshold"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "sat",
+      "label": "SAT",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 100.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "22",
+          "index": 24,
+          "name": "Pre:Saturation"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "satOn",
+      "label": "SAT",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "18",
+          "index": 20,
+          "name": "Pre:Saturation On/Off"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "satType",
+      "label": "TYPE",
+      "kind": "stepped",
+      "steps": [
+        "ODD",
+        "EVEN",
+        "HVY",
+        "CRSH"
+      ],
+      "mapping": {
+        "param": {
+          "id": "19",
+          "index": 21,
+          "name": "Pre:Pre Type"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "thumpOn",
+      "label": "THMP",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "25",
+          "index": 27,
+          "name": "Pre:Thump On"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "thump",
+      "label": "THDB",
+      "kind": "stepped",
+      "steps": [
+        "+2",
+        "+4"
+      ],
+      "mapping": {
+        "param": {
+          "id": "24",
+          "index": 26,
+          "name": "Pre:Thump"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "hpfOn",
+      "label": "HPF",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "28",
+          "index": 30,
+          "name": "Pre:HP On/Off"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "hpfSlope",
+      "label": "HSLP",
+      "kind": "stepped",
+      "steps": [
+        "6",
+        "12",
+        "18",
+        "24"
+      ],
+      "mapping": {
+        "param": {
+          "id": "30",
+          "index": 32,
+          "name": "Pre:HP Slope"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "lpfOn",
+      "label": "LPF",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "34",
+          "index": 36,
+          "name": "Pre:LP On/Off"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "lpfSlope",
+      "label": "LSLP",
+      "kind": "stepped",
+      "steps": [
+        "6",
+        "12",
+        "18",
+        "24"
+      ],
+      "mapping": {
+        "param": {
+          "id": "36",
+          "index": 38,
+          "name": "Pre:LP Slope"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "hpRes",
+      "label": "HRES",
+      "kind": "continuous",
+      "min": 0.1,
+      "max": 4.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "41",
+          "index": 43,
+          "name": "Pre:HP Q"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "lpRes",
+      "label": "LRES",
+      "kind": "continuous",
+      "min": 0.1,
+      "max": 4.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "42",
+          "index": 44,
+          "name": "Pre:LP Q"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "lfType",
+      "label": "LFT",
+      "kind": "stepped",
+      "steps": [
+        "RSH",
+        "SHLF",
+        "PARA"
+      ],
+      "mapping": {
+        "param": {
+          "id": "145",
+          "index": 147,
+          "name": "EQ:LF Filter Type"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "toneType",
+      "label": "TNT",
+      "kind": "stepped",
+      "steps": [
+        "WIDE",
+        "NARR",
+        "PARA"
+      ],
+      "mapping": {
+        "param": {
+          "id": "149",
+          "index": 151,
+          "name": "EQ:Tone Filter Type"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "midType",
+      "label": "MDT",
+      "kind": "stepped",
+      "steps": [
+        "WIDE",
+        "NARR",
+        "PARA"
+      ],
+      "mapping": {
+        "param": {
+          "id": "155",
+          "index": 157,
+          "name": "EQ:Mid Filter Type"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "hfType",
+      "label": "HFT",
+      "kind": "stepped",
+      "steps": [
+        "RSH",
+        "SHLF",
+        "PARA"
+      ],
+      "mapping": {
+        "param": {
+          "id": "160",
+          "index": 162,
+          "name": "EQ:HF Filter Type"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "compType",
+      "label": "TYPE",
+      "kind": "stepped",
+      "steps": [
+        "VCA",
+        "FET",
+        "OPT",
+        "SOFT"
+      ],
+      "mapping": {
+        "param": {
+          "id": "75",
+          "index": 77,
+          "name": "Comp:Type"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "scHp",
+      "label": "SCHP",
+      "kind": "continuous",
+      "min": 20.0,
+      "max": 20000.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "87",
+          "index": 89,
+          "name": "Comp:SC HP F"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "scHpOn",
+      "label": "SCHP",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "97",
+          "index": 99,
+          "name": "Comp:SC HP On/Off"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "compKey",
+      "label": "KEY",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "106",
+          "index": 108,
+          "name": "Comp:ExtSC"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "gClose",
+      "label": "CLOS",
+      "kind": "continuous",
+      "min": -48.0,
+      "max": 0.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "52",
+          "index": 54,
+          "name": "Gate:Close"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "gAtk",
+      "label": "ATK",
+      "kind": "continuous",
+      "min": 0.1,
+      "max": 1000.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "54",
+          "index": 56,
+          "name": "Gate:Attack"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "gKeyHp",
+      "label": "KHP",
+      "kind": "continuous",
+      "min": 20.0,
+      "max": 20000.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "65",
+          "index": 67,
+          "name": "Gate:HP F"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "gKeyLp",
+      "label": "KLP",
+      "kind": "continuous",
+      "min": 20.0,
+      "max": 20000.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "69",
+          "index": 71,
+          "name": "Gate:LP F"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "gKeyHpOn",
+      "label": "KHP",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "63",
+          "index": 65,
+          "name": "Gate:HP On/Off"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "gKeyLpOn",
+      "label": "KLP",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "67",
+          "index": 69,
+          "name": "Gate:LP On/Off"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "gKey",
+      "label": "KEY",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "62",
+          "index": 64,
+          "name": "Gate:ExtSC"
+        },
+        "type": "switch"
+      }
+    }
+  ],
+  "strip": {
+    "global": [
+      {
+        "control": "input.phase",
+        "label": "ØL"
+      },
+      {
+        "control": "x.invR",
+        "label": "ØR"
+      },
+      {
+        "control": "x.deEss",
+        "label": "DS"
+      },
+      {
+        "control": "x.limOn",
+        "label": "LIM"
+      }
+    ],
+    "in": {
+      "knobs": [
+        "x.sat",
+        "x.limThr"
+      ],
+      "buttons": [
+        "x.satOn",
+        "x.satType",
+        "x.thumpOn",
+        "x.thump"
+      ]
+    },
+    "filt": {
+      "knobs": [
+        "x.hpRes",
+        "x.lpRes"
+      ],
+      "buttons": [
+        "x.hpfOn",
+        "x.hpfSlope",
+        "x.lpfOn",
+        "x.lpfSlope"
+      ]
+    },
+    "eq": {
+      "buttons": [
+        "x.lfType",
+        "x.toneType",
+        "x.midType",
+        "x.hfType"
+      ]
+    },
+    "comp": {
+      "knobs": [
+        {
+          "control": "comp.makeup",
+          "label": "GAIN"
+        },
+        {
+          "control": "comp.mix",
+          "label": "MIX"
+        },
+        "x.scHp"
+      ],
+      "buttons": [
+        "x.compType",
+        "x.scHpOn",
+        "x.compKey"
+      ]
+    },
+    "gate": {
+      "knobs": [
+        "x.gClose",
+        "x.gAtk",
+        "x.gKeyHp",
+        "x.gKeyLp"
+      ],
+      "buttons": [
+        "x.gKeyHpOn",
+        "x.gKeyLpOn",
+        "x.gKey"
+      ]
+    },
+    "colors": {
+      "input.gain": {
+        "cap": "#D9D9D9"
+      },
+      "comp.threshold": {
+        "cap": "#D9D9D9"
+      },
+      "gate.threshold": {
+        "cap": "#D9D9D9"
+      }
+    }
+  },
+  "skin": {
+    "panel": "#232427",
+    "header": "#1B1C1E",
+    "line": "#36383C",
+    "title": "#F08A3C",
+    "label": "#C9CBCF",
+    "value": "#EDEDEF",
+    "track": "#3A3C40",
+    "ticks": "#8F9297",
+    "arc": "#F08A3C",
+    "cap": "#2C2D30",
+    "inset": "transparent",
+    "switchOff": [
+      "#2E2F33",
+      "#4A4C51",
+      "#C9CBCF"
+    ],
+    "switchOn": [
+      "#F08A3C",
+      "#F08A3C",
+      "#1A1A1A"
+    ]
+  }
+}

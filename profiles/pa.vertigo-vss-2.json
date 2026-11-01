@@ -1,0 +1,655 @@
+{
+  "$schema": "../schema/profile.schema.json",
+  "schemaVersion": 3,
+  "id": "pa.vertigo-vss-2",
+  "name": "Vertigo VSS-2",
+  "author": "Stripline",
+  "status": "verified",
+  "notes": "Knobs pass the plugin's own position through; the console prints the plugin's text. No gate. The Tube Saturator is in the IN section's own knobs and buttons (SAT F, its filter, is a global button). BELL on LF and HF is the plugin's Alt Curve switch; the mid bands' Alt Curve are LM~ and HM~.",
+  "plugin": {
+    "name": "Vertigo VSS-2",
+    "aliases": [],
+    "vendor": "Plugin Alliance",
+    "uids": {
+      "VST3": "VST3-Vertigo VSS-2-328f07be-1b24610a"
+    },
+    "scan": {
+      "files": [
+        "Vertigo VSS-2"
+      ]
+    }
+  },
+  "mappings": {
+    "input.in": {
+      "available": false
+    },
+    "input.gain": {
+      "param": {
+        "id": "1386281684",
+        "index": 1,
+        "name": "Input Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "input.trim": {
+      "available": false
+    },
+    "input.phase": {
+      "available": false
+    },
+    "filter.in": {
+      "param": {
+        "id": "1266111308",
+        "index": 3,
+        "name": "Filter In"
+      },
+      "type": "switch"
+    },
+    "filter.hpf": {
+      "param": {
+        "id": "195904953",
+        "index": 5,
+        "name": "HPF Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "filter.lpf": {
+      "param": {
+        "id": "724695349",
+        "index": 8,
+        "name": "LPF Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.in": {
+      "param": {
+        "id": "96736664",
+        "index": 18,
+        "name": "EQ In"
+      },
+      "type": "switch"
+    },
+    "eq.lf.gain": {
+      "param": {
+        "id": "1941190696",
+        "index": 23,
+        "name": "EQ Lo Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.freq": {
+      "param": {
+        "id": "1941177121",
+        "index": 21,
+        "name": "EQ Lo Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.q": {
+      "available": false
+    },
+    "eq.lf.bell": {
+      "param": {
+        "id": "1064882128",
+        "index": 22,
+        "name": "EQ Lo Alt Curve"
+      },
+      "type": "switch"
+    },
+    "eq.lmf.gain": {
+      "param": {
+        "id": "905956108",
+        "index": 27,
+        "name": "EQ LoMid Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.freq": {
+      "param": {
+        "id": "905942533",
+        "index": 25,
+        "name": "EQ LoMid Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.q": {
+      "available": false
+    },
+    "eq.hmf.gain": {
+      "param": {
+        "id": "1799318666",
+        "index": 31,
+        "name": "EQ HiMid Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.freq": {
+      "param": {
+        "id": "1799305091",
+        "index": 29,
+        "name": "EQ HiMid Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.q": {
+      "available": false
+    },
+    "eq.hf.gain": {
+      "param": {
+        "id": "366884714",
+        "index": 35,
+        "name": "EQ Hi Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.freq": {
+      "param": {
+        "id": "366871139",
+        "index": 33,
+        "name": "EQ Hi Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.q": {
+      "available": false
+    },
+    "eq.hf.bell": {
+      "param": {
+        "id": "592841166",
+        "index": 34,
+        "name": "EQ Hi Alt Curve"
+      },
+      "type": "switch"
+    },
+    "dyn.in": {
+      "param": {
+        "id": "950482005",
+        "index": 10,
+        "name": "Comp In"
+      },
+      "type": "switch"
+    },
+    "comp.threshold": {
+      "param": {
+        "id": "2036942651",
+        "index": 11,
+        "name": "Comp Threshold"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.ratio": {
+      "param": {
+        "id": "1245551323",
+        "index": 16,
+        "name": "Comp Ratio"
+      },
+      "type": "stepped",
+      "auto": true
+    },
+    "comp.attack": {
+      "param": {
+        "id": "1635712376",
+        "index": 12,
+        "name": "Comp Attack"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.release": {
+      "param": {
+        "id": "933428951",
+        "index": 13,
+        "name": "Comp Release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.makeup": {
+      "param": {
+        "id": "1961451577",
+        "index": 15,
+        "name": "Comp Makeup"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.mix": {
+      "available": false
+    },
+    "gate.in": {
+      "available": false
+    },
+    "gate.threshold": {
+      "available": false
+    },
+    "gate.range": {
+      "available": false
+    },
+    "gate.release": {
+      "available": false
+    },
+    "gate.ratio": {
+      "available": false
+    },
+    "gate.exp": {
+      "available": false
+    },
+    "output.fader": {
+      "param": {
+        "id": "1322673149",
+        "index": 2,
+        "name": "Output Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    }
+  },
+  "extras": [
+    {
+      "id": "drive",
+      "label": "DRV",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 100.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "389395441",
+          "index": 39,
+          "name": "Sat Drive"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "satLevel",
+      "label": "LVL",
+      "kind": "continuous",
+      "min": -20.0,
+      "max": 20.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "396408299",
+          "index": 40,
+          "name": "Sat Level"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "shape",
+      "label": "SHP",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 100.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "402942472",
+          "index": 41,
+          "name": "Sat Shape"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "satMix",
+      "label": "MIX",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 100.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "1870802563",
+          "index": 42,
+          "name": "Sat Mix"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "satIn",
+      "label": "SAT",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1238000670",
+          "index": 36,
+          "name": "Sat In"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "satPost",
+      "label": "POST",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "12916057",
+          "index": 37,
+          "name": "Sat Post"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "tube",
+      "label": "TUBE",
+      "kind": "stepped",
+      "steps": [
+        "TRI",
+        "PENT"
+      ],
+      "mapping": {
+        "param": {
+          "id": "13040445",
+          "index": 43,
+          "name": "Sat Tube"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "style",
+      "label": "STYL",
+      "kind": "stepped",
+      "steps": [
+        "I",
+        "II"
+      ],
+      "mapping": {
+        "param": {
+          "id": "403322904",
+          "index": 44,
+          "name": "Sat Style"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "satFilter",
+      "label": "SAT F",
+      "kind": "stepped",
+      "steps": [
+        "LOW",
+        "MID",
+        "HMID",
+        "HIGH",
+        "FULL",
+        "TRK"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1382874609",
+          "index": 38,
+          "name": "Sat Filter"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "hpfIn",
+      "label": "HPF",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "936515750",
+          "index": 4,
+          "name": "HPF In"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "hpfSlope",
+      "label": "HSLP",
+      "kind": "stepped",
+      "steps": [
+        "6",
+        "12"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1789922954",
+          "index": 6,
+          "name": "HPF Slope"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "lpfIn",
+      "label": "LPF",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1051032354",
+          "index": 7,
+          "name": "LPF In"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "lpfSlope",
+      "label": "LSLP",
+      "kind": "stepped",
+      "steps": [
+        "6",
+        "12"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1002556046",
+          "index": 9,
+          "name": "LPF Slope"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "eqPre",
+      "label": "EQ PRE",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "851359888",
+          "index": 19,
+          "name": "EQ Pre"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "lmAlt",
+      "label": "LM~",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1554606956",
+          "index": 26,
+          "name": "EQ LoMid Alt Curve"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "hmAlt",
+      "label": "HM~",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "705235118",
+          "index": 30,
+          "name": "EQ HiMid Alt Curve"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "autoRel",
+      "label": "AUTO",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1432189095",
+          "index": 14,
+          "name": "Comp Auto Release"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "scFilter",
+      "label": "SCF",
+      "kind": "stepped",
+      "steps": [
+        "OFF",
+        "90",
+        "120"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1909613335",
+          "index": 17,
+          "name": "Comp SC Filter"
+        },
+        "type": "even"
+      }
+    }
+  ],
+  "strip": {
+    "global": [
+      {
+        "control": "x.eqPre",
+        "label": "EQ PRE"
+      },
+      {
+        "control": "x.satFilter",
+        "label": "SAT F"
+      }
+    ],
+    "in": {
+      "knobs": [
+        "x.drive",
+        "x.satLevel",
+        "x.shape",
+        "x.satMix"
+      ],
+      "buttons": [
+        "x.satIn",
+        "x.satPost",
+        "x.tube",
+        "x.style"
+      ]
+    },
+    "filt": {
+      "buttons": [
+        "x.hpfIn",
+        "x.hpfSlope",
+        "x.lpfIn",
+        "x.lpfSlope"
+      ]
+    },
+    "eq": {
+      "buttons": [
+        "x.lmAlt",
+        "x.hmAlt"
+      ]
+    },
+    "comp": {
+      "knobs": [
+        {
+          "control": "comp.makeup",
+          "label": "GAIN"
+        }
+      ],
+      "buttons": [
+        "x.autoRel",
+        "x.scFilter"
+      ]
+    }
+  },
+  "skin": {
+    "panel": "#CBCCCE",
+    "header": "#BDBEC0",
+    "line": "#AAACAF",
+    "title": "#141516",
+    "label": "#2C2E31",
+    "value": "#0F1011",
+    "track": "#B3B5B8",
+    "ticks": "#3A3D40",
+    "arc": "#141516",
+    "cap": "#151617",
+    "inset": "transparent",
+    "switchOff": [
+      "#E7E8E9",
+      "#8F9296",
+      "#1A1B1D"
+    ],
+    "switchOn": [
+      "#F0A030",
+      "#F0A030",
+      "#141516"
+    ]
+  }
+}

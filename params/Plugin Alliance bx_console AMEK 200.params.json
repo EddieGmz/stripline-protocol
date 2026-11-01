@@ -1,0 +1,5102 @@
+[
+  {
+    "index": 0,
+    "name": "Power",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1349482354",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 1,
+    "name": "Bank",
+    "label": "",
+    "steps": 4,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "A",
+    "id": "1113681515",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "A"
+      },
+      {
+        "normalized": 0.333333343267441,
+        "text": "B"
+      },
+      {
+        "normalized": 0.666666686534882,
+        "text": "C"
+      },
+      {
+        "normalized": 1.0,
+        "text": "D"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 2,
+    "name": "Monitoring",
+    "label": "",
+    "steps": 3,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Stereo",
+    "id": "1299084402",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Stereo"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Mid"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Side"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 3,
+    "name": "Meter Position",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Output",
+    "id": "1231965556",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Output"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Input"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 4,
+    "name": "Mute",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1299543141",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 5,
+    "name": "Phase",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1349022565",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 6,
+    "name": "V-Gain",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.300000011920929,
+    "normalized": 0.300000011920929,
+    "text": "-105.0",
+    "id": "1449740142",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-oo"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-117.5"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-115.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-112.5"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-110.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-107.5"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-105.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-102.5"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-100.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-97.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-95.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "-92.5"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "-90.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "-87.5"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "-85.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "-82.5"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "-80.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "-77.5"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "-75.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "-72.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "-70.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 7,
+    "name": "THD",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "-75",
+    "id": "1884571716",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-115"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-111"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-106"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-102"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-98"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-93"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-89"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-84"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-80"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-75"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "-70"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "-66"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "-62"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "-57"
+      },
+      {
+        "normalized": 0.75,
+        "text": "-53"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "-48"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "-43"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "-39"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "-35"
+      },
+      {
+        "normalized": 1.0,
+        "text": "-30"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 8,
+    "name": "Input Gain",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "1231964014",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-10.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-9.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-8.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-7.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-6.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-5.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-4.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-3.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-2.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "+1.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "+2.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "+3.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "+4.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "+5.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "+6.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "+7.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "+8.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "+9.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "+10.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 9,
+    "name": "Output Gain",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.75,
+    "normalized": 0.75,
+    "text": "0.0",
+    "id": "1333097543",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-120.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-88.5"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-57.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-39.1"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-35.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-30.9"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-26.9"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-22.9"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-18.8"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-14.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-10.2"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "-8.2"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "-6.1"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "-4.1"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "-2.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "+2.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "+4.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "+6.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "+8.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "+10.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 10,
+    "name": "Console Channel",
+    "label": "",
+    "steps": 72,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "1",
+    "id": "1128491084",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1"
+      },
+      {
+        "normalized": 0.014084506779909,
+        "text": "2"
+      },
+      {
+        "normalized": 0.028169013559818,
+        "text": "3"
+      },
+      {
+        "normalized": 0.042253520339727,
+        "text": "4"
+      },
+      {
+        "normalized": 0.056338027119637,
+        "text": "5"
+      },
+      {
+        "normalized": 0.070422537624836,
+        "text": "6"
+      },
+      {
+        "normalized": 0.084507040679455,
+        "text": "7"
+      },
+      {
+        "normalized": 0.098591551184654,
+        "text": "8"
+      },
+      {
+        "normalized": 0.112676054239273,
+        "text": "9"
+      },
+      {
+        "normalized": 0.126760557293892,
+        "text": "10"
+      },
+      {
+        "normalized": 0.140845075249672,
+        "text": "11"
+      },
+      {
+        "normalized": 0.154929578304291,
+        "text": "12"
+      },
+      {
+        "normalized": 0.16901408135891,
+        "text": "13"
+      },
+      {
+        "normalized": 0.183098584413528,
+        "text": "14"
+      },
+      {
+        "normalized": 0.197183102369308,
+        "text": "15"
+      },
+      {
+        "normalized": 0.211267605423927,
+        "text": "16"
+      },
+      {
+        "normalized": 0.225352108478546,
+        "text": "17"
+      },
+      {
+        "normalized": 0.239436626434326,
+        "text": "18"
+      },
+      {
+        "normalized": 0.253521114587784,
+        "text": "19"
+      },
+      {
+        "normalized": 0.267605632543564,
+        "text": "20"
+      },
+      {
+        "normalized": 0.281690150499344,
+        "text": "21"
+      },
+      {
+        "normalized": 0.295774638652802,
+        "text": "22"
+      },
+      {
+        "normalized": 0.309859156608582,
+        "text": "23"
+      },
+      {
+        "normalized": 0.323943674564362,
+        "text": "24"
+      },
+      {
+        "normalized": 0.338028162717819,
+        "text": "25"
+      },
+      {
+        "normalized": 0.352112680673599,
+        "text": "26"
+      },
+      {
+        "normalized": 0.366197168827057,
+        "text": "27"
+      },
+      {
+        "normalized": 0.380281686782837,
+        "text": "28"
+      },
+      {
+        "normalized": 0.394366204738617,
+        "text": "29"
+      },
+      {
+        "normalized": 0.408450692892075,
+        "text": "30"
+      },
+      {
+        "normalized": 0.422535210847855,
+        "text": "31"
+      },
+      {
+        "normalized": 0.436619728803635,
+        "text": "32"
+      },
+      {
+        "normalized": 0.450704216957092,
+        "text": "33"
+      },
+      {
+        "normalized": 0.464788734912872,
+        "text": "34"
+      },
+      {
+        "normalized": 0.478873252868652,
+        "text": "35"
+      },
+      {
+        "normalized": 0.49295774102211,
+        "text": "36"
+      },
+      {
+        "normalized": 0.507042229175568,
+        "text": "37"
+      },
+      {
+        "normalized": 0.521126747131348,
+        "text": "38"
+      },
+      {
+        "normalized": 0.535211265087128,
+        "text": "39"
+      },
+      {
+        "normalized": 0.549295783042908,
+        "text": "40"
+      },
+      {
+        "normalized": 0.563380300998688,
+        "text": "41"
+      },
+      {
+        "normalized": 0.577464759349823,
+        "text": "42"
+      },
+      {
+        "normalized": 0.591549277305603,
+        "text": "43"
+      },
+      {
+        "normalized": 0.605633795261383,
+        "text": "44"
+      },
+      {
+        "normalized": 0.619718313217163,
+        "text": "45"
+      },
+      {
+        "normalized": 0.633802831172943,
+        "text": "46"
+      },
+      {
+        "normalized": 0.647887349128723,
+        "text": "47"
+      },
+      {
+        "normalized": 0.661971807479858,
+        "text": "48"
+      },
+      {
+        "normalized": 0.676056325435638,
+        "text": "49"
+      },
+      {
+        "normalized": 0.690140843391418,
+        "text": "50"
+      },
+      {
+        "normalized": 0.704225361347198,
+        "text": "51"
+      },
+      {
+        "normalized": 0.718309879302979,
+        "text": "52"
+      },
+      {
+        "normalized": 0.732394337654114,
+        "text": "53"
+      },
+      {
+        "normalized": 0.746478855609894,
+        "text": "54"
+      },
+      {
+        "normalized": 0.760563373565674,
+        "text": "55"
+      },
+      {
+        "normalized": 0.774647891521454,
+        "text": "56"
+      },
+      {
+        "normalized": 0.788732409477234,
+        "text": "57"
+      },
+      {
+        "normalized": 0.802816927433014,
+        "text": "58"
+      },
+      {
+        "normalized": 0.816901385784149,
+        "text": "59"
+      },
+      {
+        "normalized": 0.830985903739929,
+        "text": "60"
+      },
+      {
+        "normalized": 0.845070421695709,
+        "text": "61"
+      },
+      {
+        "normalized": 0.859154939651489,
+        "text": "62"
+      },
+      {
+        "normalized": 0.873239457607269,
+        "text": "63"
+      },
+      {
+        "normalized": 0.887323915958405,
+        "text": "64"
+      },
+      {
+        "normalized": 0.901408433914185,
+        "text": "65"
+      },
+      {
+        "normalized": 0.915492951869965,
+        "text": "66"
+      },
+      {
+        "normalized": 0.929577469825745,
+        "text": "67"
+      },
+      {
+        "normalized": 0.943661987781525,
+        "text": "68"
+      },
+      {
+        "normalized": 0.957746505737305,
+        "text": "69"
+      },
+      {
+        "normalized": 0.97183096408844,
+        "text": "70"
+      },
+      {
+        "normalized": 0.98591548204422,
+        "text": "71"
+      },
+      {
+        "normalized": 1.0,
+        "text": "72"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 11,
+    "name": "Stereo Mode",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Analog",
+    "id": "1400130927",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Analog"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Digital"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 12,
+    "name": "Mono Maker In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1296910702",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 13,
+    "name": "Mono Maker",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "20 Hz",
+    "id": "1299139937",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "20 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "25 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "32 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "40 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "50 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "63 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "80 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "100 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "126 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "159 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "200 Hz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "252 Hz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "317 Hz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "399 Hz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "502 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "632 Hz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "796 Hz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "1.00 kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "1.26 kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "1.59 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "2.00 kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 14,
+    "name": "Stereo Width In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1398229358",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 15,
+    "name": "Stereo Width",
+    "label": "%",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "100",
+    "id": "1400133481",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "10"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "20"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "30"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "40"
+      },
+      {
+        "normalized": 0.25,
+        "text": "50"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "60"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "70"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "80"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "90"
+      },
+      {
+        "normalized": 0.5,
+        "text": "100"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "120"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "140"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "160"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "180"
+      },
+      {
+        "normalized": 0.75,
+        "text": "200"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "240"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "280"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "320"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "360"
+      },
+      {
+        "normalized": 1.0,
+        "text": "400"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 16,
+    "name": "Balance L/R",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "C",
+    "id": "1113672786",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "100 % R"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "90 % R"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "80 % R"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "70 % R"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "60 % R"
+      },
+      {
+        "normalized": 0.25,
+        "text": "50 % R"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "40 % R"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "30 % R"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "20 % R"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "10 % R"
+      },
+      {
+        "normalized": 0.5,
+        "text": "C"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "10 % L"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "20 % L"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "30 % L"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "40 % L"
+      },
+      {
+        "normalized": 0.75,
+        "text": "50 % L"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "60 % L"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "70 % L"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "80 % L"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "90 % L"
+      },
+      {
+        "normalized": 1.0,
+        "text": "100 % L"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 17,
+    "name": "Filter Position",
+    "label": "",
+    "steps": 3,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Input",
+    "id": "1181503599",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Input"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Post Dyn"
+      },
+      {
+        "normalized": 1.0,
+        "text": "In SC"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 18,
+    "name": "High Pass Filter In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "In",
+    "id": "1213221230",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Out"
+      },
+      {
+        "normalized": 1.0,
+        "text": "In"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 19,
+    "name": "High Pass Filter",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "20 Hz",
+    "id": "1213220465",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "20 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "28 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "40 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "56 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "80 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "112 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "159 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "224 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "317 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "448 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "632 Hz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "893 Hz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "1.26kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "1.78kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "2.52kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "3.56kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "5.02kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "7.10kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "10.02kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "14.16kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.00kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 20,
+    "name": "Low Pass Filter In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "In",
+    "id": "1280330094",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Out"
+      },
+      {
+        "normalized": 1.0,
+        "text": "In"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 21,
+    "name": "Low Pass Filter",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "30.00kHz",
+    "id": "1280329329",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "20 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "29 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "42 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "60 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "86 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "124 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "179 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "259 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "373 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "537 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "775 Hz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.12kHz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "1.61kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "2.32kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "3.34kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "4.82kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "6.95kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "10.02kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "14.44kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "20.81kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "30.00kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 22,
+    "name": "EQ On/Off",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1165053806",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 23,
+    "name": "EQ Position",
+    "label": "",
+    "steps": 3,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "Post Dyn",
+    "id": "1162956911",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Pre Dyn"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Post Dyn"
+      },
+      {
+        "normalized": 1.0,
+        "text": "In SC"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 24,
+    "name": "LF Band In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "In",
+    "id": "1818649136",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Out"
+      },
+      {
+        "normalized": 1.0,
+        "text": "In"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 25,
+    "name": "LF Frequency",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "80 Hz",
+    "id": "1818650160",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "15 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "16 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "17 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "18 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "19 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "22 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "24 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "32 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "40 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "60 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "80 Hz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "105 Hz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "130 Hz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "155 Hz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "180 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "210 Hz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "240 Hz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "330 Hz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "420 Hz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "600 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "780 Hz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 26,
+    "name": "LF Q",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Shelf",
+    "id": "1818652976",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Shelf"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "Shelf"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "0.4"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "0.6"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "0.8"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.9"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "1.1"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.3"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.5"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.6"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.8"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "2.2"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "2.4"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "2.7"
+      },
+      {
+        "normalized": 0.75,
+        "text": "2.9"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "3.1"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "3.3"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "3.6"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.8"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 27,
+    "name": "LF Gain",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "1818650416",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-13.5"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-12.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-10.5"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-9.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-6.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-4.5"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-3.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "+1.5"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "+3.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "+4.5"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "+6.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "+7.5"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "+9.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "+10.5"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "+12.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "+13.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "+15.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 28,
+    "name": "LMF Band In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "In",
+    "id": "1819107888",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Out"
+      },
+      {
+        "normalized": 1.0,
+        "text": "In"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 29,
+    "name": "LMF Frequency",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "80 Hz",
+    "id": "1819108912",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "15 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "16 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "17 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "18 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "19 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "22 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "24 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "32 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "40 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "60 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "80 Hz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "105 Hz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "130 Hz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "155 Hz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "180 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "210 Hz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "240 Hz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "330 Hz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "420 Hz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "600 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "780 Hz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 30,
+    "name": "LMF Q",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.550000011920929,
+    "normalized": 0.550000011920929,
+    "text": "2.0",
+    "id": "1819111728",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Shelf"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "Shelf"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "0.4"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "0.6"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "0.8"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.9"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "1.1"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.3"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.5"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.6"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.8"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "2.2"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "2.4"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "2.7"
+      },
+      {
+        "normalized": 0.75,
+        "text": "2.9"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "3.1"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "3.3"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "3.6"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.8"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 31,
+    "name": "LMF Gain",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "1819109168",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-13.5"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-12.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-10.5"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-9.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-6.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-4.5"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-3.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "+1.5"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "+3.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "+4.5"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "+6.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "+7.5"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "+9.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "+10.5"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "+12.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "+13.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "+15.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 32,
+    "name": "MF Band In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "In",
+    "id": "1835426352",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Out"
+      },
+      {
+        "normalized": 1.0,
+        "text": "In"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 33,
+    "name": "MF Frequency",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "580 Hz",
+    "id": "1835427376",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "120 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "130 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "140 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "150 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "160 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "190 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "220 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "260 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "300 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "440 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "580 Hz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "790 Hz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "1.00kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "1.25kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "1.50kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.75kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "2.00kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "2.50kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "3.00kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "5.40kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "7.80kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 34,
+    "name": "MF Q",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "2.0",
+    "id": "1835430192",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.4"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "0.6"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "0.7"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "0.9"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "1.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "1.2"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "1.4"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.5"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.7"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.8"
+      },
+      {
+        "normalized": 0.5,
+        "text": "2.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.2"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "2.4"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "2.6"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "2.8"
+      },
+      {
+        "normalized": 0.75,
+        "text": "3.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "3.2"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "3.4"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "3.6"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.8"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 35,
+    "name": "MF Gain",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "1835427632",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-13.5"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-12.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-10.5"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-9.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-6.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-4.5"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-3.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "+1.5"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "+3.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "+4.5"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "+6.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "+7.5"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "+9.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "+10.5"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "+12.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "+13.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "+15.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 36,
+    "name": "HMF Band In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "In",
+    "id": "1751999024",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Out"
+      },
+      {
+        "normalized": 1.0,
+        "text": "In"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 37,
+    "name": "HMF Frequency",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "1.80kHz",
+    "id": "1752000048",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "370 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "385 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "400 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "425 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "450 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "515 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "580 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "700 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "820 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.31kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.80kHz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.65kHz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "3.50kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "4.35kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "5.20kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "6.60kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "8.00kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "9.50kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "11.00kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "18.50kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "26.00kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 38,
+    "name": "HMF Q",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.550000011920929,
+    "normalized": 0.550000011920929,
+    "text": "2.0",
+    "id": "1752002864",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Shelf"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "Shelf"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "0.4"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "0.6"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "0.8"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.9"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "1.1"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.3"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.5"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.6"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.8"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "2.2"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "2.4"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "2.7"
+      },
+      {
+        "normalized": 0.75,
+        "text": "2.9"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "3.1"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "3.3"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "3.6"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.8"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 39,
+    "name": "HMF Gain",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "1752000304",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-13.5"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-12.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-10.5"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-9.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-6.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-4.5"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-3.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "+1.5"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "+3.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "+4.5"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "+6.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "+7.5"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "+9.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "+10.5"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "+12.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "+13.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "+15.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 40,
+    "name": "HF Band In",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "In",
+    "id": "1751540272",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Out"
+      },
+      {
+        "normalized": 1.0,
+        "text": "In"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 41,
+    "name": "HF Frequency",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "1.80kHz",
+    "id": "1751541296",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "370 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "385 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "400 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "425 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "450 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "515 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "580 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "700 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "820 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.31kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.80kHz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.65kHz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "3.50kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "4.35kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "5.20kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "6.60kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "8.00kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "9.50kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "11.00kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "18.50kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "26.00kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 42,
+    "name": "HF Q",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Shelf",
+    "id": "1751544112",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Shelf"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "Shelf"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "0.4"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "0.6"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "0.8"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.9"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "1.1"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.3"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.5"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.6"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.8"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "2.2"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "2.4"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "2.7"
+      },
+      {
+        "normalized": 0.75,
+        "text": "2.9"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "3.1"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "3.3"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "3.6"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.8"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 43,
+    "name": "HF Gain",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0",
+    "id": "1751541552",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-13.5"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-12.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-10.5"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-9.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-6.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-4.5"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-3.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.5"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "+1.5"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "+3.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "+4.5"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "+6.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "+7.5"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "+9.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "+10.5"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "+12.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "+13.5"
+      },
+      {
+        "normalized": 1.0,
+        "text": "+15.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 44,
+    "name": "Gain Scale",
+    "label": " %",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "100",
+    "id": "1735291747",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "10"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "20"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "30"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "40"
+      },
+      {
+        "normalized": 0.25,
+        "text": "50"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "60"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "70"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "80"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "90"
+      },
+      {
+        "normalized": 0.5,
+        "text": "100"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "110"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "120"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "130"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "140"
+      },
+      {
+        "normalized": 0.75,
+        "text": "150"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "160"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "170"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "180"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "190"
+      },
+      {
+        "normalized": 1.0,
+        "text": "200"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 45,
+    "name": "Gain Scale Invert",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1735289206",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 46,
+    "name": "Auto Listen",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1098216559",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 47,
+    "name": "Dyn External Key",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1165513571",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 48,
+    "name": "Gate/Exp On/Off",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1198804846",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 49,
+    "name": "Gate/Expander Mode",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "Expander",
+    "id": "1195735152",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Gate"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Expander"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 50,
+    "name": "Gate/Exp Thresh",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.300000011920929,
+    "normalized": 0.300000011920929,
+    "text": "-54.0",
+    "id": "1196714098",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-72.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-69.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-66.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-63.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-60.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-57.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-54.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-51.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-48.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-45.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-42.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "-39.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "-36.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "-33.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "-30.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "-27.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "-24.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "-21.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "-18.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "-12.0"
+      }
+    ],
+    "textFromCurrentValue": true
+  },
+  {
+    "index": 51,
+    "name": "Gate/Exp Thresh Range",
+    "label": " dB",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "-30",
+    "id": "1196714066",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "-30"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 52,
+    "name": "Gate/Exp Range",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "-24.0",
+    "id": "1196584551",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-2.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-4.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-6.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-8.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-10.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-12.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-18.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-21.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-24.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "-27.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "-30.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "-35.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "-40.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "-50.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "-60.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "-70.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "-80.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "-90.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "-100.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 53,
+    "name": "Gate/Exp Invert",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1195994742",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 54,
+    "name": "Gate Hold",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.300000011920929,
+    "normalized": 0.300000011920929,
+    "text": "200 ms",
+    "id": "1195929452",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "10 ms"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "30 ms"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "50 ms"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "75 ms"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "100 ms"
+      },
+      {
+        "normalized": 0.25,
+        "text": "150 ms"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "200 ms"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "250 ms"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "300 ms"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "350 ms"
+      },
+      {
+        "normalized": 0.5,
+        "text": "400 ms"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "550 ms"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "700 ms"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "950 ms"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "1.2 s"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.6 s"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "2.0 s"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "2.5 s"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "3.0 s"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.5 s"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0 s"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 55,
+    "name": "Expander Ratio",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "2.0:1",
+    "id": "1195735122",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1.0:1"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "1.1:1"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "1.2:1"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "1.3:1"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "1.4:1"
+      },
+      {
+        "normalized": 0.25,
+        "text": "1.5:1"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "1.6:1"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.7:1"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.8:1"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.9:1"
+      },
+      {
+        "normalized": 0.5,
+        "text": "2.0:1"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.2:1"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "2.3:1"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "2.4:1"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "2.6:1"
+      },
+      {
+        "normalized": 0.75,
+        "text": "2.8:1"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "3.0:1"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "3.3:1"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "3.5:1"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.7:1"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.0:1"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 56,
+    "name": "Gate/Exp Attack",
+    "label": "",
+    "steps": 3,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "Fast",
+    "id": "1195786612",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Slower"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Slow"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Fast"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 57,
+    "name": "Gate/Exp Release",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "400 ms",
+    "id": "1196582252",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1 ms"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "16 ms"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "30 ms"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "65 ms"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "100 ms"
+      },
+      {
+        "normalized": 0.25,
+        "text": "150 ms"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "200 ms"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "250 ms"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "300 ms"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "350 ms"
+      },
+      {
+        "normalized": 0.5,
+        "text": "400 ms"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "500 ms"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "600 ms"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "800 ms"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "1000 ms"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.4 s"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "1.8 s"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "3.4 s"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "5.0 s"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "7.5 s"
+      },
+      {
+        "normalized": 1.0,
+        "text": "10.0 s"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 58,
+    "name": "Gate/Exp Release Lin",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1196584012",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 59,
+    "name": "Gate/Exp Low Pass Freq",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "Off",
+    "id": "1196183622",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "100 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "130 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "170 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "221 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "289 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "376 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "490 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "639 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "833 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.09kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.41kHz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.84kHz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "2.40kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "3.13kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "4.08kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "5.32kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "6.93kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "9.03kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "11.77kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "15.35kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Off"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 60,
+    "name": "Gate/Exp Low Pass Resonant Q",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "low Q",
+    "id": "1196183633",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "low Q"
+      },
+      {
+        "normalized": 1.0,
+        "text": "high Q"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 61,
+    "name": "Gate/Exp High Pass Freq",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1195921478",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "26 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "34 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "44 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "58 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "75 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "98 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "128 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "167 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "217 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "283 Hz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "369 Hz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "480 Hz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "626 Hz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "816 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.06 kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "1.39 kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "1.81 kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "2.35 kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.07 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.00 kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 62,
+    "name": "Gate/Exp High Pass Resonant Q",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "low Q",
+    "id": "1195921489",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "low Q"
+      },
+      {
+        "normalized": 1.0,
+        "text": "high Q"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 63,
+    "name": "Gate/Exp Key Listen",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1196128588",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 64,
+    "name": "Comp On/Off",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1129279024",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 65,
+    "name": "Comp Threshold",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "0.0",
+    "id": "1416131120",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "1.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "2.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "3.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "4.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "5.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "6.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "7.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "8.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "9.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "10.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "11.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "12.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "13.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "14.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "15.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "16.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "17.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "18.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "19.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 66,
+    "name": "Comp Ratio",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "2.2",
+    "id": "1382118448",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Soft"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "Soft"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "1.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "1.1"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "1.2"
+      },
+      {
+        "normalized": 0.25,
+        "text": "1.3"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "1.4"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.5"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.7"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.9"
+      },
+      {
+        "normalized": 0.5,
+        "text": "2.2"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "3.1"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "4.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "5.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "6.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "9.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "12.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "15.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "18.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "29.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "40.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 67,
+    "name": "Comp Timing",
+    "label": " ms",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "8.0",
+    "id": "1416195376",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "70.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "55.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "40.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "34.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "28.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "23.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "18.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "15.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "12.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "10.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "8.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "6.2"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "4.5"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "3.5"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "2.4"
+      },
+      {
+        "normalized": 0.75,
+        "text": "2.1"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "1.9"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "1.7"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "1.5"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "1.4"
+      },
+      {
+        "normalized": 1.0,
+        "text": "1.2"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 68,
+    "name": "Comp Ambience",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1147758156",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 69,
+    "name": "Comp Output",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.300000011920929,
+    "normalized": 0.300000011920929,
+    "text": "0.0",
+    "id": "1333097520",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-6.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-5.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-4.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-3.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-2.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-1.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "+1.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "+2.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "+3.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "+4.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "+5.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "+6.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "+7.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "+8.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "+9.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "+10.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "+11.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "+12.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "+13.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "+14.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 70,
+    "name": "Comp Parallel Mix",
+    "label": "%",
+    "steps": 0,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "100.0",
+    "id": "1298757680",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "5.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "10.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "15.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "20.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "25.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "30.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "35.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "40.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "45.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "50.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "55.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "60.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "65.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "70.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "75.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "80.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "85.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "90.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "95.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "100.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 71,
+    "name": "Sidechain Link",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1281977963",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 72,
+    "name": "Limiter On/Off",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1282230638",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 73,
+    "name": "Limiter Threshold",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "0.0",
+    "id": "1416131148",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "1.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "2.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "3.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "4.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "5.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "6.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "7.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "8.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "9.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "10.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "11.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "12.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "13.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "14.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "15.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "16.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "17.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "18.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "19.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 74,
+    "name": "Limiter Makeup Gain",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "0.0",
+    "id": "1280142192",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "+1.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "+2.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "+3.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "+4.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "+5.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "+6.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "+7.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "+8.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "+9.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "+10.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "+11.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "+12.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "+13.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "+14.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "+15.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "+16.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "+17.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "+18.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "+19.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "+20.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 75,
+    "name": "Limiter Mix",
+    "label": "%",
+    "steps": 0,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "100.0",
+    "id": "1280141688",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "5.0"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "10.0"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "15.0"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "20.0"
+      },
+      {
+        "normalized": 0.25,
+        "text": "25.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "30.0"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "35.0"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "40.0"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "45.0"
+      },
+      {
+        "normalized": 0.5,
+        "text": "50.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "55.0"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "60.0"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "65.0"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "70.0"
+      },
+      {
+        "normalized": 0.75,
+        "text": "75.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "80.0"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "85.0"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "90.0"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "95.0"
+      },
+      {
+        "normalized": 1.0,
+        "text": "100.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 76,
+    "name": "Limiter Ambience",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1097687657",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 77,
+    "name": "VCA Clip On/Off",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1447250286",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 78,
+    "name": "VCA Clip Headroom",
+    "label": " dB",
+    "steps": 0,
+    "defaultNormalized": 0.666000008583069,
+    "normalized": 0.666000008583069,
+    "text": "0.0",
+    "id": "1884701505",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-24.0"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-22.2"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-20.4"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-18.6"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-16.8"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-15.0"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-13.2"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-11.4"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-9.6"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-7.8"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-6.0"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "-4.2"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "-2.4"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "-0.6"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "1.2"
+      },
+      {
+        "normalized": 0.75,
+        "text": "3.0"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "4.8"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "6.6"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "8.4"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "10.2"
+      },
+      {
+        "normalized": 1.0,
+        "text": "12.0"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 79,
+    "name": "Bypass",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1296202096",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  }
+]

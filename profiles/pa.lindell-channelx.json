@@ -1,0 +1,741 @@
+{
+  "$schema": "../schema/profile.schema.json",
+  "schemaVersion": 3,
+  "id": "pa.lindell-channelx",
+  "name": "Lindell ChannelX",
+  "author": "Stripline",
+  "status": "verified",
+  "notes": "Knobs pass the plugin's own position through; the console prints the plugin's text. No gate and no fader. Only the normal EQ is on the strip (its Mid and Side copies stay in the plugin; M/S picks the mode). The compressor has no threshold: its Input drives it, on THRSH inverted. ATTACK and RELEASE are the continuous knobs, active when CONT is on. ORDER: P(re), C(omp), E(Q) in signal order.",
+  "plugin": {
+    "name": "Lindell ChannelX",
+    "aliases": [],
+    "vendor": "Plugin Alliance",
+    "uids": {
+      "VST3": "VST3-Lindell ChannelX-329b8898-b735873e"
+    },
+    "scan": {
+      "files": [
+        "Lindell ChannelX"
+      ]
+    }
+  },
+  "mappings": {
+    "input.in": {
+      "param": {
+        "id": "1573",
+        "index": 16,
+        "name": "Pre. Bypass"
+      },
+      "type": "switch",
+      "invert": true
+    },
+    "input.gain": {
+      "param": {
+        "id": "48",
+        "index": 0,
+        "name": "Pre. Input gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "input.trim": {
+      "available": false
+    },
+    "input.phase": {
+      "param": {
+        "id": "56",
+        "index": 8,
+        "name": "Pre. Polarity"
+      },
+      "type": "switch"
+    },
+    "filter.in": {
+      "available": false
+    },
+    "filter.hpf": {
+      "param": {
+        "id": "1570",
+        "index": 13,
+        "name": "Pre. Highpass frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "filter.lpf": {
+      "param": {
+        "id": "1567",
+        "index": 10,
+        "name": "Pre. Lowpass frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.in": {
+      "param": {
+        "id": "1722",
+        "index": 60,
+        "name": "EQ EQ In"
+      },
+      "type": "switch"
+    },
+    "eq.lf.gain": {
+      "param": {
+        "id": "1635",
+        "index": 36,
+        "name": "EQ Low boost"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.freq": {
+      "param": {
+        "id": "1636",
+        "index": 37,
+        "name": "EQ Low frequency"
+      },
+      "type": "stepped",
+      "auto": true
+    },
+    "eq.lf.q": {
+      "available": false
+    },
+    "eq.lf.bell": {
+      "available": false
+    },
+    "eq.lmf.gain": {
+      "available": false
+    },
+    "eq.lmf.freq": {
+      "available": false
+    },
+    "eq.lmf.q": {
+      "available": false
+    },
+    "eq.hmf.gain": {
+      "available": false
+    },
+    "eq.hmf.freq": {
+      "available": false
+    },
+    "eq.hmf.q": {
+      "available": false
+    },
+    "eq.hf.gain": {
+      "param": {
+        "id": "1632",
+        "index": 33,
+        "name": "EQ Hi boost"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.freq": {
+      "param": {
+        "id": "1633",
+        "index": 34,
+        "name": "EQ Hi frequency"
+      },
+      "type": "stepped",
+      "auto": true
+    },
+    "eq.hf.q": {
+      "param": {
+        "id": "1634",
+        "index": 35,
+        "name": "EQ Hi bandwidth"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      },
+      "invert": true
+    },
+    "eq.hf.bell": {
+      "available": false
+    },
+    "dyn.in": {
+      "param": {
+        "id": "1605",
+        "index": 27,
+        "name": "Comp. Bypass"
+      },
+      "type": "switch",
+      "invert": true
+    },
+    "comp.threshold": {
+      "param": {
+        "id": "1574",
+        "index": 17,
+        "name": "Comp. Input"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      },
+      "invert": true
+    },
+    "comp.ratio": {
+      "param": {
+        "id": "1600",
+        "index": 22,
+        "name": "Comp. Ratio"
+      },
+      "type": "stepped",
+      "auto": true
+    },
+    "comp.attack": {
+      "param": {
+        "id": "1602",
+        "index": 24,
+        "name": "Comp. Continuous Attack"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      },
+      "invert": true
+    },
+    "comp.release": {
+      "param": {
+        "id": "1603",
+        "index": 25,
+        "name": "Comp. Continuous Release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      },
+      "invert": true
+    },
+    "comp.makeup": {
+      "param": {
+        "id": "1575",
+        "index": 18,
+        "name": "Comp. Output"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.mix": {
+      "param": {
+        "id": "1599",
+        "index": 21,
+        "name": "Comp. Mix"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.in": {
+      "available": false
+    },
+    "gate.threshold": {
+      "available": false
+    },
+    "gate.range": {
+      "available": false
+    },
+    "gate.release": {
+      "available": false
+    },
+    "gate.ratio": {
+      "available": false
+    },
+    "gate.exp": {
+      "available": false
+    },
+    "output.fader": {
+      "available": false
+    }
+  },
+  "extras": [
+    {
+      "id": "preOut",
+      "label": "OUT",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 10.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "49",
+          "index": 1,
+          "name": "Pre. Output level"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "hiBoost",
+      "label": "HIB",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 10.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "51",
+          "index": 3,
+          "name": "Pre. Hi boost"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "loBoost",
+      "label": "LOB",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 10.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "53",
+          "index": 5,
+          "name": "Pre. Low boost"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "preEq",
+      "label": "EQ",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "55",
+          "index": 7,
+          "name": "Pre. EQ on"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "preAnalog",
+      "label": "ANLG",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "57",
+          "index": 9,
+          "name": "Pre. Analog"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "preHiF",
+      "label": "HIF",
+      "kind": "stepped",
+      "steps": [
+        "6K",
+        "10K",
+        "16K"
+      ],
+      "mapping": {
+        "param": {
+          "id": "52",
+          "index": 4,
+          "name": "Pre. Hi frequency"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "preLoF",
+      "label": "LOF",
+      "kind": "stepped",
+      "steps": [
+        "30",
+        "60",
+        "100"
+      ],
+      "mapping": {
+        "param": {
+          "id": "54",
+          "index": 6,
+          "name": "Pre. Low frequency"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "hpfOn",
+      "label": "HPF",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1572",
+          "index": 15,
+          "name": "Pre. High filter on"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "hpfSlope",
+      "label": "HSLP",
+      "kind": "stepped",
+      "steps": [
+        "6",
+        "12",
+        "18",
+        "24",
+        "36"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1571",
+          "index": 14,
+          "name": "Pre. Highpass slope"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "lpfOn",
+      "label": "LPF",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1569",
+          "index": 12,
+          "name": "Pre. Low filter on"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "lpfSlope",
+      "label": "LSLP",
+      "kind": "stepped",
+      "steps": [
+        "6",
+        "12",
+        "18",
+        "24",
+        "36"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1568",
+          "index": 11,
+          "name": "Pre. Lowpass slope"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "loAtt",
+      "label": "LATT",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 10.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "1637",
+          "index": 38,
+          "name": "EQ Low attenuation"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "hiAtt",
+      "label": "HATT",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 10.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "1631",
+          "index": 32,
+          "name": "EQ Hi attenuation"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "pad",
+      "label": "PAD",
+      "kind": "continuous",
+      "min": -20.0,
+      "max": 0.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "1638",
+          "index": 39,
+          "name": "EQ Pad"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "hiAttF",
+      "label": "HAF",
+      "kind": "stepped",
+      "steps": [
+        "10K",
+        "15K",
+        "20K"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1630",
+          "index": 31,
+          "name": "EQ Hi atten. freq."
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "ms",
+      "label": "M/S",
+      "kind": "stepped",
+      "steps": [
+        "NORM",
+        "MID",
+        "SIDE"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1699",
+          "index": 58,
+          "name": "EQ Mid / Side"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "eqAnalog",
+      "label": "ANLG",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1700",
+          "index": 59,
+          "name": "EQ Analog"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "stLink",
+      "label": "SLNK",
+      "kind": "continuous",
+      "min": 0.0,
+      "max": 100.0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "1604",
+          "index": 26,
+          "name": "Comp. Stereo Link"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "cont",
+      "label": "CONT",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1606",
+          "index": 28,
+          "name": "Comp. Continuous ON"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "compAnalog",
+      "label": "ANLG",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1629",
+          "index": 30,
+          "name": "Comp. Analog ON"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "compLink",
+      "label": "LINK",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1607",
+          "index": 29,
+          "name": "Comp. Link ON"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "scHpf",
+      "label": "SCHP",
+      "kind": "stepped",
+      "steps": [
+        "OFF",
+        "100",
+        "300"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1601",
+          "index": 23,
+          "name": "Comp. SC High Pass Filter"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "order",
+      "label": "ORDER",
+      "kind": "stepped",
+      "steps": [
+        "PCE",
+        "PEC",
+        "CPE",
+        "CEP",
+        "EPC",
+        "ECP"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1723",
+          "index": 61,
+          "name": "Order"
+        },
+        "type": "even"
+      }
+    }
+  ],
+  "strip": {
+    "global": [
+      {
+        "control": "input.phase",
+        "label": "Ø"
+      },
+      {
+        "control": "x.order",
+        "label": "ORDER"
+      }
+    ],
+    "in": {
+      "knobs": [
+        "x.preOut",
+        "x.hiBoost",
+        "x.loBoost"
+      ],
+      "buttons": [
+        "x.preEq",
+        "x.preAnalog",
+        "x.preHiF",
+        "x.preLoF"
+      ]
+    },
+    "filt": {
+      "buttons": [
+        "x.hpfOn",
+        "x.hpfSlope",
+        "x.lpfOn",
+        "x.lpfSlope"
+      ]
+    },
+    "eq": {
+      "knobs": [
+        "x.loAtt",
+        "x.hiAtt",
+        "x.pad"
+      ],
+      "buttons": [
+        "x.hiAttF",
+        "x.ms",
+        "x.eqAnalog"
+      ]
+    },
+    "comp": {
+      "knobs": [
+        {
+          "control": "comp.makeup",
+          "label": "OUT"
+        },
+        {
+          "control": "comp.mix",
+          "label": "MIX"
+        },
+        "x.stLink"
+      ],
+      "buttons": [
+        "x.cont",
+        "x.compAnalog",
+        "x.compLink",
+        "x.scHpf"
+      ]
+    }
+  },
+  "skin": {
+    "panel": "#A79E8A",
+    "header": "#988F7C",
+    "line": "#8B8371",
+    "title": "#1B1A17",
+    "label": "#24221E",
+    "value": "#121110",
+    "track": "#8F8775",
+    "ticks": "#2E2C27",
+    "arc": "#1B1A17",
+    "cap": "#161616",
+    "inset": "transparent",
+    "switchOff": [
+      "#5E574A",
+      "#4A443A",
+      "#EDE7DA"
+    ],
+    "switchOn": [
+      "#3FC27A",
+      "#3FC27A",
+      "#0E0E0E"
+    ]
+  }
+}

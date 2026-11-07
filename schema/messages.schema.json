@@ -223,6 +223,11 @@
           "type": "string",
           "description": "Host name as reported by the plugin wrapper, e.g. REAPER"
         },
+        "hostPid": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Process id of the host (the DAW the bridge runs in). The console uses it to bring the host to the front before openPluginEditor, since an app in the background can't take focus by itself (macOS 14+, Windows)."
+        },
         "track": {
           "$ref": "#/$defs/Track"
         },

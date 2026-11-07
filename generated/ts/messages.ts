@@ -41,6 +41,10 @@ export interface Hello {
    * Host name as reported by the plugin wrapper, e.g. REAPER
    */
   host?: string;
+  /**
+   * Process id of the host (the DAW the bridge runs in). The console uses it to bring the host to the front before openPluginEditor, since an app in the background can't take focus by itself (macOS 14+, Windows).
+   */
+  hostPid?: number;
   track: Track;
   plugin?: HostedPlugin | null;
   profileId?: string | null;

@@ -1,0 +1,519 @@
+{
+  "$schema": "../schema/profile.schema.json",
+  "schemaVersion": 3,
+  "id": "ik.white-channel",
+  "name": "White Channel",
+  "author": "Stripline",
+  "status": "verified",
+  "notes": "The standalone White Channel (file \"White Channel v6\"). Same parameters and VST3 name as TR5 White Channel; told apart by its VST3 uid. Threshold runs from +10 dB down to -20 dB as the plugin knob turns.",
+  "plugin": {
+    "name": "White Channel",
+    "aliases": [],
+    "vendor": "IK Multimedia",
+    "uids": {
+      "VST3": "VST3-White Channel-e919c67-86dc83ef"
+    },
+    "scan": {
+      "files": [
+        "White Channel v6"
+      ]
+    }
+  },
+  "mappings": {
+    "input.in": {
+      "available": false
+    },
+    "input.gain": {
+      "param": {
+        "id": "21",
+        "index": 21,
+        "name": "Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "input.trim": {
+      "available": false
+    },
+    "input.phase": {
+      "param": {
+        "id": "34",
+        "index": 34,
+        "name": "Phase"
+      },
+      "type": "switch"
+    },
+    "filter.in": {
+      "param": {
+        "id": "2",
+        "index": 2,
+        "name": "Filter In"
+      },
+      "type": "switch"
+    },
+    "filter.hpf": {
+      "param": {
+        "id": "6",
+        "index": 6,
+        "name": "HP Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "filter.lpf": {
+      "param": {
+        "id": "7",
+        "index": 7,
+        "name": "LP Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.in": {
+      "param": {
+        "id": "1",
+        "index": 1,
+        "name": "Eq In"
+      },
+      "type": "switch"
+    },
+    "eq.lf.gain": {
+      "param": {
+        "id": "16",
+        "index": 16,
+        "name": "LF Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.freq": {
+      "param": {
+        "id": "17",
+        "index": 17,
+        "name": "LF Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.q": {
+      "available": false
+    },
+    "eq.lf.bell": {
+      "param": {
+        "id": "19",
+        "index": 19,
+        "name": "LF Bell"
+      },
+      "type": "switch"
+    },
+    "eq.lmf.gain": {
+      "param": {
+        "id": "13",
+        "index": 13,
+        "name": "LMF Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.freq": {
+      "param": {
+        "id": "14",
+        "index": 14,
+        "name": "LMF Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.q": {
+      "param": {
+        "id": "15",
+        "index": 15,
+        "name": "LMF Q"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.gain": {
+      "param": {
+        "id": "10",
+        "index": 10,
+        "name": "HMF Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.freq": {
+      "param": {
+        "id": "11",
+        "index": 11,
+        "name": "HMF Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.q": {
+      "param": {
+        "id": "12",
+        "index": 12,
+        "name": "HMF Q"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.gain": {
+      "param": {
+        "id": "8",
+        "index": 8,
+        "name": "HF Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.freq": {
+      "param": {
+        "id": "9",
+        "index": 9,
+        "name": "HF Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.q": {
+      "available": false
+    },
+    "eq.hf.bell": {
+      "param": {
+        "id": "18",
+        "index": 18,
+        "name": "HF Bell"
+      },
+      "type": "switch"
+    },
+    "dyn.in": {
+      "param": {
+        "id": "0",
+        "index": 0,
+        "name": "Comp In"
+      },
+      "type": "switch"
+    },
+    "comp.threshold": {
+      "param": {
+        "id": "23",
+        "index": 23,
+        "name": "Threshold"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.ratio": {
+      "param": {
+        "id": "24",
+        "index": 24,
+        "name": "Ratio"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.attack": {
+      "available": false
+    },
+    "comp.release": {
+      "param": {
+        "id": "25",
+        "index": 25,
+        "name": "Release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.makeup": {
+      "available": false
+    },
+    "comp.mix": {
+      "available": false
+    },
+    "gate.in": {
+      "available": false
+    },
+    "gate.threshold": {
+      "param": {
+        "id": "28",
+        "index": 28,
+        "name": "Threshold Exp"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.range": {
+      "param": {
+        "id": "30",
+        "index": 30,
+        "name": "Range"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.release": {
+      "param": {
+        "id": "31",
+        "index": 31,
+        "name": "Release Exp"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.ratio": {
+      "available": false
+    },
+    "gate.exp": {
+      "param": {
+        "id": "33",
+        "index": 33,
+        "name": "Exp"
+      },
+      "type": "switch"
+    },
+    "output.fader": {
+      "param": {
+        "id": "22",
+        "index": 22,
+        "name": "Volume"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    }
+  },
+  "extras": [
+    {
+      "id": "fltSc",
+      "label": "FLT SC",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "5",
+          "index": 5,
+          "name": "Filter SC"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "eqG",
+      "label": "G",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "20",
+          "index": 20,
+          "name": "G"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "eqPre",
+      "label": "EQ PRE",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "3",
+          "index": 3,
+          "name": "Eq Pre"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "eqSc",
+      "label": "EQ S/C",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "4",
+          "index": 4,
+          "name": "Eq SC"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "fastAtt",
+      "label": "FAST",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "26",
+          "index": 26,
+          "name": "Fast"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "peak",
+      "label": "PEAK",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "27",
+          "index": 27,
+          "name": "Peak"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "gateHold",
+      "label": "HOLD",
+      "kind": "continuous",
+      "min": 0,
+      "max": 4,
+      "scale": "linear",
+      "unit": "s",
+      "default": 0,
+      "mapping": {
+        "param": {
+          "id": "29",
+          "index": 29,
+          "name": "Hold Exp"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "gateFast",
+      "label": "FAST",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "32",
+          "index": 32,
+          "name": "Fast Exp"
+        },
+        "type": "switch"
+      }
+    }
+  ],
+  "strip": {
+    "global": [
+      {
+        "control": "input.phase",
+        "label": "Ø"
+      },
+      "x.eqPre",
+      "x.eqSc",
+      "x.fltSc",
+      "x.eqG"
+    ],
+    "comp": {
+      "buttons": [
+        "x.fastAtt",
+        "x.peak"
+      ]
+    },
+    "gate": {
+      "knobs": [
+        "x.gateHold"
+      ],
+      "buttons": [
+        "x.gateFast"
+      ]
+    },
+    "colors": {
+      "eq.hf.gain": {
+        "cap": "#D53A3A"
+      },
+      "eq.hf.freq": {
+        "cap": "#D53A3A"
+      },
+      "eq.hmf.gain": {
+        "cap": "#2DB884"
+      },
+      "eq.hmf.freq": {
+        "cap": "#2DB884"
+      },
+      "eq.hmf.q": {
+        "cap": "#2DB884"
+      },
+      "eq.lmf.gain": {
+        "cap": "#3A8DD6"
+      },
+      "eq.lmf.freq": {
+        "cap": "#3A8DD6"
+      },
+      "eq.lmf.q": {
+        "cap": "#3A8DD6"
+      },
+      "input.phase": {
+        "on": "#C9302C"
+      }
+    }
+  },
+  "skin": {
+    "panel": "#E6E7E9",
+    "header": "#D3D5D8",
+    "line": "#BFC2C6",
+    "title": "#111214",
+    "label": "#3A3D42",
+    "value": "#111214",
+    "track": "#C6C9CD",
+    "ticks": "#555A60",
+    "arc": "#2A2C30",
+    "cap": "#1B1C1E",
+    "inset": "transparent",
+    "switchOff": [
+      "#5A5048",
+      "#3E3832",
+      "#F2F2F2"
+    ],
+    "switchOn": [
+      "#2F6FE0",
+      "#2F6FE0",
+      "#FFFFFF"
+    ]
+  }
+}

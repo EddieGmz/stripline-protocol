@@ -1,0 +1,761 @@
+{
+  "$schema": "../schema/profile.schema.json",
+  "schemaVersion": 3,
+  "id": "analogobsession.channev",
+  "name": "CHANNEV",
+  "author": "Stripline",
+  "status": "verified",
+  "notes": "Analog Obsession CHANNEV: PRE-72 mic pre, D-03 de-esser, EQ-81, C-64 compressor, L-64 limiter and T-01 tape, in that order. IN holds the mic pre (MIC gain, TRIM, PAD, Ø, its LOW and HIGH shelves) and the de-esser (DS threshold, DSMX mix, PEAK, SOFT; DS on/off at the top). FILT is the EQ-81's high and low pass; the mic pre's own pair is on FILT's small knobs (PHP, PLP). The EQ's mid Q is a Hi Q switch (HIQ buttons) and the low and high bands switch to peak (Bell). LINE is the EQ-81's line amp, DRV the tape drive. The compressor has no attack. The L-64 limiter fills the GATE section's small knobs and buttons (LIM on/off at the top), as the plugin has no gate. The fader is the plugin's Output (-24 to +24 dB). The de-esser's release isn't on the console.",
+  "plugin": {
+    "name": "CHANNEV",
+    "aliases": [],
+    "vendor": "AnalogObsession",
+    "uids": {
+      "VST3": "VST3-CHANNEV-23209a52-c1c920b0"
+    },
+    "scan": {
+      "files": [
+        "CHANNEV"
+      ]
+    }
+  },
+  "mappings": {
+    "input.in": {
+      "param": {
+        "id": "33",
+        "index": 34,
+        "name": "Pre-In"
+      },
+      "type": "switch"
+    },
+    "input.gain": {
+      "param": {
+        "id": "0",
+        "index": 1,
+        "name": "Mic Pre"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "input.trim": {
+      "param": {
+        "id": "30",
+        "index": 31,
+        "name": "Trim"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "input.phase": {
+      "param": {
+        "id": "31",
+        "index": 32,
+        "name": "Pre-Phase"
+      },
+      "type": "switch"
+    },
+    "filter.in": {
+      "available": false
+    },
+    "filter.hpf": {
+      "param": {
+        "id": "17",
+        "index": 18,
+        "name": "Eq-Hipass"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "filter.lpf": {
+      "param": {
+        "id": "18",
+        "index": 19,
+        "name": "Eq-Lowpass"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.in": {
+      "param": {
+        "id": "41",
+        "index": 42,
+        "name": "Equalizer In"
+      },
+      "type": "switch"
+    },
+    "eq.lf.gain": {
+      "param": {
+        "id": "9",
+        "index": 10,
+        "name": "Low Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.freq": {
+      "param": {
+        "id": "10",
+        "index": 11,
+        "name": "Low Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.q": {
+      "available": false
+    },
+    "eq.lf.bell": {
+      "param": {
+        "id": "37",
+        "index": 38,
+        "name": "Low Peak"
+      },
+      "type": "switch"
+    },
+    "eq.lmf.gain": {
+      "param": {
+        "id": "11",
+        "index": 12,
+        "name": "Low Mid Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.freq": {
+      "param": {
+        "id": "12",
+        "index": 13,
+        "name": "Low Mid Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.q": {
+      "available": false
+    },
+    "eq.hmf.gain": {
+      "param": {
+        "id": "13",
+        "index": 14,
+        "name": "High Mid Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.freq": {
+      "param": {
+        "id": "14",
+        "index": 15,
+        "name": "High Mid Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.q": {
+      "available": false
+    },
+    "eq.hf.gain": {
+      "param": {
+        "id": "15",
+        "index": 16,
+        "name": "High Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.freq": {
+      "param": {
+        "id": "16",
+        "index": 17,
+        "name": "High Freq"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.q": {
+      "available": false
+    },
+    "eq.hf.bell": {
+      "param": {
+        "id": "40",
+        "index": 41,
+        "name": "High Peak"
+      },
+      "type": "switch"
+    },
+    "dyn.in": {
+      "param": {
+        "id": "42",
+        "index": 43,
+        "name": "Compressor In"
+      },
+      "type": "switch"
+    },
+    "comp.threshold": {
+      "param": {
+        "id": "19",
+        "index": 20,
+        "name": "Compressor Threshold"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.ratio": {
+      "param": {
+        "id": "20",
+        "index": 21,
+        "name": "Compressor Ratio"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.attack": {
+      "available": false
+    },
+    "comp.release": {
+      "param": {
+        "id": "21",
+        "index": 22,
+        "name": "Compressor Release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.makeup": {
+      "param": {
+        "id": "22",
+        "index": 23,
+        "name": "Compressor Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.mix": {
+      "param": {
+        "id": "23",
+        "index": 24,
+        "name": "Compressor Mix"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.in": {
+      "available": false
+    },
+    "gate.threshold": {
+      "available": false
+    },
+    "gate.range": {
+      "available": false
+    },
+    "gate.release": {
+      "available": false
+    },
+    "gate.ratio": {
+      "available": false
+    },
+    "gate.exp": {
+      "available": false
+    },
+    "output.fader": {
+      "param": {
+        "id": "29",
+        "index": 30,
+        "name": "Output"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    }
+  },
+  "extras": [
+    {
+      "id": "pad",
+      "label": "PAD",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "32",
+          "index": 33,
+          "name": "Pre-Pad"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "preLow",
+      "label": "LOW",
+      "kind": "continuous",
+      "min": -6,
+      "max": 6,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "1",
+          "index": 2,
+          "name": "Pre-Low"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "preHigh",
+      "label": "HIGH",
+      "kind": "continuous",
+      "min": -6,
+      "max": 6,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "2",
+          "index": 3,
+          "name": "Pre-High"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "preHp",
+      "label": "PHP",
+      "kind": "continuous",
+      "min": 27,
+      "max": 270,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "3",
+          "index": 4,
+          "name": "Pre-Hipass"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "preLp",
+      "label": "PLP",
+      "kind": "continuous",
+      "min": 3.9,
+      "max": 19,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "4",
+          "index": 5,
+          "name": "Pre-Lowpass"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "line",
+      "label": "LINE",
+      "kind": "continuous",
+      "min": -20,
+      "max": 20,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "8",
+          "index": 9,
+          "name": "Line Amp"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "drive",
+      "label": "DRV",
+      "kind": "continuous",
+      "min": 0,
+      "max": 24,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "28",
+          "index": 29,
+          "name": "Tape Drive"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "lmfHiQ",
+      "label": "HIQ",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "38",
+          "index": 39,
+          "name": "Low Mid Q"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "hmfHiQ",
+      "label": "HIQ",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "39",
+          "index": 40,
+          "name": "High Mid Q"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "compExt",
+      "label": "EXT",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "43",
+          "index": 44,
+          "name": "Compressor Sidechain"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "dsIn",
+      "label": "DS",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "35",
+          "index": 36,
+          "name": "De-esser In"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "dsThr",
+      "label": "DS",
+      "kind": "continuous",
+      "min": -30,
+      "max": 0,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "5",
+          "index": 6,
+          "name": "De-Esser Threshold"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "dsMix",
+      "label": "DSMX",
+      "kind": "continuous",
+      "min": 0,
+      "max": 100,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "7",
+          "index": 8,
+          "name": "De-Esser Mix"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "dsPeak",
+      "label": "PEAK",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "34",
+          "index": 35,
+          "name": "De-esser Peak"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "dsSoft",
+      "label": "SOFT",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "36",
+          "index": 37,
+          "name": "De-esser Soft"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "limIn",
+      "label": "LIM",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "44",
+          "index": 45,
+          "name": "Limiter In"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "limThr",
+      "label": "THR",
+      "kind": "continuous",
+      "min": 4,
+      "max": 15,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "24",
+          "index": 25,
+          "name": "Limiter Threshold"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "limRel",
+      "label": "REL",
+      "kind": "continuous",
+      "min": 50,
+      "max": 500,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "25",
+          "index": 26,
+          "name": "Limiter Release"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "limGain",
+      "label": "GAIN",
+      "kind": "continuous",
+      "min": 0,
+      "max": 20,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "26",
+          "index": 27,
+          "name": "Limiter Gain"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "limMix",
+      "label": "MIX",
+      "kind": "continuous",
+      "min": 0,
+      "max": 100,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "27",
+          "index": 28,
+          "name": "Limiter Mix"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "limExt",
+      "label": "EXT",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "45",
+          "index": 46,
+          "name": "Limiter Sidechain"
+        },
+        "type": "switch"
+      }
+    }
+  ],
+  "strip": {
+    "global": [
+      {
+        "control": "input.phase",
+        "label": "Ø"
+      },
+      "x.dsIn",
+      "x.limIn"
+    ],
+    "in": {
+      "knobs": [
+        "x.preLow",
+        "x.preHigh",
+        "x.dsThr",
+        "x.dsMix"
+      ],
+      "buttons": [
+        "x.pad",
+        "x.dsPeak",
+        "x.dsSoft"
+      ]
+    },
+    "filt": {
+      "knobs": [
+        "x.preHp",
+        "x.preLp"
+      ]
+    },
+    "eq": {
+      "knobs": [
+        "x.line",
+        "x.drive"
+      ],
+      "buttons": [
+        "x.lmfHiQ",
+        "x.hmfHiQ"
+      ]
+    },
+    "comp": {
+      "knobs": [
+        {
+          "control": "comp.makeup",
+          "label": "GAIN"
+        },
+        {
+          "control": "comp.mix",
+          "label": "MIX"
+        }
+      ],
+      "buttons": [
+        "x.compExt"
+      ]
+    },
+    "gate": {
+      "knobs": [
+        "x.limThr",
+        "x.limRel",
+        "x.limGain",
+        "x.limMix"
+      ],
+      "buttons": [
+        "x.limExt"
+      ]
+    },
+    "colors": {
+      "input.gain": {
+        "cap": "#C8352B"
+      },
+      "x.line": {
+        "cap": "#C8352B"
+      },
+      "x.drive": {
+        "cap": "#C8352B"
+      },
+      "comp.threshold": {
+        "cap": "#2F5FB0"
+      },
+      "x.dsThr": {
+        "cap": "#2F5FB0"
+      },
+      "x.limThr": {
+        "cap": "#2F5FB0"
+      }
+    }
+  },
+  "skin": {
+    "panel": "#3A3D40",
+    "header": "#2F3235",
+    "line": "#4C5054",
+    "title": "#ECE8DE",
+    "label": "#D6D3CB",
+    "value": "#F2EFE7",
+    "track": "#4E5256",
+    "ticks": "#E6E3DA",
+    "arc": "#F2EFE7",
+    "cap": "#C9CBCD",
+    "inset": "transparent",
+    "switchOff": [
+      "#4A4D50",
+      "#6A6D70",
+      "#D6D3CB"
+    ],
+    "switchOn": [
+      "#EADFB8",
+      "#EADFB8",
+      "#2A2A2A"
+    ]
+  }
+}

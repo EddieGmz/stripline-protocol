@@ -1,0 +1,397 @@
+{
+  "$schema": "../schema/profile.schema.json",
+  "schemaVersion": 3,
+  "id": "analogobsession.frankcs",
+  "name": "FrankCS",
+  "author": "Stripline",
+  "status": "verified",
+  "notes": "Analog Obsession FrankCS (Ultimate Channelstrip). The low band is Pultec-style: Gain is the low BOOST, its ATTEN is on the EQ's small knobs. The plugin's MID band is the low-mid band here (75 Hz to 12.5 kHz). High atten and its frequency are small knobs too (HATT, HFRQ); there is no low pass. Attack, release and ratio click through the plugin's steps. The compressor has no makeup gain. TUBE buttons switch the preamp (IN) and the compressor model; OS is oversampling. The EQ and COMP buttons are the plugin's \"EQ Bypass\" and \"Compressor Bypass\" parameters, which are 1 when the section is on. The fader is the plugin's Output (-24 to +24 dB).",
+  "plugin": {
+    "name": "FrankCS",
+    "aliases": [],
+    "vendor": "AnalogObsession",
+    "uids": {
+      "VST3": "VST3-FrankCS-f0df6fd-c4c425b0"
+    },
+    "scan": {
+      "files": [
+        "FrankCS"
+      ]
+    }
+  },
+  "mappings": {
+    "input.in": {
+      "available": false
+    },
+    "input.gain": {
+      "param": {
+        "id": "0",
+        "index": 1,
+        "name": "Input"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "input.trim": {
+      "available": false
+    },
+    "input.phase": {
+      "available": false
+    },
+    "filter.in": {
+      "available": false
+    },
+    "filter.hpf": {
+      "param": {
+        "id": "2",
+        "index": 3,
+        "name": "Highpass Filter"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "filter.lpf": {
+      "available": false
+    },
+    "eq.in": {
+      "param": {
+        "id": "17",
+        "index": 18,
+        "name": "EQ Bypass"
+      },
+      "type": "switch"
+    },
+    "eq.lf.gain": {
+      "param": {
+        "id": "3",
+        "index": 4,
+        "name": "Low Boost"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.freq": {
+      "param": {
+        "id": "5",
+        "index": 6,
+        "name": "Low Frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.q": {
+      "available": false
+    },
+    "eq.lf.bell": {
+      "available": false
+    },
+    "eq.lmf.gain": {
+      "param": {
+        "id": "6",
+        "index": 7,
+        "name": "Mid Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.freq": {
+      "param": {
+        "id": "7",
+        "index": 8,
+        "name": "Mid Frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.q": {
+      "available": false
+    },
+    "eq.hmf.gain": {
+      "available": false
+    },
+    "eq.hmf.freq": {
+      "available": false
+    },
+    "eq.hmf.q": {
+      "available": false
+    },
+    "eq.hf.gain": {
+      "param": {
+        "id": "8",
+        "index": 9,
+        "name": "High Gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.freq": {
+      "param": {
+        "id": "9",
+        "index": 10,
+        "name": "High Frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.q": {
+      "available": false
+    },
+    "eq.hf.bell": {
+      "available": false
+    },
+    "dyn.in": {
+      "param": {
+        "id": "18",
+        "index": 19,
+        "name": "Compressor Bypass"
+      },
+      "type": "switch"
+    },
+    "comp.threshold": {
+      "param": {
+        "id": "12",
+        "index": 13,
+        "name": "Threshold"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.ratio": {
+      "param": {
+        "id": "16",
+        "index": 17,
+        "name": "Ratio"
+      },
+      "type": "stepped",
+      "auto": true
+    },
+    "comp.attack": {
+      "param": {
+        "id": "14",
+        "index": 15,
+        "name": "Attack"
+      },
+      "type": "stepped",
+      "auto": true
+    },
+    "comp.release": {
+      "param": {
+        "id": "15",
+        "index": 16,
+        "name": "Release"
+      },
+      "type": "stepped",
+      "auto": true
+    },
+    "comp.makeup": {
+      "available": false
+    },
+    "comp.mix": {
+      "param": {
+        "id": "13",
+        "index": 14,
+        "name": "Compressor Mix"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.in": {
+      "available": false
+    },
+    "gate.threshold": {
+      "available": false
+    },
+    "gate.range": {
+      "available": false
+    },
+    "gate.release": {
+      "available": false
+    },
+    "gate.ratio": {
+      "available": false
+    },
+    "gate.exp": {
+      "available": false
+    },
+    "output.fader": {
+      "param": {
+        "id": "1",
+        "index": 2,
+        "name": "Output"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    }
+  },
+  "extras": [
+    {
+      "id": "tube",
+      "label": "TUBE",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "19",
+          "index": 20,
+          "name": "Preamp Model"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "os",
+      "label": "OS",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "21",
+          "index": 22,
+          "name": "Oversampling"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "lowAtt",
+      "label": "LATT",
+      "kind": "continuous",
+      "min": 0,
+      "max": 10,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "4",
+          "index": 5,
+          "name": "Low Atten"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "highAtt",
+      "label": "HATT",
+      "kind": "continuous",
+      "min": 0,
+      "max": 10,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "10",
+          "index": 11,
+          "name": "High Atten"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "highAttFreq",
+      "label": "HFRQ",
+      "kind": "continuous",
+      "min": 5,
+      "max": 20,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "11",
+          "index": 12,
+          "name": "High Atten Frequency"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "compTube",
+      "label": "TUBE",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "20",
+          "index": 21,
+          "name": "Compressor Model"
+        },
+        "type": "switch"
+      }
+    }
+  ],
+  "strip": {
+    "global": [
+      "x.os"
+    ],
+    "in": {
+      "buttons": [
+        "x.tube"
+      ]
+    },
+    "eq": {
+      "knobs": [
+        "x.lowAtt",
+        "x.highAtt",
+        "x.highAttFreq"
+      ]
+    },
+    "comp": {
+      "knobs": [
+        {
+          "control": "comp.mix",
+          "label": "MIX"
+        }
+      ],
+      "buttons": [
+        "x.compTube"
+      ]
+    }
+  },
+  "skin": {
+    "panel": "#B9B8B3",
+    "header": "#A9A8A3",
+    "line": "#9C9B96",
+    "title": "#2A2A2A",
+    "label": "#2E2E2E",
+    "value": "#1E1E1E",
+    "track": "#9E9D98",
+    "ticks": "#F4F4F2",
+    "arc": "#2A2A2A",
+    "cap": "#1F1F1F",
+    "inset": "transparent",
+    "switchOff": [
+      "#A3A29D",
+      "#8E8D88",
+      "#3A3A3A"
+    ],
+    "switchOn": [
+      "#F4F4F2",
+      "#FFFFFF",
+      "#1E1E1E"
+    ]
+  }
+}

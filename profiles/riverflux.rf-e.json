@@ -1,0 +1,692 @@
+{
+  "$schema": "../schema/profile.schema.json",
+  "schemaVersion": 3,
+  "id": "riverflux.rf-e",
+  "name": "RF-E",
+  "author": "Stripline",
+  "status": "verified",
+  "notes": "Riverflux Audio RF-E, an E-series channel strip. PRE is the DRIVE, LINE the line input; TRIM (after the fader), the plugin's own INPUT and OUTPUT, and MIX are IN's small knobs. The low pass, the compressor threshold and both mid Qs run the other way in the plugin: inverted. TYPE switches the EQ between Brown and Black. The compressor has a FAST attack switch and no makeup gain; the gate's MODE steps through Expand, Gate 1 and Gate 2, so there is no separate expander switch. DYN is the whole dynamics section, EXT the external key, LSTN key listen, OS the oversampling. The fader is the plugin's own fader (-inf to +10 dB).",
+  "plugin": {
+    "name": "RF-E",
+    "aliases": [],
+    "vendor": "Riverflux Audio",
+    "uids": {
+      "VST3": "VST3-RF-E-d2013369-9d24df43"
+    },
+    "scan": {
+      "files": [
+        "RF-E"
+      ]
+    }
+  },
+  "mappings": {
+    "input.in": {
+      "available": false
+    },
+    "input.gain": {
+      "param": {
+        "id": "411300669",
+        "index": 47,
+        "name": "S1 Channel Strip Drive"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "input.trim": {
+      "param": {
+        "id": "415805821",
+        "index": 4,
+        "name": "S1 Channel Strip Line input"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "input.phase": {
+      "param": {
+        "id": "654863901",
+        "index": 5,
+        "name": "S1 Channel Strip Phase invert"
+      },
+      "type": "switch"
+    },
+    "filter.in": {
+      "available": false
+    },
+    "filter.hpf": {
+      "param": {
+        "id": "1169145553",
+        "index": 6,
+        "name": "S1 Channel Strip High pass"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "filter.lpf": {
+      "param": {
+        "id": "1169149397",
+        "index": 7,
+        "name": "S1 Channel Strip Low pass"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      },
+      "invert": true
+    },
+    "eq.in": {
+      "param": {
+        "id": "412184395",
+        "index": 23,
+        "name": "S1 Channel Strip EQ in"
+      },
+      "type": "switch"
+    },
+    "eq.lf.gain": {
+      "param": {
+        "id": "427297815",
+        "index": 19,
+        "name": "S1 Channel Strip LF gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.freq": {
+      "param": {
+        "id": "1019503556",
+        "index": 20,
+        "name": "S1 Channel Strip LF frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lf.q": {
+      "available": false
+    },
+    "eq.lf.bell": {
+      "param": {
+        "id": "427152795",
+        "index": 21,
+        "name": "S1 Channel Strip LF bell"
+      },
+      "type": "switch"
+    },
+    "eq.lmf.gain": {
+      "param": {
+        "id": "324592102",
+        "index": 16,
+        "name": "S1 Channel Strip LMF gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.freq": {
+      "param": {
+        "id": "1213978453",
+        "index": 17,
+        "name": "S1 Channel Strip LMF frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.lmf.q": {
+      "param": {
+        "id": "418536298",
+        "index": 18,
+        "name": "S1 Channel Strip LMF Q"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      },
+      "invert": true
+    },
+    "eq.hmf.gain": {
+      "param": {
+        "id": "1943285354",
+        "index": 13,
+        "name": "S1 Channel Strip HMF gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.freq": {
+      "param": {
+        "id": "240106833",
+        "index": 14,
+        "name": "S1 Channel Strip HMF frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hmf.q": {
+      "param": {
+        "id": "414842214",
+        "index": 15,
+        "name": "S1 Channel Strip HMF Q"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      },
+      "invert": true
+    },
+    "eq.hf.gain": {
+      "param": {
+        "id": "1172250387",
+        "index": 10,
+        "name": "S1 Channel Strip HF gain"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.freq": {
+      "param": {
+        "id": "503172680",
+        "index": 11,
+        "name": "S1 Channel Strip HF frequency"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "eq.hf.q": {
+      "available": false
+    },
+    "eq.hf.bell": {
+      "param": {
+        "id": "1172105367",
+        "index": 12,
+        "name": "S1 Channel Strip HF bell"
+      },
+      "type": "switch"
+    },
+    "dyn.in": {
+      "param": {
+        "id": "1300557128",
+        "index": 26,
+        "name": "S1 Channel Strip Compressor in"
+      },
+      "type": "switch"
+    },
+    "comp.threshold": {
+      "param": {
+        "id": "350889704",
+        "index": 28,
+        "name": "S1 Channel Strip Compressor threshold"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      },
+      "invert": true
+    },
+    "comp.ratio": {
+      "param": {
+        "id": "5462280",
+        "index": 27,
+        "name": "S1 Channel Strip Compressor ratio"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.attack": {
+      "available": false
+    },
+    "comp.release": {
+      "param": {
+        "id": "1061283268",
+        "index": 29,
+        "name": "S1 Channel Strip Compressor release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "comp.makeup": {
+      "available": false
+    },
+    "comp.mix": {
+      "available": false
+    },
+    "gate.in": {
+      "param": {
+        "id": "160933388",
+        "index": 32,
+        "name": "S1 Channel Strip Gate in"
+      },
+      "type": "switch"
+    },
+    "gate.threshold": {
+      "param": {
+        "id": "1631504804",
+        "index": 33,
+        "name": "S1 Channel Strip Gate threshold"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.range": {
+      "param": {
+        "id": "1191092982",
+        "index": 34,
+        "name": "S1 Channel Strip Gate range"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.release": {
+      "param": {
+        "id": "144181120",
+        "index": 35,
+        "name": "S1 Channel Strip Gate release"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    },
+    "gate.ratio": {
+      "available": false
+    },
+    "gate.exp": {
+      "available": false
+    },
+    "output.fader": {
+      "param": {
+        "id": "412635945",
+        "index": 40,
+        "name": "S1 Channel Strip Fader"
+      },
+      "type": "continuous",
+      "curve": {
+        "kind": "auto"
+      }
+    }
+  },
+  "extras": [
+    {
+      "id": "trim",
+      "label": "TRIM",
+      "kind": "continuous",
+      "min": -20,
+      "max": 20,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "183432622",
+          "index": 41,
+          "name": "S1 Channel Strip Trim"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "input",
+      "label": "INP",
+      "kind": "continuous",
+      "min": -12,
+      "max": 12,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "100358090",
+          "index": 43,
+          "name": "Input"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "output",
+      "label": "OUT",
+      "kind": "continuous",
+      "min": -12,
+      "max": 12,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "1141971201",
+          "index": 44,
+          "name": "Output"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "mix",
+      "label": "MIX",
+      "kind": "continuous",
+      "min": 0,
+      "max": 100,
+      "scale": "linear",
+      "mapping": {
+        "param": {
+          "id": "108124",
+          "index": 0,
+          "name": "Mix"
+        },
+        "type": "continuous",
+        "curve": {
+          "kind": "auto"
+        }
+      }
+    },
+    {
+      "id": "fltSc",
+      "label": "SC",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1502725953",
+          "index": 8,
+          "name": "S1 Channel Strip Filters to side chain"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "fltPre",
+      "label": "PRE",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1487345618",
+          "index": 9,
+          "name": "S1 Channel Strip Filters pre dynamics"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "eqType",
+      "label": "TYPE",
+      "kind": "stepped",
+      "steps": [
+        "BRN",
+        "BLK"
+      ],
+      "mapping": {
+        "param": {
+          "id": "972554208",
+          "index": 22,
+          "name": "S1 Channel Strip EQ type"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "eqSc",
+      "label": "SC",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "412184694",
+          "index": 24,
+          "name": "S1 Channel Strip EQ to side chain"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "eqPre",
+      "label": "PRE",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "2040304957",
+          "index": 25,
+          "name": "S1 Channel Strip EQ pre dynamics"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "compFast",
+      "label": "FAST",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "2147302335",
+          "index": 30,
+          "name": "S1 Channel Strip Compressor fast attack"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "link",
+      "label": "LINK",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "60298068",
+          "index": 31,
+          "name": "S1 Channel Strip Stereo link"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "gateMode",
+      "label": "MODE",
+      "kind": "stepped",
+      "steps": [
+        "EXP",
+        "GT1",
+        "GT2"
+      ],
+      "mapping": {
+        "param": {
+          "id": "38286538",
+          "index": 36,
+          "name": "S1 Channel Strip Gate mode"
+        },
+        "type": "even"
+      }
+    },
+    {
+      "id": "gateFast",
+      "label": "FAST",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "38065027",
+          "index": 37,
+          "name": "S1 Channel Strip Gate fast attack"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "dynIn",
+      "label": "DYN",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "2019494232",
+          "index": 38,
+          "name": "S1 Channel Strip Dynamics in"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "listen",
+      "label": "LSTN",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "86436468",
+          "index": 39,
+          "name": "S1 Channel Strip Key listen"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "extKey",
+      "label": "EXT",
+      "kind": "switch",
+      "mapping": {
+        "param": {
+          "id": "1457969465",
+          "index": 3,
+          "name": "S1 External key"
+        },
+        "type": "switch"
+      }
+    },
+    {
+      "id": "os",
+      "label": "OS",
+      "kind": "stepped",
+      "steps": [
+        "2X",
+        "4X",
+        "8X"
+      ],
+      "mapping": {
+        "param": {
+          "id": "1769509718",
+          "index": 46,
+          "name": "Oversampling"
+        },
+        "type": "even"
+      }
+    }
+  ],
+  "strip": {
+    "global": [
+      {
+        "control": "input.phase",
+        "label": "Ø"
+      },
+      "x.dynIn",
+      "x.extKey",
+      "x.listen",
+      "x.os"
+    ],
+    "in": {
+      "knobs": [
+        "x.trim",
+        "x.input",
+        "x.output",
+        "x.mix"
+      ]
+    },
+    "filt": {
+      "buttons": [
+        "x.fltSc",
+        "x.fltPre"
+      ]
+    },
+    "eq": {
+      "buttons": [
+        "x.eqType",
+        "x.eqSc",
+        "x.eqPre"
+      ]
+    },
+    "comp": {
+      "buttons": [
+        "x.compFast",
+        "x.link"
+      ]
+    },
+    "gate": {
+      "buttons": [
+        "x.gateMode",
+        "x.gateFast"
+      ]
+    },
+    "colors": {
+      "input.gain": {
+        "cap": "#B8383A"
+      },
+      "filter.hpf": {
+        "cap": "#3C8A4E"
+      },
+      "filter.lpf": {
+        "cap": "#B06A48"
+      },
+      "eq.hf.gain": {
+        "cap": "#B8383A"
+      },
+      "eq.hmf.gain": {
+        "cap": "#3C8A4E"
+      },
+      "eq.lmf.gain": {
+        "cap": "#2F64B0"
+      },
+      "eq.lf.gain": {
+        "cap": "#8A5A3C"
+      },
+      "comp.threshold": {
+        "cap": "#B8383A"
+      },
+      "gate.threshold": {
+        "cap": "#3C8A4E"
+      }
+    }
+  },
+  "skin": {
+    "panel": "#2E3033",
+    "header": "#25272A",
+    "line": "#44474B",
+    "title": "#EDEDED",
+    "label": "#D4D6D8",
+    "value": "#F2F2F2",
+    "track": "#46494D",
+    "ticks": "#C6C8CB",
+    "arc": "#F0F0F0",
+    "cap": "#9DA0A4",
+    "inset": "transparent",
+    "switchOff": [
+      "#3E4145",
+      "#5A5E62",
+      "#E6E6E6"
+    ],
+    "switchOn": [
+      "#E8935A",
+      "#E8935A",
+      "#1A1A1A"
+    ]
+  }
+}

@@ -1,0 +1,3065 @@
+[
+  {
+    "index": 0,
+    "name": "Mix",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "100.0 %",
+    "id": "108124",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0 %"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "5.0 %"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "10.0 %"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "15.0 %"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "20.0 %"
+      },
+      {
+        "normalized": 0.25,
+        "text": "25.0 %"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "30.0 %"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "35.0 %"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "40.0 %"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "45.0 %"
+      },
+      {
+        "normalized": 0.5,
+        "text": "50.0 %"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "55.0 %"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "60.0 %"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "65.0 %"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "70.0 %"
+      },
+      {
+        "normalized": 0.75,
+        "text": "75.0 %"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "80.0 %"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "85.0 %"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "90.0 %"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "95.0 %"
+      },
+      {
+        "normalized": 1.0,
+        "text": "100.0 %"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 1,
+    "name": "Bypass",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "773352680",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 2,
+    "name": "S1 Bypass",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1148017113",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 3,
+    "name": "S1 External key",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1457969465",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 4,
+    "name": "S1 Channel Strip Line input",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0 dB",
+    "id": "415805821",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-20.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-18.0 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-16.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-14.0 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-12.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-10.0 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-8.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-6.0 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-4.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-2.0 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.0 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "4.0 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "8.0 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "10.0 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "12.0 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "14.0 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "16.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "18.0 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 5,
+    "name": "S1 Channel Strip Phase invert",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "654863901",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 6,
+    "name": "S1 Channel Strip High pass",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1169145553",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "26 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "37 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "54 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "74 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "87 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "102 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "120 Hz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "140 Hz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "163 Hz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "190 Hz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "217 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "245 Hz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "277 Hz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "305 Hz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "319 Hz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "334 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "350 Hz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 7,
+    "name": "S1 Channel Strip Low pass",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1169149397",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "18.4 kHz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "15.4 kHz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "12.8 kHz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "11.1 kHz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "9.80 kHz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "8.68 kHz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "7.63 kHz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "6.63 kHz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "5.76 kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "5.00 kHz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "4.68 kHz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "4.37 kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "4.09 kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "3.89 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "3.74 kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "3.59 kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "3.45 kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "3.29 kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.14 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "3.00 kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 8,
+    "name": "S1 Channel Strip Filters to side chain",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1502725953",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 9,
+    "name": "S1 Channel Strip Filters pre dynamics",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1487345618",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 10,
+    "name": "S1 Channel Strip HF gain",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0 dB",
+    "id": "1172250387",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-13.5 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-12.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-10.5 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-9.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-6.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-4.5 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-3.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.5 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.5 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "3.0 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "4.5 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "9.0 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "10.5 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "12.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "13.5 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 11,
+    "name": "S1 Channel Strip HF frequency",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "8.00 kHz",
+    "id": "503172680",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1.50 kHz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "1.64 kHz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "1.78 kHz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "1.94 kHz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "2.40 kHz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "3.16 kHz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "4.16 kHz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "5.24 kHz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "6.03 kHz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "6.95 kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "8.00 kHz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "8.55 kHz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "9.15 kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "9.78 kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "10.7 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "11.8 kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "13.1 kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "14.2 kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "14.8 kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "15.4 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "16.0 kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 12,
+    "name": "S1 Channel Strip HF bell",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1172105367",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 13,
+    "name": "S1 Channel Strip HMF gain",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0 dB",
+    "id": "1943285354",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-13.5 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-12.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-10.5 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-9.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-6.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-4.5 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-3.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.5 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.5 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "3.0 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "4.5 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "9.0 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "10.5 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "12.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "13.5 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 14,
+    "name": "S1 Channel Strip HMF frequency",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.333332985639572,
+    "normalized": 0.333332985639572,
+    "text": "1.50 kHz",
+    "id": "240106833",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "600 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "654 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "713 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "777 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "907 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "1.10 kHz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "1.32 kHz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.61 kHz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.98 kHz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "2.44 kHz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "3.00 kHz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "3.39 kHz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "3.83 kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "4.32 kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "4.77 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "5.20 kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "5.66 kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "6.09 kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "6.38 kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "6.68 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "7.00 kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 15,
+    "name": "S1 Channel Strip HMF Q",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "1.50",
+    "id": "414842214",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "3.00"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "2.84"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "2.69"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "2.55"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "2.39"
+      },
+      {
+        "normalized": 0.25,
+        "text": "2.24"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "2.09"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.94"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.78"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.64"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.50"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.33"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "1.18"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "1.04"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "0.94"
+      },
+      {
+        "normalized": 0.75,
+        "text": "0.87"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "0.79"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "0.72"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "0.64"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "0.56"
+      },
+      {
+        "normalized": 1.0,
+        "text": "0.50"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 16,
+    "name": "S1 Channel Strip LMF gain",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0 dB",
+    "id": "324592102",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-13.5 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-12.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-10.5 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-9.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-6.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-4.5 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-3.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.5 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.5 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "3.0 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "4.5 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "9.0 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "10.5 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "12.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "13.5 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 17,
+    "name": "S1 Channel Strip LMF frequency",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.28444904088974,
+    "normalized": 0.28444904088974,
+    "text": "600 Hz",
+    "id": "1213978453",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "200 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "226 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "255 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "288 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "365 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "490 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "658 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "818 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "875 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "935 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.00 kHz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.13 kHz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "1.28 kHz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "1.44 kHz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "1.59 kHz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.73 kHz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "1.89 kHz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "2.05 kHz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "2.19 kHz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "2.34 kHz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "2.50 kHz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 18,
+    "name": "S1 Channel Strip LMF Q",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "1.50",
+    "id": "418536298",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "3.00"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "2.84"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "2.69"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "2.55"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "2.39"
+      },
+      {
+        "normalized": 0.25,
+        "text": "2.24"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "2.09"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "1.94"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "1.78"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "1.64"
+      },
+      {
+        "normalized": 0.5,
+        "text": "1.50"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.33"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "1.18"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "1.04"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "0.94"
+      },
+      {
+        "normalized": 0.75,
+        "text": "0.87"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "0.79"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "0.72"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "0.64"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "0.56"
+      },
+      {
+        "normalized": 1.0,
+        "text": "0.50"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 19,
+    "name": "S1 Channel Strip LF gain",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0 dB",
+    "id": "427297815",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-15.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-13.5 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-12.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-10.5 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-9.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-7.5 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-6.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-4.5 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-3.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.5 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.5 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "3.0 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "4.5 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "7.5 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "9.0 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "10.5 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "12.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "13.5 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "15.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 20,
+    "name": "S1 Channel Strip LF frequency",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.333332985639572,
+    "normalized": 0.333332985639572,
+    "text": "100 Hz",
+    "id": "1019503556",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "30 Hz"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "35 Hz"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "41 Hz"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "48 Hz"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "57 Hz"
+      },
+      {
+        "normalized": 0.25,
+        "text": "71 Hz"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "87 Hz"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "107 Hz"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "132 Hz"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "162 Hz"
+      },
+      {
+        "normalized": 0.5,
+        "text": "200 Hz"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "226 Hz"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "255 Hz"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "288 Hz"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "314 Hz"
+      },
+      {
+        "normalized": 0.75,
+        "text": "335 Hz"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "359 Hz"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "382 Hz"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "403 Hz"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "426 Hz"
+      },
+      {
+        "normalized": 1.0,
+        "text": "450 Hz"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 21,
+    "name": "S1 Channel Strip LF bell",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "427152795",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 22,
+    "name": "S1 Channel Strip EQ type",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Brown",
+    "id": "972554208",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Brown"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Black"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 23,
+    "name": "S1 Channel Strip EQ in",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "412184395",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 24,
+    "name": "S1 Channel Strip EQ to side chain",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "412184694",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 25,
+    "name": "S1 Channel Strip EQ pre dynamics",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "2040304957",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 26,
+    "name": "S1 Channel Strip Compressor in",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1300557128",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 27,
+    "name": "S1 Channel Strip Compressor ratio",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.427194982767105,
+    "normalized": 0.427194982767105,
+    "text": "4.00:1",
+    "id": "5462280",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "1.00:1"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "1.23:1"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "1.52:1"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "1.87:1"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "2.17:1"
+      },
+      {
+        "normalized": 0.25,
+        "text": "2.45:1"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "2.77:1"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "3.16:1"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "3.68:1"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "4.29:1"
+      },
+      {
+        "normalized": 0.5,
+        "text": "5.00:1"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "5.76:1"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "6.63:1"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "7.63:1"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "9.61:1"
+      },
+      {
+        "normalized": 0.75,
+        "text": "12.6:1"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "16.7:1"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "29.6:1"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "95.6:1"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "309.3:1"
+      },
+      {
+        "normalized": 1.0,
+        "text": "inf:1"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 28,
+    "name": "S1 Channel Strip Compressor threshold",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.333332985639572,
+    "normalized": 0.333332985639572,
+    "text": "0.0 dB",
+    "id": "350889704",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "10.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "8.5 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "7.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "5.5 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "4.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "2.5 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "1.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-0.5 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-2.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-3.5 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-5.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "-6.5 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "-8.0 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "-9.5 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "-11.0 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "-12.5 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "-14.0 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "-15.5 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "-17.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "-18.5 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "-20.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 29,
+    "name": "S1 Channel Strip Compressor release",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.710505902767181,
+    "normalized": 0.710505902767181,
+    "text": "1.20 s",
+    "id": "1061283268",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.100 s"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "0.113 s"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "0.128 s"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "0.144 s"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "0.159 s"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.173 s"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "0.189 s"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "0.214 s"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "0.264 s"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "0.325 s"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.400 s"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "0.527 s"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "0.693 s"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "0.912 s"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "1.15 s"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.41 s"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "1.74 s"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "2.14 s"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "2.64 s"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.25 s"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.00 s"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 30,
+    "name": "S1 Channel Strip Compressor fast attack",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "2147302335",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 31,
+    "name": "S1 Channel Strip Stereo link",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "60298068",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 32,
+    "name": "S1 Channel Strip Gate in",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "160933388",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 33,
+    "name": "S1 Channel Strip Gate threshold",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.333332985639572,
+    "normalized": 0.333332985639572,
+    "text": "-20.0 dB",
+    "id": "1631504804",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-30.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-28.5 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-27.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-25.5 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-24.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-22.5 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-21.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-19.2 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-16.8 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-14.4 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-12.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "-9.6 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "-7.2 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "-4.8 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "-2.2 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "0.5 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "3.2 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "5.5 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "7.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "8.5 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "10.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 34,
+    "name": "S1 Channel Strip Gate range",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "0.0 dB",
+    "id": "1191092982",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "1.5 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "3.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "4.5 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "7.5 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "9.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "11.0 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "14.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "17.0 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "20.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "23.0 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "26.0 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "29.0 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "31.0 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "32.5 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "34.0 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "35.5 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "37.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "38.5 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "40.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 35,
+    "name": "S1 Channel Strip Gate release",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.54058825969696,
+    "normalized": 0.54058825969696,
+    "text": "0.500 s",
+    "id": "144181120",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.100 s"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "0.113 s"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "0.128 s"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "0.144 s"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "0.159 s"
+      },
+      {
+        "normalized": 0.25,
+        "text": "0.173 s"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "0.189 s"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "0.214 s"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "0.264 s"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "0.325 s"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.400 s"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "0.527 s"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "0.693 s"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "0.912 s"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "1.15 s"
+      },
+      {
+        "normalized": 0.75,
+        "text": "1.41 s"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "1.74 s"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "2.14 s"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "2.64 s"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "3.25 s"
+      },
+      {
+        "normalized": 1.0,
+        "text": "4.00 s"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 36,
+    "name": "S1 Channel Strip Gate mode",
+    "label": "",
+    "steps": 3,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "Gate 1",
+    "id": "38286538",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Expand"
+      },
+      {
+        "normalized": 0.5,
+        "text": "Gate 1"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Gate 2"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 37,
+    "name": "S1 Channel Strip Gate fast attack",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "38065027",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 38,
+    "name": "S1 Channel Strip Dynamics in",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "2019494232",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 39,
+    "name": "S1 Channel Strip Key listen",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "86436468",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 40,
+    "name": "S1 Channel Strip Fader",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.759999990463257,
+    "normalized": 0.759999990463257,
+    "text": "-0.0 dB",
+    "id": "412635945",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-inf dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-56.0 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-50.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-45.0 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-40.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-35.2 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-30.5 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-25.7 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-21.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-16.4 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "-11.8 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "-8.7 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "-6.7 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "-4.6 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "-2.5 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "-0.4 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "1.7 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "3.8 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "5.8 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "7.9 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "10.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 41,
+    "name": "S1 Channel Strip Trim",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0 dB",
+    "id": "183432622",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-20.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-18.0 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-16.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-14.0 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-12.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-10.0 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-8.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-6.0 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-4.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-2.0 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "2.0 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "4.0 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "8.0 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "10.0 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "12.0 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "14.0 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "16.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "18.0 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "20.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 42,
+    "name": "S1 Mix",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "100.0 %",
+    "id": "1190676235",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0 %"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "5.0 %"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "10.0 %"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "15.0 %"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "20.0 %"
+      },
+      {
+        "normalized": 0.25,
+        "text": "25.0 %"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "30.0 %"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "35.0 %"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "40.0 %"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "45.0 %"
+      },
+      {
+        "normalized": 0.5,
+        "text": "50.0 %"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "55.0 %"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "60.0 %"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "65.0 %"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "70.0 %"
+      },
+      {
+        "normalized": 0.75,
+        "text": "75.0 %"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "80.0 %"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "85.0 %"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "90.0 %"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "95.0 %"
+      },
+      {
+        "normalized": 1.0,
+        "text": "100.0 %"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 43,
+    "name": "Input",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0 dB",
+    "id": "100358090",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-12.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-10.8 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-9.6 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-8.4 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-7.2 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-6.0 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-4.8 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-3.6 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-2.4 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.2 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.2 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "2.4 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "3.6 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "4.8 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "7.2 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "8.4 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "9.6 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "10.8 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "12.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 44,
+    "name": "Output",
+    "label": "dB",
+    "steps": 0,
+    "defaultNormalized": 0.5,
+    "normalized": 0.5,
+    "text": "0.0 dB",
+    "id": "1141971201",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "-12.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "-10.8 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "-9.6 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "-8.4 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "-7.2 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "-6.0 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "-4.8 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "-3.6 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "-2.4 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "-1.2 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "1.2 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "2.4 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "3.6 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "4.8 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "7.2 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "8.4 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "9.6 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "10.8 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "12.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 45,
+    "name": "Delta",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "541329789",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 46,
+    "name": "Oversampling",
+    "label": "",
+    "steps": 3,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "2x",
+    "id": "1769509718",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "2x"
+      },
+      {
+        "normalized": 0.5,
+        "text": "4x"
+      },
+      {
+        "normalized": 1.0,
+        "text": "8x"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 47,
+    "name": "S1 Channel Strip Drive",
+    "label": "",
+    "steps": 0,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "0.0 dB",
+    "id": "411300669",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "0.0 dB"
+      },
+      {
+        "normalized": 0.050000000745058,
+        "text": "1.0 dB"
+      },
+      {
+        "normalized": 0.100000001490116,
+        "text": "2.0 dB"
+      },
+      {
+        "normalized": 0.150000005960464,
+        "text": "3.0 dB"
+      },
+      {
+        "normalized": 0.200000002980232,
+        "text": "4.0 dB"
+      },
+      {
+        "normalized": 0.25,
+        "text": "5.0 dB"
+      },
+      {
+        "normalized": 0.300000011920929,
+        "text": "6.0 dB"
+      },
+      {
+        "normalized": 0.349999994039536,
+        "text": "7.0 dB"
+      },
+      {
+        "normalized": 0.400000005960464,
+        "text": "8.0 dB"
+      },
+      {
+        "normalized": 0.449999988079071,
+        "text": "9.0 dB"
+      },
+      {
+        "normalized": 0.5,
+        "text": "10.0 dB"
+      },
+      {
+        "normalized": 0.550000011920929,
+        "text": "12.0 dB"
+      },
+      {
+        "normalized": 0.600000023841858,
+        "text": "14.0 dB"
+      },
+      {
+        "normalized": 0.649999976158142,
+        "text": "16.0 dB"
+      },
+      {
+        "normalized": 0.699999988079071,
+        "text": "18.0 dB"
+      },
+      {
+        "normalized": 0.75,
+        "text": "20.0 dB"
+      },
+      {
+        "normalized": 0.800000011920929,
+        "text": "22.0 dB"
+      },
+      {
+        "normalized": 0.850000023841858,
+        "text": "24.0 dB"
+      },
+      {
+        "normalized": 0.899999976158142,
+        "text": "26.0 dB"
+      },
+      {
+        "normalized": 0.949999988079071,
+        "text": "28.0 dB"
+      },
+      {
+        "normalized": 1.0,
+        "text": "30.0 dB"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 48,
+    "name": "Stereo Mode",
+    "label": "",
+    "steps": 4,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Stereo",
+    "id": "44434131",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Stereo"
+      },
+      {
+        "normalized": 0.333333343267441,
+        "text": "Mid"
+      },
+      {
+        "normalized": 0.666666686534882,
+        "text": "Side"
+      },
+      {
+        "normalized": 1.0,
+        "text": "Mid/Side"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 49,
+    "name": "HPF Follows Label",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 1.0,
+    "normalized": 1.0,
+    "text": "On",
+    "id": "1373791731",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  },
+  {
+    "index": 50,
+    "name": "Low Latency",
+    "label": "",
+    "steps": 2,
+    "defaultNormalized": 0.0,
+    "normalized": 0.0,
+    "text": "Off",
+    "id": "1579976837",
+    "samples": [
+      {
+        "normalized": 0.0,
+        "text": "Off"
+      },
+      {
+        "normalized": 1.0,
+        "text": "On"
+      }
+    ],
+    "textFromCurrentValue": false
+  }
+]

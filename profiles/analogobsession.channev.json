@@ -5,7 +5,7 @@
   "name": "CHANNEV",
   "author": "Stripline",
   "status": "verified",
-  "notes": "Analog Obsession CHANNEV: PRE-72 mic pre, D-03 de-esser, EQ-81, C-64 compressor, L-64 limiter and T-01 tape, in that order. IN holds the mic pre (MIC gain, TRIM, PAD, Ø, its LOW and HIGH shelves) and the de-esser (DS threshold, DSMX mix, PEAK, SOFT; DS on/off at the top). FILT is the EQ-81's high and low pass; the mic pre's own pair is on FILT's small knobs (PHP, PLP). The EQ's mid Q is a Hi Q switch (HIQ buttons) and the low and high bands switch to peak (Bell). LINE is the EQ-81's line amp, DRV the tape drive. The compressor has no attack. The L-64 limiter fills the GATE section's small knobs and buttons (LIM on/off at the top), as the plugin has no gate. The fader is the plugin's Output (-24 to +24 dB). The de-esser's release isn't on the console.",
+  "notes": "Analog Obsession CHANNEV: PRE-72 mic pre, D-03 de-esser, EQ-81, C-64 compressor, L-64 limiter and T-01 tape, in that order. IN: PRE is the mic pre's MIC gain and LINE the EQ-81's line amp; the small knobs and buttons hold the mic pre's LOW and HIGH shelves and PAD, and the de-esser (DS threshold, DSMX mix, PEAK, SOFT; DS on/off at the top). FILT is the EQ-81's high and low pass; the mic pre's own pair and its TRIM are on FILT's small knobs (PHP, PLP, TRIM). The EQ's mid Q is a Hi Q switch (HIQ buttons) and the low and high bands switch to peak (Bell). DRV is the tape drive. The compressor has no attack. The L-64 limiter fills the GATE section's small knobs and buttons (LIM on/off at the top), as the plugin has no gate. The fader is the plugin's Output (-24 to +24 dB). The de-esser's release isn't on the console.",
   "plugin": {
     "name": "CHANNEV",
     "aliases": [],
@@ -41,9 +41,9 @@
     },
     "input.trim": {
       "param": {
-        "id": "30",
-        "index": 31,
-        "name": "Trim"
+        "id": "8",
+        "index": 9,
+        "name": "Line Amp"
       },
       "type": "continuous",
       "curve": {
@@ -394,17 +394,17 @@
       }
     },
     {
-      "id": "line",
-      "label": "LINE",
+      "id": "trim",
+      "label": "TRIM",
       "kind": "continuous",
-      "min": -20,
-      "max": 20,
+      "min": -30,
+      "max": 0,
       "scale": "linear",
       "mapping": {
         "param": {
-          "id": "8",
-          "index": 9,
-          "name": "Line Amp"
+          "id": "30",
+          "index": 31,
+          "name": "Trim"
         },
         "type": "continuous",
         "curve": {
@@ -675,12 +675,12 @@
     "filt": {
       "knobs": [
         "x.preHp",
-        "x.preLp"
+        "x.preLp",
+        "x.trim"
       ]
     },
     "eq": {
       "knobs": [
-        "x.line",
         "x.drive"
       ],
       "buttons": [
@@ -718,7 +718,7 @@
       "input.gain": {
         "cap": "#C8352B"
       },
-      "x.line": {
+      "input.trim": {
         "cap": "#C8352B"
       },
       "x.drive": {

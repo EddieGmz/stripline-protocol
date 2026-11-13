@@ -5,7 +5,7 @@
   "name": "CHANNEV",
   "author": "Stripline",
   "status": "verified",
-  "notes": "Analog Obsession CHANNEV: PRE-72 mic pre, D-03 de-esser, EQ-81, C-64 compressor, L-64 limiter and T-01 tape, in that order. IN: PRE is the mic pre's MIC gain and LINE the EQ-81's line amp; the small knobs and buttons hold the mic pre's LOW and HIGH shelves, TRIM and PAD. FILT is the EQ-81's high and low pass; the mic pre's own pair is on FILT's small knobs (PHP, PLP). The EQ's mid Q is a Hi Q switch (HIQ buttons) and the low and high bands switch to peak (Bell). DRV is the tape drive. The compressor has no attack, and the plugin has no gate. The de-esser and the limiter only switch on and off here (DS, LIM at the top); their settings stay in the plugin window. The fader is the plugin's Output (-24 to +24 dB).",
+  "notes": "Analog Obsession CHANNEV: PRE-72 mic pre, D-03 de-esser, EQ-81, C-64 compressor, L-64 limiter and T-01 tape, in that order. IN: PRE is the mic pre's MIC gain and LINE the EQ-81's line amp; the small knobs and buttons hold the mic pre's LOW and HIGH shelves, TRIM and PAD. FILT is the EQ-81's high and low pass; the mic pre's own pair is on FILT's small knobs (PHP, PLP). The EQ's mid Q is a Hi Q switch (HIQ buttons) and the low and high bands switch to peak (Bell). DRV is the tape drive. The compressor has no attack, and the plugin has no gate. The de-esser and the limiter stay in the plugin window. The fader is the plugin's Output (-24 to +24 dB).",
   "plugin": {
     "name": "CHANNEV",
     "aliases": [],
@@ -469,32 +469,6 @@
         },
         "type": "switch"
       }
-    },
-    {
-      "id": "dsIn",
-      "label": "DS",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "35",
-          "index": 36,
-          "name": "De-esser In"
-        },
-        "type": "switch"
-      }
-    },
-    {
-      "id": "limIn",
-      "label": "LIM",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "44",
-          "index": 45,
-          "name": "Limiter In"
-        },
-        "type": "switch"
-      }
     }
   ],
   "strip": {
@@ -502,9 +476,7 @@
       {
         "control": "input.phase",
         "label": "Ø"
-      },
-      "x.dsIn",
-      "x.limIn"
+      }
     ],
     "in": {
       "knobs": [

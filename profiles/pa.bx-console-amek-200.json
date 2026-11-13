@@ -5,7 +5,7 @@
   "name": "bx_console AMEK 200",
   "author": "Stripline",
   "status": "verified",
-  "notes": "Knobs pass the plugin's own position through; the console prints the plugin's text. Five EQ bands: LF, LMF, HMF and HF on the four base bands, MF in the EQ section's own knobs. The Q knobs include the shelf position, so there are no BELL switches. Comp Timing (attack and release on one knob) is on RELEASE, inverted so it rises with longer times.",
+  "notes": "Knobs pass the plugin's own position through; the console prints the plugin's text. Five EQ bands: LF, LMF, HMF and HF on the four base bands, MF in the EQ section's own knobs. The Q knobs include the shelf position, so there are no BELL switches. Comp Timing (attack and release on one knob) is on RELEASE, inverted so it rises with longer times. The limiter stays in the plugin window.",
   "plugin": {
     "name": "bx_console AMEK 200",
     "aliases": [],
@@ -361,7 +361,7 @@
       "label": "VGN",
       "kind": "continuous",
       "min": -117.5,
-      "max": -70.0,
+      "max": -70,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -379,8 +379,8 @@
       "id": "thd",
       "label": "THD",
       "kind": "continuous",
-      "min": -115.0,
-      "max": -30.0,
+      "min": -115,
+      "max": -30,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -460,8 +460,8 @@
       "id": "mfGain",
       "label": "MFG",
       "kind": "continuous",
-      "min": -15.0,
-      "max": 15.0,
+      "min": -15,
+      "max": 15,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -479,8 +479,8 @@
       "id": "mfFreq",
       "label": "MFF",
       "kind": "continuous",
-      "min": 1.0,
-      "max": 790.0,
+      "min": 1,
+      "max": 790,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -499,7 +499,7 @@
       "label": "MFQ",
       "kind": "continuous",
       "min": 0.4,
-      "max": 4.0,
+      "max": 4,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -517,8 +517,8 @@
       "id": "gainScale",
       "label": "SCAL",
       "kind": "continuous",
-      "min": 0.0,
-      "max": 200.0,
+      "min": 0,
+      "max": 200,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -572,30 +572,11 @@
       }
     },
     {
-      "id": "limThr",
-      "label": "LIM",
-      "kind": "continuous",
-      "min": 0.0,
-      "max": 20.0,
-      "scale": "linear",
-      "mapping": {
-        "param": {
-          "id": "1416131148",
-          "index": 73,
-          "name": "Limiter Threshold"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
       "id": "headroom",
       "label": "HDRM",
       "kind": "continuous",
-      "min": -24.0,
-      "max": 12.0,
+      "min": -24,
+      "max": 12,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -618,19 +599,6 @@
           "id": "1147758156",
           "index": 68,
           "name": "Comp Ambience"
-        },
-        "type": "switch"
-      }
-    },
-    {
-      "id": "limOn",
-      "label": "LIM",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "1282230638",
-          "index": 72,
-          "name": "Limiter On/Off"
         },
         "type": "switch"
       }
@@ -666,7 +634,7 @@
       "label": "HOLD",
       "kind": "continuous",
       "min": 1.2,
-      "max": 950.0,
+      "max": 950,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -685,7 +653,7 @@
       "label": "KLP",
       "kind": "continuous",
       "min": 1.09,
-      "max": 833.0,
+      "max": 833,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -704,7 +672,7 @@
       "label": "KHP",
       "kind": "continuous",
       "min": 1.06,
-      "max": 816.0,
+      "max": 816,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -843,12 +811,10 @@
           "control": "comp.mix",
           "label": "MIX"
         },
-        "x.limThr",
         "x.headroom"
       ],
       "buttons": [
         "x.amb",
-        "x.limOn",
         "x.clip",
         "x.scLink"
       ]
@@ -898,9 +864,6 @@
         "arc": "#E8A13A"
       },
       "gate.threshold": {
-        "arc": "#22A6A6"
-      },
-      "x.limThr": {
         "arc": "#22A6A6"
       },
       "x.headroom": {

@@ -9,8 +9,7 @@
   "plugin": {
     "name": "Lindell 80 Channel",
     "aliases": [
-      "Lindell 80 Series",
-      "Lindell 80"
+      "Lindell 80 Series"
     ],
     "vendor": "Plugin Alliance",
     "scan": {
@@ -360,20 +359,6 @@
       }
     },
     {
-      "id": "mode84",
-      "label": "84",
-      "kind": "switch",
-      "default": 1,
-      "mapping": {
-        "param": {
-          "id": "1078682591",
-          "index": 6,
-          "name": "84 Mode"
-        },
-        "type": "switch"
-      }
-    },
-    {
       "id": "scHpf",
       "label": "SCHP",
       "kind": "continuous",
@@ -477,8 +462,7 @@
         "label": "Ø"
       },
       "x.pad",
-      "x.unity",
-      "x.mode84"
+      "x.unity"
     ],
     "in": {
       "knobs": [

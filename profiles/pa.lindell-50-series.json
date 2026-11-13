@@ -5,12 +5,11 @@
   "name": "Lindell 50 Channel",
   "author": "Stripline",
   "status": "verified",
-  "notes": "From Lindell 50 Channel (VST3). Five EQ bands: the Mid band is on the EQ bottom row. The compressor maps to the VCA section; the FET section is not mapped. Equalizer 60 switches to the graphic EQ, which is not mapped.",
+  "notes": "From Lindell 50 Channel (VST3). The EQ's fifth (Mid) band and the Equalizer type (50A, 50B, 60) stay in the plugin window. The compressor maps to the VCA section; the FET section and the Compressor type switch are not mapped.",
   "plugin": {
     "name": "Lindell 50 Channel",
     "aliases": [
-      "Lindell 50 Series",
-      "Lindell 50"
+      "Lindell 50 Series"
     ],
     "vendor": "Plugin Alliance",
     "scan": {
@@ -112,8 +111,7 @@
         "index": 21,
         "name": "Low Shelf"
       },
-      "type": "switch",
-      "invert": true
+      "type": "switch"
     },
     "eq.lmf.gain": {
       "param": {
@@ -190,8 +188,7 @@
         "index": 22,
         "name": "High Shelf"
       },
-      "type": "switch",
-      "invert": true
+      "type": "switch"
     },
     "dyn.in": {
       "param": {
@@ -381,69 +378,6 @@
       }
     },
     {
-      "id": "eqType",
-      "label": "TYPE",
-      "kind": "stepped",
-      "steps": [
-        "50A",
-        "50B",
-        "60"
-      ],
-      "default": 1,
-      "mapping": {
-        "param": {
-          "id": "2052620399",
-          "index": 9,
-          "name": "Equalizer"
-        },
-        "type": "even"
-      }
-    },
-    {
-      "id": "midGain",
-      "label": "MID",
-      "kind": "continuous",
-      "min": -12,
-      "max": 12,
-      "scale": "linear",
-      "unit": "dB",
-      "default": 0,
-      "mapping": {
-        "param": {
-          "id": "1992341403",
-          "index": 15,
-          "name": "Mid Gain"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
-      "id": "midFreq",
-      "label": "MIDF",
-      "kind": "stepped",
-      "steps": [
-        "200",
-        "400",
-        "600",
-        "800",
-        "1.5k",
-        "3k",
-        "5k"
-      ],
-      "default": 3,
-      "mapping": {
-        "param": {
-          "id": "1992327828",
-          "index": 14,
-          "name": "Mid Freq"
-        },
-        "type": "even"
-      }
-    },
-    {
       "id": "bandFilter",
       "label": "BAND",
       "kind": "switch",
@@ -454,24 +388,6 @@
           "name": "Band Filter"
         },
         "type": "switch"
-      }
-    },
-    {
-      "id": "compType",
-      "label": "TYPE",
-      "kind": "stepped",
-      "steps": [
-        "FET",
-        "VCA"
-      ],
-      "default": 1,
-      "mapping": {
-        "param": {
-          "id": "1611768178",
-          "index": 35,
-          "name": "Compressor"
-        },
-        "type": "even"
       }
     },
     {
@@ -608,12 +524,7 @@
       ]
     },
     "eq": {
-      "knobs": [
-        "x.midGain",
-        "x.midFreq"
-      ],
       "buttons": [
-        "x.eqType",
         "x.bandFilter"
       ]
     },
@@ -626,7 +537,6 @@
         "x.vcaLink"
       ],
       "buttons": [
-        "x.compType",
         "x.knee",
         "x.niveau",
         "x.vcaType"
@@ -655,9 +565,6 @@
         "cap": "#2C5AA0"
       },
       "eq.lf.freq": {
-        "cap": "#2C5AA0"
-      },
-      "x.midFreq": {
         "cap": "#2C5AA0"
       },
       "comp.makeup": {

@@ -5,7 +5,7 @@
   "name": "API Vision Channel Strip",
   "author": "Stripline",
   "status": "verified",
-  "notes": "From UADx API Vision Channel Strip (VST3). Each module (215 filter, 550 EQ, 225 comp, 235 gate) has its own On switch, all off when the plugin loads. EQ Type 560L switches to the graphic EQ, which is not mapped.",
+  "notes": "From UADx API Vision Channel Strip (VST3). Each module (215 filter, 550 EQ, 225 comp, 235 gate) has its own On switch, all off when the plugin loads. The EQ Type (550 or the 560L graphic EQ) stays in the plugin window.",
   "plugin": {
     "name": "API Vision Channel Strip",
     "aliases": [
@@ -385,23 +385,6 @@
       }
     },
     {
-      "id": "eqType",
-      "label": "EQ",
-      "kind": "stepped",
-      "steps": [
-        "550L",
-        "560L"
-      ],
-      "mapping": {
-        "param": {
-          "id": "1666",
-          "index": 46,
-          "name": "EQ Type"
-        },
-        "type": "even"
-      }
-    },
-    {
       "id": "compAttack",
       "label": "ATK",
       "kind": "stepped",
@@ -494,8 +477,7 @@
       "x.pad",
       "x.inputSel",
       "x.preDyn",
-      "x.dynSc",
-      "x.eqType"
+      "x.dynSc"
     ],
     "filt": {
       "buttons": [

@@ -5,7 +5,7 @@
   "name": "bx_console AMEK 9099",
   "author": "Stripline",
   "status": "verified",
-  "notes": "Knobs pass the plugin's own position through; the console prints the plugin's text. The limiter shows its level and on/off; its makeup, release, mix and clip stay in the plugin window, as do the two notches.",
+  "notes": "Knobs pass the plugin's own position through; the console prints the plugin's text. The limiter and the two notches stay in the plugin window.",
   "plugin": {
     "name": "bx_console AMEK 9099",
     "aliases": [],
@@ -362,7 +362,7 @@
       "label": "VGN",
       "kind": "continuous",
       "min": -117.5,
-      "max": -70.0,
+      "max": -70,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -381,7 +381,7 @@
       "label": "THD",
       "kind": "continuous",
       "min": -115.5,
-      "max": -30.0,
+      "max": -30,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -540,32 +540,13 @@
       "label": "SCHP",
       "kind": "continuous",
       "min": 1.18,
-      "max": 903.0,
+      "max": 903,
       "scale": "linear",
       "mapping": {
         "param": {
           "id": "1131432016",
           "index": 54,
           "name": "Comp Highpass"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
-      "id": "limLevel",
-      "label": "LIM",
-      "kind": "continuous",
-      "min": -10.0,
-      "max": 20.0,
-      "scale": "linear",
-      "mapping": {
-        "param": {
-          "id": "1280079468",
-          "index": 60,
-          "name": "Limiter Level"
         },
         "type": "continuous",
         "curve": {
@@ -600,19 +581,6 @@
       }
     },
     {
-      "id": "limOn",
-      "label": "LIM",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "1282230638",
-          "index": 59,
-          "name": "Limiter On/Off"
-        },
-        "type": "switch"
-      }
-    },
-    {
       "id": "amb",
       "label": "AMB",
       "kind": "switch",
@@ -630,7 +598,7 @@
       "label": "HOLD",
       "kind": "continuous",
       "min": 1.2,
-      "max": 950.0,
+      "max": 950,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -649,7 +617,7 @@
       "label": "KLP",
       "kind": "continuous",
       "min": 1.09,
-      "max": 833.0,
+      "max": 833,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -668,7 +636,7 @@
       "label": "KHP",
       "kind": "continuous",
       "min": 1.06,
-      "max": 816.0,
+      "max": 816,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -838,13 +806,11 @@
           "control": "comp.mix",
           "label": "MIX"
         },
-        "x.cHpf",
-        "x.limLevel"
+        "x.cHpf"
       ],
       "buttons": [
         "x.hardKnee",
         "x.autoRel",
-        "x.limOn",
         "x.amb"
       ]
     },

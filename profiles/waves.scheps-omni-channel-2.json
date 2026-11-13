@@ -5,7 +5,7 @@
   "name": "Scheps Omni Channel 2",
   "author": "Stripline",
   "status": "verified",
-  "notes": "Knobs pass the plugin's own position through; the console prints the plugin's text. Stereo and Mono (name match). Only the main (left / stereo) set of controls is on the strip; the R copies for Duo and M/S modes stay in the plugin, as do the de-esser bands and inserts. EQ: LOW, TONE (on LO MID), MID (on HI MID), HIGH; their filter types are the EQ buttons. Gate range is the Floor knob, inverted.",
+  "notes": "Knobs pass the plugin's own position through; the console prints the plugin's text. Stereo and Mono (name match). Only the main (left / stereo) set of controls is on the strip; the R copies for Duo and M/S modes stay in the plugin, as do the de-esser, the limiter and the inserts. EQ: LOW, TONE (on LO MID), MID (on HI MID), HIGH; their filter types are the EQ buttons. Gate range is the Floor knob, inverted.",
   "plugin": {
     "name": "Scheps Omni Channel 2",
     "aliases": [],
@@ -374,56 +374,11 @@
       }
     },
     {
-      "id": "deEss",
-      "label": "DS",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "110",
-          "index": 112,
-          "name": "DeEsser:On/Off"
-        },
-        "type": "switch"
-      }
-    },
-    {
-      "id": "limOn",
-      "label": "LIM",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "10",
-          "index": 12,
-          "name": "Limit:On"
-        },
-        "type": "switch"
-      }
-    },
-    {
-      "id": "limThr",
-      "label": "LIM",
-      "kind": "continuous",
-      "min": -30.0,
-      "max": 0.0,
-      "scale": "linear",
-      "mapping": {
-        "param": {
-          "id": "9",
-          "index": 11,
-          "name": "Limit:Threshold"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
       "id": "sat",
       "label": "SAT",
       "kind": "continuous",
-      "min": 0.0,
-      "max": 100.0,
+      "min": 0,
+      "max": 100,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -568,7 +523,7 @@
       "label": "HRES",
       "kind": "continuous",
       "min": 0.1,
-      "max": 4.0,
+      "max": 4,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -587,7 +542,7 @@
       "label": "LRES",
       "kind": "continuous",
       "min": 0.1,
-      "max": 4.0,
+      "max": 4,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -696,8 +651,8 @@
       "id": "scHp",
       "label": "SCHP",
       "kind": "continuous",
-      "min": 20.0,
-      "max": 20000.0,
+      "min": 20,
+      "max": 20000,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -741,8 +696,8 @@
       "id": "gClose",
       "label": "CLOS",
       "kind": "continuous",
-      "min": -48.0,
-      "max": 0.0,
+      "min": -48,
+      "max": 0,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -761,7 +716,7 @@
       "label": "ATK",
       "kind": "continuous",
       "min": 0.1,
-      "max": 1000.0,
+      "max": 1000,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -779,8 +734,8 @@
       "id": "gKeyHp",
       "label": "KHP",
       "kind": "continuous",
-      "min": 20.0,
-      "max": 20000.0,
+      "min": 20,
+      "max": 20000,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -798,8 +753,8 @@
       "id": "gKeyLp",
       "label": "KLP",
       "kind": "continuous",
-      "min": 20.0,
-      "max": 20000.0,
+      "min": 20,
+      "max": 20000,
       "scale": "linear",
       "mapping": {
         "param": {
@@ -862,20 +817,11 @@
       {
         "control": "x.invR",
         "label": "ØR"
-      },
-      {
-        "control": "x.deEss",
-        "label": "DS"
-      },
-      {
-        "control": "x.limOn",
-        "label": "LIM"
       }
     ],
     "in": {
       "knobs": [
-        "x.sat",
-        "x.limThr"
+        "x.sat"
       ],
       "buttons": [
         "x.satOn",

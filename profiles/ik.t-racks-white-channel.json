@@ -2,10 +2,10 @@
   "$schema": "../schema/profile.schema.json",
   "schemaVersion": 3,
   "id": "ik.t-racks-white-channel",
-  "name": "TR5 White Channel",
+  "name": "White Channel",
   "author": "Stripline",
   "status": "verified",
-  "notes": "The T-RackS 5 version of White Channel (its VST3 name is plain \"White Channel\"). Threshold runs from +10 dB down to -20 dB as the plugin knob turns.",
+  "notes": "Threshold runs from +10 dB down to -20 dB as the plugin knob turns.",
   "plugin": {
     "name": "White Channel",
     "aliases": [

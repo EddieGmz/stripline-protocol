@@ -5,7 +5,7 @@
   "name": "CHANNEV",
   "author": "Stripline",
   "status": "verified",
-  "notes": "Analog Obsession CHANNEV: PRE-72 mic pre, D-03 de-esser, EQ-81, C-64 compressor, L-64 limiter and T-01 tape, in that order. IN: PRE is the mic pre's MIC gain and LINE the EQ-81's line amp; the small knobs and buttons hold the mic pre's LOW and HIGH shelves and PAD, and the de-esser (DS threshold, DSMX mix, PEAK, SOFT; DS on/off at the top). FILT is the EQ-81's high and low pass; the mic pre's own pair and its TRIM are on FILT's small knobs (PHP, PLP, TRIM). The EQ's mid Q is a Hi Q switch (HIQ buttons) and the low and high bands switch to peak (Bell). DRV is the tape drive. The compressor has no attack. The L-64 limiter fills the GATE section's small knobs and buttons (LIM on/off at the top), as the plugin has no gate. The fader is the plugin's Output (-24 to +24 dB). The de-esser's release isn't on the console.",
+  "notes": "Analog Obsession CHANNEV: PRE-72 mic pre, D-03 de-esser, EQ-81, C-64 compressor, L-64 limiter and T-01 tape, in that order. IN: PRE is the mic pre's MIC gain and LINE the EQ-81's line amp; the small knobs and buttons hold the mic pre's LOW and HIGH shelves, TRIM and PAD. FILT is the EQ-81's high and low pass; the mic pre's own pair is on FILT's small knobs (PHP, PLP). The EQ's mid Q is a Hi Q switch (HIQ buttons) and the low and high bands switch to peak (Bell). DRV is the tape drive. The compressor has no attack, and the plugin has no gate. The de-esser and the limiter only switch on and off here (DS, LIM at the top); their settings stay in the plugin window. The fader is the plugin's Output (-24 to +24 dB).",
   "plugin": {
     "name": "CHANNEV",
     "aliases": [],
@@ -484,70 +484,6 @@
       }
     },
     {
-      "id": "dsThr",
-      "label": "DS",
-      "kind": "continuous",
-      "min": -30,
-      "max": 0,
-      "scale": "linear",
-      "mapping": {
-        "param": {
-          "id": "5",
-          "index": 6,
-          "name": "De-Esser Threshold"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
-      "id": "dsMix",
-      "label": "DSMX",
-      "kind": "continuous",
-      "min": 0,
-      "max": 100,
-      "scale": "linear",
-      "mapping": {
-        "param": {
-          "id": "7",
-          "index": 8,
-          "name": "De-Esser Mix"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
-      "id": "dsPeak",
-      "label": "PEAK",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "34",
-          "index": 35,
-          "name": "De-esser Peak"
-        },
-        "type": "switch"
-      }
-    },
-    {
-      "id": "dsSoft",
-      "label": "SOFT",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "36",
-          "index": 37,
-          "name": "De-esser Soft"
-        },
-        "type": "switch"
-      }
-    },
-    {
       "id": "limIn",
       "label": "LIM",
       "kind": "switch",
@@ -556,95 +492,6 @@
           "id": "44",
           "index": 45,
           "name": "Limiter In"
-        },
-        "type": "switch"
-      }
-    },
-    {
-      "id": "limThr",
-      "label": "THR",
-      "kind": "continuous",
-      "min": 4,
-      "max": 15,
-      "scale": "linear",
-      "mapping": {
-        "param": {
-          "id": "24",
-          "index": 25,
-          "name": "Limiter Threshold"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
-      "id": "limRel",
-      "label": "REL",
-      "kind": "continuous",
-      "min": 50,
-      "max": 500,
-      "scale": "linear",
-      "mapping": {
-        "param": {
-          "id": "25",
-          "index": 26,
-          "name": "Limiter Release"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
-      "id": "limGain",
-      "label": "GAIN",
-      "kind": "continuous",
-      "min": 0,
-      "max": 20,
-      "scale": "linear",
-      "mapping": {
-        "param": {
-          "id": "26",
-          "index": 27,
-          "name": "Limiter Gain"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
-      "id": "limMix",
-      "label": "MIX",
-      "kind": "continuous",
-      "min": 0,
-      "max": 100,
-      "scale": "linear",
-      "mapping": {
-        "param": {
-          "id": "27",
-          "index": 28,
-          "name": "Limiter Mix"
-        },
-        "type": "continuous",
-        "curve": {
-          "kind": "auto"
-        }
-      }
-    },
-    {
-      "id": "limExt",
-      "label": "EXT",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "45",
-          "index": 46,
-          "name": "Limiter Sidechain"
         },
         "type": "switch"
       }
@@ -663,20 +510,16 @@
       "knobs": [
         "x.preLow",
         "x.preHigh",
-        "x.dsThr",
-        "x.dsMix"
+        "x.trim"
       ],
       "buttons": [
-        "x.pad",
-        "x.dsPeak",
-        "x.dsSoft"
+        "x.pad"
       ]
     },
     "filt": {
       "knobs": [
         "x.preHp",
-        "x.preLp",
-        "x.trim"
+        "x.preLp"
       ]
     },
     "eq": {
@@ -703,17 +546,6 @@
         "x.compExt"
       ]
     },
-    "gate": {
-      "knobs": [
-        "x.limThr",
-        "x.limRel",
-        "x.limGain",
-        "x.limMix"
-      ],
-      "buttons": [
-        "x.limExt"
-      ]
-    },
     "colors": {
       "input.gain": {
         "cap": "#C8352B"
@@ -725,12 +557,6 @@
         "cap": "#C8352B"
       },
       "comp.threshold": {
-        "cap": "#2F5FB0"
-      },
-      "x.dsThr": {
-        "cap": "#2F5FB0"
-      },
-      "x.limThr": {
         "cap": "#2F5FB0"
       }
     }

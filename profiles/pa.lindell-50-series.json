@@ -5,7 +5,7 @@
   "name": "Lindell 50 Channel",
   "author": "Stripline",
   "status": "verified",
-  "notes": "From Lindell 50 Channel (VST3). The EQ's fifth (Mid) band and the Equalizer type (50A, 50B, 60) stay in the plugin window. The compressor maps to the VCA section; the FET section and the Compressor type switch are not mapped.",
+  "notes": "From Lindell 50 Channel (VST3). The EQ's fifth (Mid) band, the Band filter and the Equalizer type (50A, 50B, 60) stay in the plugin window. The compressor maps to the VCA section; the FET section and the Compressor type switch are not mapped.",
   "plugin": {
     "name": "Lindell 50 Channel",
     "aliases": [
@@ -378,19 +378,6 @@
       }
     },
     {
-      "id": "bandFilter",
-      "label": "BAND",
-      "kind": "switch",
-      "mapping": {
-        "param": {
-          "id": "972525380",
-          "index": 20,
-          "name": "Band Filter"
-        },
-        "type": "switch"
-      }
-    },
-    {
       "id": "knee",
       "label": "KNEE",
       "kind": "stepped",
@@ -521,11 +508,6 @@
     "in": {
       "knobs": [
         "x.thd"
-      ]
-    },
-    "eq": {
-      "buttons": [
-        "x.bandFilter"
       ]
     },
     "comp": {

@@ -25,6 +25,10 @@ export type Mapping =
       on?: number;
       off?: number;
       invert?: boolean;
+      /**
+       * The plugin's parameter name and on/off text describe the opposite of the console's control (Lindell 50's "High Shelf" is On when the band is a bell). Tooltips, which name the plugin's parameter, read it that way round. It doesn't change what the switch does; use 'invert' for that.
+       */
+      textInverted?: boolean;
     }
   | {
       param: ParamRef;

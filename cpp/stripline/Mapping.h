@@ -77,6 +77,8 @@ struct Mapping
     float on = 1.0f, off = 0.0f; // Switch
     int count = 2;              // Even: number of positions of the control (step i sits at i/(count-1))
     bool invert = false;
+    /** Switches: the plugin's name and on/off text read the other way round (tooltips only). */
+    bool textInverted = false;
 
     bool isMapped() const noexcept { return type == Type::Continuous || type == Type::Stepped || type == Type::Switch || type == Type::Even; }
 };

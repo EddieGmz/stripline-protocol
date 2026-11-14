@@ -111,7 +111,8 @@
         "index": 21,
         "name": "Low Shelf"
       },
-      "type": "switch"
+      "type": "switch",
+      "textInverted": true
     },
     "eq.lmf.gain": {
       "param": {
@@ -188,7 +189,8 @@
         "index": 22,
         "name": "High Shelf"
       },
-      "type": "switch"
+      "type": "switch",
+      "textInverted": true
     },
     "dyn.in": {
       "param": {
